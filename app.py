@@ -956,15 +956,34 @@ HTML_TEMPLATE = '''
             padding: 15px 30px;
         }
         
-        header { background: var(--color-primary); color: white; padding: 20px 0; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        .header-top { display: flex; justify-content: space-between; align-items: center; }
-        .logo { width: 50px; height: 50px; border-radius: 8px; object-fit: cover; }
-        
-        .nav-tabs { display: flex; gap: 10px; margin-top: 20px; flex-wrap: wrap; }
-        .nav-tab { padding: 10px 20px; background: rgba(255,255,255,0.1); border-radius: 6px; cursor: pointer; white-space: nowrap; transition: all 0.3s ease; }
-        .nav-tab.active { background: white; color: var(--color-primary); }
-        .nav-tab:hover { background: rgba(255,255,255,0.2); }
+        header { 
+    background: linear-gradient(
+        135deg, 
+        #1a0f42 0%,     
+        #0A1429 30%,    
+        #0A1429 70%,    
+        #1a0f42 100%    
+    );
+    color: white; 
+    padding: 20px 0; 
+}
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+.header-top { display: flex; justify-content: space-between; align-items: center; }
+.logo { width: 50px; height: 50px; border-radius: 8px; object-fit: cover; }
+
+.nav-tabs { display: flex; gap: 10px; margin-top: 20px; flex-wrap: wrap; }
+.nav-tab { padding: 10px 20px; background: rgba(255,255,255,0.1); border-radius: 6px; cursor: pointer; white-space: nowrap; transition: all 0.3s ease; }
+.nav-tab.active { 
+    background: rgba(10, 20, 41, 0.9);
+    color: white; 
+}
+.nav-tab:hover { 
+    background: rgba(10, 20, 41, 0.6);
+}
+
+.status-bar {
+    background: linear-gradient(135deg, #1a0f42, #0A1429, #1a0f42);
+}
         
         main { padding: 30px 0; }
         .page { display: none; background: white; padding: 30px; border-radius: var(--radius-lg); margin-bottom: 20px; }
