@@ -1650,7 +1650,13 @@ HTML_TEMPLATE = '''
         @keyframes loadingFill {
             to { width: 100%; }
         }
+        @keyframes loadingFill {
+            to { width: 100%; }
+        }
 
+        .market-open { color: #28A745; font-weight: bold; }
+        .market-closed { color: #DC3545; }
+        .market-status { margin: 0 5px; }
 
     </style>
 </head>
@@ -1715,6 +1721,7 @@ HTML_TEMPLATE = '''
                 <div id="smiReturnText">SMI Rendite: <span id="smiReturn">+1.2%</span></div>
                 <div id="portfolioReturnText">Portfolio Rendite: <span id="portfolioReturn">+0.0%</span></div>
                 <div id="portfolioValueText">Portfolio Wert: <span id="portfolioValue">CHF 0</span></div>
+            <div id="marketStatusText">Markets: <span id="marketStatus">SIX: <span class="market-status">--</span> NYSE: <span class="market-status">--</span> FX: <span class="market-status">--</span></span></div>
             </div>
 
             <!-- Dashboard -->
