@@ -358,7 +358,13 @@ def refresh_all_markets():
         "data": live_market_data,
         "last_update": last_market_update.strftime("%H:%M:%S")
     })
-
+@app.route('/api/verify_password', methods=['POST'])
+def verify_password():
+    user_password = request.json.get('password')
+    correct_password = "6R1TUt0Qkw"  # Dein neues Passwort
+    if user_password == correct_password:
+        return jsonify({"success": True})
+    return jsonify({"success": False})
 @app.route('/get_news')
 def get_news():
     """Simuliert Finanznachrichten mit Links"""
@@ -1567,7 +1573,12 @@ HTML_TEMPLATE = '''
             color: rgba(255,255,255,0.8);
             font-weight: 300;
         }
-
+.welcome-author {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.7);
+    font-weight: 300;
+    margin-bottom: 2rem;
+}
         .loading-bar {
             width: 200px;
             height: 3px;
@@ -1614,6 +1625,7 @@ HTML_TEMPLATE = '''
         <div class="welcome-content">
             <h1 class="welcome-title">Swiss Asset Manager</h1>
             <p class="welcome-subtitle">Professional Portfolio Simulation</p>
+            <p class="welcome-author">by Ahmed Choudhary</p>
             <div class="loading-bar">
                 <div class="loading-progress"></div>
             </div>
@@ -2410,26 +2422,41 @@ HTML_TEMPLATE = '''
             const password = document.getElementById('passwordInput').value;
             const errorElement = document.getElementById('passwordError');
             
-            if (password === "swissassetmanagerAC") {
-                // SOFORT zur Welcome Screen wechseln
-                document.getElementById('passwordProtection').style.display = 'none';
-                document.getElementById('welcomeScreen').style.display = 'flex';
-                
-                // Nach 2 Sekunden direkt zur Hauptseite
-                setTimeout(() => {
-                    document.getElementById('welcomeScreen').style.display = 'none';
-                    document.getElementById('mainContent').style.display = 'block';
-                    initializeApplication();
-                    startAutoRefresh();
-                }, 2000);
-                
-            } else {
+            // Backend Password Check
+            fetch('/api/verify_password', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({password: password})
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    // SOFORT zur Welcome Screen wechseln
+                    document.getElementById('passwordProtection').style.display = 'none';
+                    document.getElementById('welcomeScreen').style.display = 'flex';
+                    
+                    // Nach 4.5 Sekunden direkt zur Hauptseite
+                    setTimeout(() => {
+                        document.getElementById('welcomeScreen').style.display = 'none';
+                        document.getElementById('mainContent').style.display = 'block';
+                        initializeApplication();
+                        startAutoRefresh();
+                    }, 4500);
+                    
+                } else {
+                    errorElement.style.display = 'block';
+                    document.getElementById('passwordInput').style.borderColor = '#DC3545';
+                    setTimeout(() => {
+                        document.getElementById('passwordInput').style.borderColor = '';
+                    }, 1000);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
                 errorElement.style.display = 'block';
-                document.getElementById('passwordInput').style.borderColor = '#DC3545';
-                setTimeout(() => {
-                    document.getElementById('passwordInput').style.borderColor = '';
-                }, 1000);
-            }
+            });
         }
 
         // Enter-Taste für Passwort
