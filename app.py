@@ -4424,8 +4424,35 @@ HTML_TEMPLATE = '''
             defaults: {
                 width: '100%',
                 height: '100%'
+            } });
+        function updateGlobalMarketStatus() {
+            const now = new Date();
+            const zurichTime = new Date(now.toLocaleString("en-US", {timeZone: "Europe/Zurich"}));
+            const zurichHour = zurichTime.getHours() + zurichTime.getMinutes()/60;
+            const isWeekday = zurichTime.getDay() >= 1 && zurichTime.getDay() <= 5;
+            
+            // Börsen-Öffnungszeiten (Zürich Zeit)
+            const sixOpen = isWeekday && zurichHour >= 9 && zurichHour < 17.5;
+            const nyseOpen = isWeekday && zurichHour >= 15.5 && zurichHour < 22;
+            const forexOpen = isWeekday; // Forex: 24/5
+            
+            // Status updaten
+            const marketElements = document.querySelectorAll('.market-status');
+            if (marketElements.length > 0) {
+                marketElements[0].textContent = sixOpen ? 'OPEN' : 'CLOSED';
+                marketElements[0].className = sixOpen ? 'market-status market-open' : 'market-status market-closed';
+                
+                marketElements[1].textContent = nyseOpen ? 'OPEN' : 'CLOSED';
+                marketElements[1].className = nyseOpen ? 'market-status market-open' : 'market-status market-closed';
+                
+                marketElements[2].textContent = forexOpen ? 'OPEN' : 'CLOSED';
+                marketElements[2].className = forexOpen ? 'market-status market-open' : 'market-status market-closed';
             }
-        });
+        }
+
+        // Alle 60 Sekunden updaten
+        setInterval(updateGlobalMarketStatus, 60000);
+        updateGlobalMarketStatus(); // Sofort ausführen        
     </script>
 </body>
 </html>
