@@ -1528,6 +1528,82 @@ HTML_TEMPLATE = '''
             height: 15px;
             border-radius: 3px;
         }
+
+        .welcome-screen {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: linear-gradient(135deg, #1a0f42 0%, #0A1429 30%, #0A1429 70%, #1a0f42 100%);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            z-index: 9999;
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+
+        .welcome-screen.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .welcome-content {
+            text-align: center;
+            transform: translateY(20px);
+            opacity: 0;
+            animation: welcomeSlideIn 1s ease 1s forwards;
+        }
+
+        .welcome-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 1rem;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+
+        .welcome-subtitle {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.8);
+            font-weight: 300;
+        }
+
+        .loading-bar {
+            width: 200px;
+            height: 3px;
+            background: rgba(255,255,255,0.2);
+            margin-top: 2rem;
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .loading-progress {
+            width: 0%;
+            height: 100%;
+            background: white;
+            animation: loadingFill 3s ease 1s forwards;
+        }
+
+        @keyframes welcomeSlideIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes loadingFill {
+            to { width: 100%; }
+        }
+
+        #mainContent {
+            opacity: 0;
+            animation: contentFadeIn 1s ease 4s forwards;
+        }
+
+        @keyframes contentFadeIn {
+            to { opacity: 1; }
+        }
     </style>
 </head>
 <body>
@@ -1539,6 +1615,16 @@ HTML_TEMPLATE = '''
             <button class="btn" onclick="checkPassword()" id="accessButton">Zugang erhalten</button>
             <p id="passwordError" class="password-error">Falsches Passwort. Bitte versuchen Sie es erneut.</p>
             <p style="margin-top: 15px; font-size: 12px; color: #6C757D;" id="passwordHint">by Ahmed Choudhary</p>
+        </div>
+    </div>
+
+    <div class="welcome-screen" id="welcomeScreen">
+        <div class="welcome-content">
+            <h1 class="welcome-title">Swiss Asset Manager</h1>
+            <p class="welcome-subtitle">Professional Portfolio Simulation</p>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
         </div>
     </div>
 
@@ -2333,10 +2419,16 @@ HTML_TEMPLATE = '''
             const errorElement = document.getElementById('passwordError');
             
             if (password === "swissassetmanagerAC") {
-                document.getElementById('passwordProtection').style.display = 'none';
-                document.getElementById('mainContent').style.display = 'block';
-                initializeApplication();
-                startAutoRefresh();
+                document.getElementById('welcomeScreen').classList.add('active');
+                
+                setTimeout(() => {
+                    document.getElementById('passwordProtection').style.display = 'none';
+                    document.getElementById('mainContent').style.display = 'block';
+                    document.getElementById('welcomeScreen').style.display = 'none';
+                    initializeApplication();
+                    startAutoRefresh();
+                }, 4000);
+                
             } else {
                 errorElement.style.display = 'block';
                 document.getElementById('passwordInput').style.borderColor = '#DC3545';
