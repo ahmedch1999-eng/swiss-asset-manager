@@ -1653,7 +1653,45 @@ HTML_TEMPLATE = '''
         @keyframes loadingFill {
             to { width: 100%; }
         }
+        /* Finance Footer Styles */
+        .finance-footer {
+            background: linear-gradient(135deg, #0A1429 0%, #1a0f42 100%);
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding: 15px 20px;
+            margin-top: auto;
+        }
 
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .footer-link {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 13px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .footer-link:hover {
+            color: white;
+        }
+
+        .footer-info {
+            color: rgba(255,255,255,0.5);
+            font-size: 12px;
+        }
         .market-open { color: #28A745; font-weight: bold; }
         .market-closed { color: #DC3545; }
         .market-status { margin: 0 5px; }
@@ -4454,6 +4492,26 @@ HTML_TEMPLATE = '''
         setInterval(updateGlobalMarketStatus, 60000);
         updateGlobalMarketStatus(); // Sofort ausführen        
     </script>
+
+    <!-- Finance Footer -->
+    <footer class="finance-footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="https://www.six-group.com" target="_blank" class="footer-link">
+                    <i class="fas fa-chart-line"></i> SIX Swiss Exchange
+                </a>
+                <a href="https://www.bloomberg.com/europe" target="_blank" class="footer-link">
+                    <i class="fas fa-globe"></i> Bloomberg Markets
+                </a>
+                <a href="https://finance.yahoo.com" target="_blank" class="footer-link">
+                    <i class="fas fa-dollar-sign"></i> Yahoo Finance
+                </a>
+            </div>
+            <div class="footer-info">
+                <span>Real-time Financial Data</span>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
 '''
