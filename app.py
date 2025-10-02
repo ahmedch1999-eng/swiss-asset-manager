@@ -367,7 +367,53 @@ def verify_password():
     return jsonify({"success": False})
 @app.route('/get_news')
 def get_news():
-    """Simuliert Finanznachrichten mit Links"""
+    """Echte Schweizer Finanznachrichten von RSS Feeds"""
+    try:
+        import feedparser
+        import random
+        
+        # Schweizer Finanznews RSS Feeds
+        feeds = [
+            "https://www.fuw.ch/feed/",
+            "https://www.handelszeitung.ch/rss",
+            "https://www.nzz.ch/finanzen.rss",
+            "https://www.finews.com/rss/finews.xml"
+        ]
+        
+        news_items = []
+        times = ["Vor 2 Stunden", "Gestern", "Heute früh", "Vor 1 Stunde"]
+        
+        for feed_url in feeds:
+            try:
+                feed = feedparser.parse(feed_url)
+                for entry in feed.entries[:2]:  # 2 News pro Feed
+                    # Filter für Finanzthemen
+                    title = entry.title
+                    if any(keyword in title.lower() for keyword in ['bank', 'finance', 'aktie', 'ubs', 'credit', 'snb', 'smi', 'börse', 'investment']):
+                        news_items.append({
+                            "title": title,
+                            "content": entry.summary[:200] + "..." if len(entry.summary) > 200 else entry.summary,
+                            "time": random.choice(times),
+                            "source": feed_url.split('/')[2].replace('www.', '').replace('.ch', '').replace('.com', ''),
+                            "link": entry.link
+                        })
+            except:
+                continue  # Falls ein Feed nicht funktioniert
+        
+        # Falls keine News gefunden, Fallback zu originalen
+        if not news_items:
+            return get_fallback_news()
+            
+        # Mischen und auf 5 News begrenzen
+        random.shuffle(news_items)
+        return jsonify(news_items[:5])
+        
+    except Exception as e:
+        print(f"News error: {e}")
+        return get_fallback_news()
+
+def get_fallback_news():
+    """Fallback News falls RSS Feeds nicht funktionieren"""
     news_items = [
         {
             "title": "UBS übertrifft Erwartungen im Quartalsbericht",
@@ -387,7 +433,7 @@ def get_news():
             "title": "Schweizer Nationalbank behält Zinssatz bei",
             "content": "SNB entscheidet sich gegen Zinserhöhung trotz Inflation.",
             "time": "Gestern",
-            "source": "Neue Zürcher Zeitung",
+            "source": "NZZ",
             "link": "https://www.nzz.ch"
         },
         {
@@ -405,7 +451,6 @@ def get_news():
             "link": "https://www.ft.com"
         }
     ]
-    
     return jsonify(news_items)
 
 @app.route('/get_current_prices')
