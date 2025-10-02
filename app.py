@@ -1715,11 +1715,245 @@ HTML_TEMPLATE = '''
             <h1 class="welcome-title">Swiss Asset Manager</h1>
             <p class="welcome-subtitle">Professional Portfolio Simulation</p>
             <p class="welcome-author">by Ahmed Choudhary</p>
+            
             <div class="loading-bar">
                 <div class="loading-progress"></div>
             </div>
+            
+            <div class="mountain-growth-animation">
+                <div class="mountain-range">
+                    <div class="mountain-peak"></div>
+                    <div class="mountain-base"></div>
+                    <div class="snow-cap"></div>
+                </div>
+                <div class="growth-arrow">↗</div>
+                <div class="growth-sparkle">✨</div>
+                <div class="finance-glow"></div>
+            </div>
         </div>
     </div>
+
+<style>
+.welcome-screen {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: linear-gradient(135deg, #1a0f42 0%, #0A1429 30%, #0A1429 70%, #1a0f42 100%);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 9999;
+}
+
+.welcome-screen.active {
+    display: flex;
+}
+
+.welcome-content {
+    text-align: center;
+    transform: translateY(20px);
+    opacity: 0;
+    animation: welcomeSlideIn 1s ease 1s forwards;
+}
+
+.welcome-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1rem;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+.welcome-subtitle {
+    font-size: 1.2rem;
+    color: rgba(255,255,255,0.8);
+    font-weight: 300;
+}
+
+.welcome-author {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.7);
+    font-weight: 300;
+    margin-bottom: 2rem;
+}
+
+.loading-bar {
+    width: 200px;
+    height: 3px;
+    background: rgba(255,255,255,0.2);
+    margin-top: 2rem;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.loading-progress {
+    width: 0%;
+    height: 100%;
+    background: white;
+    animation: loadingFill 3s ease 1s forwards;
+}
+
+.mountain-growth-animation {
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+    position: relative;
+}
+
+.mountain-range {
+    position: relative;
+    animation: mountainGlow 3s ease-in-out infinite;
+    z-index: 2;
+}
+
+.mountain-peak {
+    width: 0;
+    height: 0;
+    border-left: 35px solid transparent;
+    border-right: 35px solid transparent;
+    border-bottom: 60px solid rgba(255, 255, 255, 0.9);
+    filter: drop-shadow(0 0 12px rgba(100, 150, 255, 0.6));
+    position: relative;
+}
+
+.snow-cap {
+    width: 20px;
+    height: 10px;
+    background: linear-gradient(90deg, #a8d8ff, #ffffff);
+    border-radius: 10px;
+    position: absolute;
+    top: -5px;
+    left: 25px;
+    animation: snowSparkle 2s infinite;
+    box-shadow: 0 0 8px rgba(168, 216, 255, 0.8);
+}
+
+.mountain-base {
+    width: 70px;
+    height: 20px;
+    background: linear-gradient(90deg, rgba(100, 120, 255, 0.4), rgba(150, 180, 255, 0.6));
+    border-radius: 10px;
+    margin-top: -8px;
+    position: relative;
+    z-index: 1;
+}
+
+.growth-arrow {
+    font-size: 3.5rem;
+    color: #63B3ED;
+    animation: arrowBounce 1.8s infinite, arrowGlow 2.5s infinite;
+    filter: drop-shadow(0 0 12px #63B3ED);
+    text-shadow: 0 0 20px #63B3ED;
+    z-index: 3;
+}
+
+.growth-sparkle {
+    font-size: 2.2rem;
+    animation: sparkleSpin 3s linear infinite, sparklePulse 1.5s infinite;
+    filter: drop-shadow(0 0 8px #D6BCFA);
+    z-index: 3;
+}
+
+.finance-glow {
+    position: absolute;
+    width: 200px;
+    height: 80px;
+    background: radial-gradient(circle, rgba(99, 179, 237, 0.25) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: glowPulse 4s infinite;
+    z-index: 1;
+}
+
+@keyframes welcomeSlideIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes loadingFill {
+    to { width: 100%; }
+}
+
+@keyframes mountainGlow {
+    0%, 100% { 
+        transform: translateY(0px) scale(1);
+        filter: drop-shadow(0 0 8px rgba(100, 150, 255, 0.4));
+    }
+    50% { 
+        transform: translateY(-8px) scale(1.05);
+        filter: drop-shadow(0 0 20px rgba(100, 150, 255, 0.7));
+    }
+}
+
+@keyframes arrowBounce {
+    0%, 100% { 
+        transform: translateY(0px) scale(1) rotate(0deg);
+    }
+    25% { 
+        transform: translateY(-12px) scale(1.15) rotate(-5deg);
+    }
+    50% { 
+        transform: translateY(-15px) scale(1.2) rotate(0deg);
+    }
+    75% { 
+        transform: translateY(-8px) scale(1.1) rotate(5deg);
+    }
+}
+
+@keyframes arrowGlow {
+    0%, 100% { 
+        opacity: 0.8;
+        text-shadow: 0 0 15px #63B3ED;
+    }
+    50% { 
+        opacity: 1;
+        text-shadow: 0 0 25px #63B3ED, 0 0 35px #63B3ED;
+    }
+}
+
+@keyframes sparkleSpin {
+    0% { transform: rotate(0deg) scale(1); }
+    50% { transform: rotate(180deg) scale(1.3); }
+    100% { transform: rotate(360deg) scale(1); }
+}
+
+@keyframes sparklePulse {
+    0%, 100% { 
+        opacity: 0.6;
+        filter: drop-shadow(0 0 5px #D6BCFA);
+    }
+    50% { 
+        opacity: 1;
+        filter: drop-shadow(0 0 15px #D6BCFA) brightness(1.5);
+    }
+}
+
+@keyframes snowSparkle {
+    0%, 100% { 
+        opacity: 0.7;
+        transform: scale(1);
+    }
+    50% { 
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+@keyframes glowPulse {
+    0%, 100% { 
+        opacity: 0.3;
+        transform: scale(1);
+    }
+    50% { 
+        opacity: 0.6;
+        transform: scale(1.1);
+    }
+}
+</style>
 
     <div id="mainContent" style="display: none;">
         <header>
