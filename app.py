@@ -1539,13 +1539,12 @@ HTML_TEMPLATE = '''
             align-items: center;
             flex-direction: column;
             z-index: 9999;
-            opacity: 0;
-            transition: opacity 1s ease;
+
         }
 
         .welcome-screen.active {
             display: flex;
-            opacity: 1;
+
         }
 
         .welcome-content {
@@ -1596,14 +1595,7 @@ HTML_TEMPLATE = '''
             to { width: 100%; }
         }
 
-        #mainContent {
-            opacity: 0;
-            animation: contentFadeIn 1s ease 4s forwards;
-        }
 
-        @keyframes contentFadeIn {
-            to { opacity: 1; }
-        }
     </style>
 </head>
 <body>
@@ -2419,15 +2411,17 @@ HTML_TEMPLATE = '''
             const errorElement = document.getElementById('passwordError');
             
             if (password === "swissassetmanagerAC") {
-                document.getElementById('welcomeScreen').classList.add('active');
+                // SOFORT zur Welcome Screen wechseln
+                document.getElementById('passwordProtection').style.display = 'none';
+                document.getElementById('welcomeScreen').style.display = 'flex';
                 
+                // Nach 2 Sekunden direkt zur Hauptseite
                 setTimeout(() => {
-                    document.getElementById('passwordProtection').style.display = 'none';
-                    document.getElementById('mainContent').style.display = 'block';
                     document.getElementById('welcomeScreen').style.display = 'none';
+                    document.getElementById('mainContent').style.display = 'block';
                     initializeApplication();
                     startAutoRefresh();
-                }, 4000);
+                }, 2000);
                 
             } else {
                 errorElement.style.display = 'block';
