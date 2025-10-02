@@ -1111,7 +1111,17 @@ HTML_TEMPLATE = '''
         .assets-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin: 20px 0; }
         .asset-card { background: white; padding: 20px; border-radius: var(--radius-lg); border: 1px solid var(--border-light); }
         
-        .formula-box { background: #f8f9fa; padding: 15px; border-radius: var(--radius-lg); margin: 10px 0; font-family: monospace; }
+        .formula-box { background: #f8f9fa; padding: 15px; border-radius: var(--radius-lg); margin: 10px 0; font-family: monospace; } /* WINDOWS PERFORMANCE FIX - STUFE 1 */
+/* FINALE LÖSUNG - OPTIMIERT FÜR WINDOWS, ORIGINAL FÜR MAC */
+.performance-mode .layer {
+    animation-duration: 40s, 50s, 60s !important;
+    filter: blur(30px) !important;
+}
+
+.performance-mode .pulse {
+    animation-duration: 20s !important;
+    opacity: 0.04 !important;
+}
         
         .linkedin-link { color: var(--color-primary); text-decoration: none; display: inline-flex; align-items: center; gap: 5px; }
         
@@ -1874,7 +1884,32 @@ HTML_TEMPLATE = '''
     .layer, .pulse { animation: none !important; transform: none !important; }
     .grain { opacity: 0.02 !important; }
 }
-    </style>
+/* NUR WINDOWS PERFORMANCE OPTIMIERUNGEN - STANDIMAGE */
+.performance-mode .layer {
+    animation: none !important;
+    filter: blur(40px) !important;
+}
+
+.performance-mode .pulse {
+    display: none !important;
+}
+
+.performance-mode .l1 { opacity: 0.9; }
+.performance-mode .l2 { opacity: 0.7; }
+.performance-mode .l3 { opacity: 0.5; }
+
+/* SMOOTH SCROLLING FIX */
+html, body {
+    overflow-x: hidden;
+    height: 100%;
+    scroll-behavior: smooth;
+}
+
+.performance-mode main {
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    will-change: transform;
+}  </style>
 </head>
 <body>
     <div id="passwordProtection" class="password-protection">
@@ -2775,7 +2810,15 @@ HTML_TEMPLATE = '''
         </main>
     </div>
 
-    <script>
+    <script>         // Windows Detection - Optimierte Animationen nur für Windows
+        function isWindows() {
+            return navigator.userAgent.includes('Windows');
+        }
+
+        if (isWindows()) {
+            document.body.classList.add('performance-mode');
+            console.log('Windows Performance Mode aktiviert');
+        }
         // Globale Variablen
         const swissStocks = ''' + json.dumps(SWISS_STOCKS) + ''';
         const indices = ''' + json.dumps(INDICES) + ''';
