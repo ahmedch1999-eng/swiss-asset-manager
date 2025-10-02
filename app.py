@@ -978,7 +978,13 @@ HTML_TEMPLATE = '''
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: var(--font-ui); background: var(--bg-default); color: var(--text-default); line-height: 1.6; }
+        body { 
+    
+    font-family: var(--font-ui); 
+    background: transparent; 
+    color: var(--text-default); 
+    line-height: 1.6; 
+}
         
         .password-protection {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
@@ -1032,12 +1038,14 @@ HTML_TEMPLATE = '''
     background: rgba(10, 20, 41, 0.6);
 }
 
-.status-bar {
-    background: linear-gradient(135deg, #1a0f42, #0A1429, #1a0f42);
-}
+
         
-        main { padding: 30px 0; }
-        .page { display: none; background: white; padding: 30px; border-radius: var(--radius-lg); margin-bottom: 20px; }
+        main { 
+    padding: 30px 0; 
+    position: relative;
+    z-index: 1;
+}
+        .page { display: none; background: rgba(255, 255, 255, 0.95); padding: 30px; border-radius: var(--radius-lg); margin-bottom: 20px; position: relative; z-index: 2; }
         .page.active { display: block; }
         
         .page-header { margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px solid var(--border-light); }
@@ -1066,7 +1074,13 @@ HTML_TEMPLATE = '''
         .chart-container { height: 400px; margin: 20px 0; background: white; padding: 20px; border-radius: var(--radius-lg); border: 1px solid var(--border-light); }
         
         .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin: 20px 0; }
-        .card { background: white; padding: 20px; border-radius: var(--radius-lg); border-left: 4px solid var(--color-primary); transition: all 0.3s ease; }
+        .card { 
+    background: rgba(255, 255, 255, 0.95); 
+    padding: 20px; 
+    border-radius: var(--radius-lg); 
+    border-left: 4px solid var(--color-primary); 
+    transition: all 0.3s ease; 
+}
         .card:hover { transform: translateY(-2px); box-shadow: var(--shadow-soft); }
         
         .data-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
@@ -1076,7 +1090,17 @@ HTML_TEMPLATE = '''
         .positive { color: var(--accent-positive); font-weight: 600; }
         .negative { color: var(--accent-negative); font-weight: 600; }
         
-        .status-bar { display: flex; justify-content: space-between; padding: 15px; background: white; border-radius: var(--radius-lg); margin-bottom: 20px; flex-wrap: wrap; gap: 10px; background: #0A1429; color: white; }
+        .status-bar {
+    display: flex; 
+    justify-content: space-between; 
+    padding: 15px; 
+    background: rgba(10, 20, 41, 0.9); 
+    border-radius: var(--radius-lg); 
+    margin-bottom: 20px; 
+    flex-wrap: wrap; 
+    gap: 10px; 
+    color: white; 
+}
         
         .market-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0; }
         .market-item { background: white; padding: 15px; border-radius: var(--radius-lg); text-align: center; border: 1px solid var(--border-light); }
@@ -1695,7 +1719,161 @@ HTML_TEMPLATE = '''
         .market-open { color: #28A745; font-weight: bold; }
         .market-closed { color: #DC3545; }
         .market-status { margin: 0 5px; }
+/* Violet Background Styles */
+:root{
+    /* Basis / Branding-empfohlene Farben */
+    --base-black: #050510;      /* sehr dunkler Grundton (nicht reines Schwarz) */
+    --violet-1:  #0a0f2c;       /* sehr dunkles Blau-Violett */
+    --violet-2:  #1a0b38;       /* tiefes Violett */
+    --violet-3:  #2e0f54;       /* edles Lila */
+    --violet-4:  #3c1a70;       /* Blau-Violett für Tiefe */
 
+    /* Bewegung (kleiner = schneller) */
+    --d1: 10s;
+    --d2: 14s;
+    --d3: 20s;
+
+    /* Unschärfe / Sichtbarkeit (anpassbar) */
+    --blur1: 48px;
+    --blur2: 84px;
+    --blur3: 120px;
+    --opa1: 0.96;
+    --opa2: 0.82;
+    --opa3: 0.74;
+}
+
+/* Fullscreen background container */
+.bg {
+    position: fixed;
+    inset: 0;
+    z-index: -1; /* WICHTIG: Hinter allen Inhalten */
+    pointer-events: none;
+    isolation: isolate;
+    background: var(--base-black);
+}
+
+/* Layers use repeating radial gradients and animate background-position diagonally.
+   Because they repeat, the motion loops seamlessly (no snapping). */
+.layer {
+    position: absolute;
+    inset: -40%;
+    pointer-events: none;
+    background-repeat: repeat;
+    mix-blend-mode: screen;
+    will-change: background-position, transform, opacity;
+}
+
+/* Layer 1 - vorne (fein strukturiert, schneller) */
+.l1 {
+    background-image:
+        radial-gradient(closest-side, rgba(10,15,44,0.98) 0%, rgba(10,15,44,0) 48%),
+        radial-gradient(circle at 18% 82%, rgba(26,11,56,0.90) 0%, rgba(26,11,56,0) 44%);
+    background-size: 1200px 1200px, 1600px 1600px;
+    filter: blur(var(--blur1)) saturate(116%);
+    opacity: var(--opa1);
+    animation:
+        bgMove1 var(--d1) linear infinite,
+        wave1 calc(var(--d1) * 1.12) ease-in-out infinite;
+}
+
+/* Layer 2 - mitte (mittlere Tiefe, moderat) */
+.l2 {
+    background-image:
+        radial-gradient(circle at 16% 86%, rgba(46,15,84,0.92) 0%, rgba(46,15,84,0) 42%),
+        radial-gradient(circle at 8% 92%, rgba(60,26,112,0.86) 0%, rgba(60,26,112,0) 38%);
+    background-size: 1800px 1800px, 2200px 2200px;
+    filter: blur(var(--blur2)) saturate(106%);
+    opacity: var(--opa2);
+    animation:
+        bgMove2 var(--d2) linear infinite,
+        wave2 calc(var(--d2) * 1.18) ease-in-out infinite;
+}
+
+/* Layer 3 - hinten (groß, sehr weich) */
+.l3 {
+    background-image:
+        radial-gradient(circle at 12% 92%, rgba(26,11,56,0.88) 0%, rgba(26,11,56,0) 36%),
+        radial-gradient(circle at 22% 72%, rgba(40,8,68,0.82) 0%, rgba(40,8,68,0) 40%);
+    background-size: 2600px 2600px, 3000px 3000px;
+    filter: blur(var(--blur3)) saturate(102%);
+    opacity: var(--opa3);
+    animation:
+        bgMove3 var(--d3) linear infinite,
+        wave3 calc(var(--d3) * 1.22) ease-in-out infinite;
+}
+
+/* subtle overlay for micro-life */
+.pulse {
+    position: absolute;
+    inset: -60%;
+    background: linear-gradient(135deg, rgba(255,255,255,0.01), rgba(255,255,255,0) 22%);
+    filter: blur(160px);
+    mix-blend-mode: overlay;
+    animation: pulse 12s ease-in-out infinite;
+    opacity: 0.07;
+    pointer-events: none;
+}
+
+/* fine grain texture for luxury finish */
+.grain {
+    position: fixed;
+    inset: 0;
+    z-index: -1; /* WICHTIG: Hinter allen Inhalten */
+    pointer-events: none;
+    opacity: 0.03;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'><filter id='g'><feTurbulence baseFrequency='0.9' numOctaves='1' seed='29' /></filter><rect width='100%' height='100%' filter='url(%23g)' opacity='0.18' /></svg>");
+    mix-blend-mode: overlay;
+}
+
+/* KEYFRAMES — diagonal translation of repeating background tiles (seamless loop) */
+@keyframes bgMove1 {
+    from { background-position: -1400px -1400px, -1800px -1800px; }
+    to   { background-position: 1400px 1400px, 1800px 1800px; }
+}
+@keyframes bgMove2 {
+    from { background-position: -1800px -1800px, -2200px -2200px; }
+    to   { background-position: 1800px 1800px, 2200px 2200px; }
+}
+@keyframes bgMove3 {
+    from { background-position: -2400px -2400px, -2800px -2800px; }
+    to   { background-position: 2400px 2400px, 2800px 2800px; }
+}
+
+/* gentle orthogonal wave movement for organic flow */
+@keyframes wave1 {
+    0%   { transform: translate(0%, 0%); }
+    25%  { transform: translate(0.35%, -0.18%); }
+    50%  { transform: translate(0%, -0.36%); }
+    75%  { transform: translate(-0.35%, -0.18%); }
+    100% { transform: translate(0%, 0%); }
+}
+@keyframes wave2 {
+    0%   { transform: translate(0%, 0%); }
+    25%  { transform: translate(0.52%, -0.28%); }
+    50%  { transform: translate(0%, -0.56%); }
+    75%  { transform: translate(-0.52%, -0.28%); }
+    100% { transform: translate(0%, 0%); }
+}
+@keyframes wave3 {
+    0%   { transform: translate(0%, 0%); }
+    25%  { transform: translate(0.75%, -0.36%); }
+    50%  { transform: translate(0%, -0.72%); }
+    75%  { transform: translate(-0.75%, -0.36%); }
+    100% { transform: translate(0%, 0%); }
+}
+
+/* micro pulse */
+@keyframes pulse {
+    0%   { opacity: 0.05; transform: scale(1) translate(0,0); }
+    50%  { opacity: 0.11; transform: scale(1.01) translate(0.12%, -0.18%); }
+    100% { opacity: 0.05; transform: scale(1) translate(0,0); }
+}
+
+/* respect user motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    .layer, .pulse { animation: none !important; transform: none !important; }
+    .grain { opacity: 0.02 !important; }
+}
     </style>
 </head>
 <body>
@@ -1910,9 +2088,21 @@ HTML_TEMPLATE = '''
                     <div class="nav-tab" data-page="about">Über mich</div>
                 </div>
             </div>
-        </header>
+        </header>     
 
-        <main class="container">
+    <!-- VIOLET BACKGROUND - HIER EINFÜGEN -->
+    <div class="bg" aria-hidden="true">
+        <div class="layer l1"></div>
+        <div class="layer l2"></div>
+        <div class="layer l3"></div>
+        <div class="pulse"></div>
+    </div>
+
+    <div class="grain" aria-hidden="true"></div>
+
+    <main class="container">
+
+        
             <div class="status-bar">
                 <div id="lastUpdateText">Letztes Update: <span id="lastUpdate">--:--:--</span></div>
                 <div id="smiReturnText">SMI Rendite: <span id="smiReturn">+1.2%</span></div>
