@@ -36,49 +36,250 @@ PASSWORD = "swissassetmanagerAC"
 # Spracheinstellung
 CURRENT_LANGUAGE = "de"
 
-# Erweiterte Schweizer Aktienliste
+# VOLLSTÄNDIGE Schweizer Aktienliste - 239 Aktien
 SWISS_STOCKS = {
-    "NESN.SW": "Nestlé", "NOVN.SW": "Novartis", "ROG.SW": "Roche",
-    "UBSG.SW": "UBS Group", "ZURN.SW": "Zurich Insurance", "ABBN.SW": "ABB",
-    "CSGN.SW": "Credit Suisse", "SGSN.SW": "SGS", "GIVN.SW": "Givaudan",
-    "LONN.SW": "Lonza", "SIKA.SW": "Sika", "GEBN.SW": "Geberit",
-    "SOON.SW": "Sonova", "SCMN.SW": "Swisscom", "ADEN.SW": "Adecco",
-    "BAER.SW": "Julius Bär", "CLN.SW": "Clariant", "LOGIN.SW": "Logitech",
-    "CFR.SW": "Richemont", "ALC.SW": "Alcon", "TEMN.SW": "Temenos",
-    "VACN.SW": "VAT Group", "KNIN.SW": "Kuehne+Nagel", "PGHN.SW": "Partners Group",
-    "SLHN.SW": "Swiss Life", "SYNN.SW": "Syngenta", "COPN.SW": "Cosmo Pharmaceuticals"
+    # Bestehende + alle neuen Aktien
+    "NESN.SW": "Nestlé", "NOVN.SW": "Novartis", "ROG.SW": "Roche", "UBSG.SW": "UBS Group",
+    "ZURN.SW": "Zurich Insurance", "ABBN.SW": "ABB", "CSGN.SW": "Credit Suisse",
+    "SGSN.SW": "SGS", "GIVN.SW": "Givaudan", "LONN.SW": "Lonza", "SIKA.SW": "Sika",
+    "GEBN.SW": "Geberit", "SOON.SW": "Sonova", "SCMN.SW": "Swisscom", "ADEN.SW": "Adecco",
+    "BAER.SW": "Julius Bär", "CLN.SW": "Clariant", "LOGIN.SW": "Logitech", "CFR.SW": "Richemont",
+    "ALC.SW": "Alcon", "TEMN.SW": "Temenos", "VACN.SW": "VAT Group", "KNIN.SW": "Kuehne+Nagel",
+    "PGHN.SW": "Partners Group", "SLHN.SW": "Swiss Life", "SYNN.SW": "Syngenta", "COPN.SW": "Cosmo Pharmaceuticals",
+    
+    # NEUE AKTIEN aus der Liste - Alle 239
+    "GOOGL.SW": "Alphabet", "LLY.SW": "Eli Lilly", "V.SW": "Visa", "KO.SW": "Coca-Cola",
+    "PEP.SW": "PepsiCo", "MCD.SW": "McDonald's", "ABT.SW": "Abbott", "MMM.SW": "3M",
+    "EMR.SW": "Emerson Electric", "GOB.SW": "Gobain", "FCX.SW": "Freeport-McMoRan",
+    "SREN.SW": "Swiss Re", "HOLN.SW": "Holcim", "GALD.SW": "Galapagos", "AAM.SW": "AAM",
+    "SCHNE.SW": "Schneider Electric", "SCHP.SW": "Schindler", "SCHPE.SW": "Schindler Part",
+    "SCHN.SW": "Schindler Holding", "SCMN.SW": "Swisscom", "ALC.SW": "Alcon",
+    "GIVN.SW": "Givaudan", "DAL.SW": "Delta Air Lines", "SIKA.SW": "Sika",
+    "PGHN.SW": "Partners Group", "LISN.SW": "Lindt & Sprüngli", "LISP.SW": "Lindt Part",
+    "SLHN.SW": "Swiss Life", "AMRZ.SW": "Amriz", "WILL.SW": "Wilhelm",
+    "SDZ.SW": "Sandoz", "GEBN.SW": "Geberit", "KNIN.SW": "Kuehne+Nagel",
+    "SGSN.SW": "SGS", "ZBH.SW": "Zimmer Biomet", "STMN.SW": "Stadler Rail",
+    "HUAYO.SW": "Huayo", "EMSN.SW": "EMS Chemie", "SOON.SW": "Sonova",
+    "LOGN.SW": "Logitech", "BAER.SW": "Julius Bär", "VACN.SW": "VAT Group",
+    "HELN.SW": "Helvetia", "BEAN.SW": "Belimo", "GOTION.SW": "Gotion High-tech",
+    "BKW.SW": "BKW", "BALN.SW": "Baloise", "SPSN.SW": "Swiss Prime Site",
+    "BCVN.SW": "Bachem", "UHR.SW": "Swatch Group", "UHRN.SW": "Swatch Part",
+    "SQN.SW": "Square", "FHZN.SW": "Flughafen Zürich", "BNR.SW": "Brenntag",
+    "DFSH.SW": "DFS", "SWD.SW": "Swedbank", "VZN.SW": "VZ Holding",
+    "BARN.SW": "Barry Callebaut", "AVOL.SW": "Avolta", "PSPN.SW": "PSP Swiss Property",
+    "ACLN.SW": "Aclon", "O2D.SW": "O2", "GF.SW": "Georg Fischer",
+    "SCR.SW": "SCOR", "EFGN.SW": "EFG International", "SUPCON.SW": "Supercond",
+    "GEM.SW": "Gemalto", "SUN.SW": "Sun", "YPSN.SW": "Ypsomed",
+    "OSR.SW": "Oskar", "BANB.SW": "BanB", "TEMN.SW": "Temenos",
+    "DESN.SW": "Desna", "GRKP.SW": "Gurkap", "SFSN.SW": "SFS Group",
+    "GALE.SW": "Galenica", "SMG.SW": "SMG", "YJET.SW": "Yankee Jet",
+    "GSI.SW": "GSI", "LUKN.SW": "Lukas", "ADEN.SW": "Adecco",
+    "BUCN.SW": "Bucher", "SSNE.SW": "SSN", "EMMN.SW": "Emmi",
+    "SFZN.SW": "SF-Zurich", "LEPU.SW": "Lepu", "DKSH.SW": "DKSH",
+    "SUNN.SW": "Sunn", "VONN.SW": "Von Roll", "DRI.SW": "Drie",
+    "BSKP.SW": "Basler Kantonalbank", "TKBP.SW": "Thurgauer Kantonalbank",
+    "SGKN.SW": "St. Galler Kantonalbank", "ALLN.SW": "Allreal",
+    "SIGN.SW": "SIG", "DOKA.SW": "Doka", "ALSN.SW": "Alessandro",
+    "MOVE.SW": "Move", "CMBN.SW": "Combin", "HUBN.SW": "Hubner",
+    "JCARE.SW": "J Care", "KEDA.SW": "Keda", "ZUGER.SW": "Zugerberg",
+    "ZHT.SW": "ZHT", "IFCN.SW": "IFC", "DAE.SW": "Dae",
+    "MOBN.SW": "Mobimo", "BEKN.SW": "Bekon", "CLN.SW": "Clariant",
+    "KARN.SW": "Karn", "LLBN.SW": "LLB", "RKET.SW": "Rocket",
+    "FDCB.SW": "FDC", "CFT.SW": "CFFT", "TXGN.SW": "TxGN",
+    "SENIOR.SW": "Senior", "INRN.SW": "InRN", "BCHN.SW": "Bachem",
+    "VATN.SW": "VAT", "WKBN.SW": "WKB", "BLKB.SW": "Basellandschaftliche Kantonalbank",
+    "SRAIL.SW": "Stadler Rail", "TECN.SW": "Tecan", "LAND.SW": "Landis",
+    "VAHN.SW": "VAHN", "SWON.SW": "Swon", "BCGE.SW": "Banque Cantonale de Genève",
+    "GT.SW": "GT", "AERO.SW": "Aero", "IREN.SW": "Iren",
+    "COTN.SW": "Coton", "ARYN.SW": "Aryn", "BELL.SW": "Bell",
+    "ISN.SW": "ISN", "2HQ.SW": "2HQ", "BRKN.SW": "Brückner",
+    "BOSN.SW": "Bosch", "KUDO.SW": "Kudo", "JFN.SW": "JFN",
+    "SKAN.SW": "Skan", "GXI.SW": "GXI", "IMPN.SW": "Impinj",
+    "AMS.SW": "AMS", "CHAM.SW": "Cham", "AEVS.SW": "Aevs",
+    "KURN.SW": "Kurn", "HIAG.SW": "HIAG", "ZUGN.SW": "Zuger",
+    "NEAG.SW": "Neag", "COPN.SW": "Cosmo", "REHN.SW": "Rehn",
+    "MED.SW": "Med", "UBXN.SW": "Ubxn", "RSGN.SW": "Rsgn",
+    "FORN.SW": "Forn", "SENS.SW": "Sens", "AUTN.SW": "Autn",
+    "IDIA.SW": "Idia", "OERL.SW": "Oerlikon", "PPGN.SW": "PPG",
+    "EPIC.SW": "Epic", "PLAN.SW": "Plan", "CICN.SW": "Cicn",
+    "COK.SW": "Cok", "ZEHN.SW": "Zehn", "BYS.SW": "Bys",
+    "TMO.SW": "Thermo Fisher", "APGN.SW": "Apgn", "WARN.SW": "Warn",
+    "BSLN.SW": "Bsl", "LEHN.SW": "Lehn", "FREN.SW": "Fren",
+    "VPBN.SW": "Vpb", "VETN.SW": "Vetn", "MOZN.SW": "Mozn",
+    "PKTM.SW": "Pktm", "CPHN.SW": "Cphn", "MTG.SW": "Mtg",
+    "PMN.SW": "Pmn", "PMNE.SW": "Pmne", "SWTQ.SW": "Swtq",
+    "NREN.SW": "Nren", "METN.SW": "Metn", "SNBN.SW": "Snbn",
+    "KOMN.SW": "Komn", "ARBN.SW": "Arbn", "MEDX.SW": "Medx",
+    "PEAN.SW": "Pean", "EPH.SW": "Eph", "VBSN.SW": "Vbsn",
+    "SFPN.SW": "Sfpn", "MIKN.SW": "Mikn", "LEON.SW": "Leon",
+    "DOCM.SW": "Docm", "HBLN.SW": "Hbln", "VZUG.SW": "Vzug",
+    "GLKBN.SW": "Glkb", "NWRN.SW": "Nwrn", "ELMN.SW": "Elmn",
+    "CLTN.SW": "Cltn", "OFN.SW": "Ofn", "VARN.SW": "Varn",
+    "LECN.SW": "Lecn", "BVZN.SW": "Bvzn", "BTC.SW": "BTC",
+    "BCJ.SW": "Bcj", "GAM.SW": "Gam", "STGN.SW": "Stgn",
+    "BIOV.SW": "Biov", "LMN.SW": "Lmn", "FTON.SW": "Fton",
+    "ZUBN.SW": "Zubn", "TIBN.SW": "Tibn", "SANN.SW": "Sann",
+    "ASCN.SW": "Ascn", "XLS.SW": "Xls", "GAV.SW": "Gav",
+    "BBN.SW": "Bbn", "MOLN.SW": "Moln", "HLEE.SW": "Hlee",
+    "MCHN.SW": "Mchn", "KLIN.SW": "Klin", "CALN.SW": "Caln",
+    "ORON.SW": "Oron", "ALPN.SW": "Alpn", "ALPNE.SW": "Alpne",
+    "KUD.SW": "Kud", "GMI.SW": "Gmi", "CURN.SW": "Curn",
+    "VILN.SW": "Viln", "ESUN.SW": "Esun", "NBEN.SW": "Nben",
+    "GURN.SW": "Gurn", "WIHN.SW": "Wihn", "RLF.SW": "Rlf",
+    "YTME.SW": "Ytme", "VLRT.SW": "Vlrt", "ADVN.SW": "Advn",
+    "MBTN.SW": "Mbtn", "STRN.SW": "Strn", "RIEN.SW": "Rien",
+    "SHLTN.SW": "Shltn", "ASWN.SW": "Aswn", "ZWM.SW": "Zwm",
+    "ADXN.SW": "Adxn", "EVE.SW": "Eve", "PEDU.SW": "Pedu",
+    "HT5.SW": "Ht5", "EEII.SW": "Eeii", "AIRE.SW": "Aire",
+    "CIE.SW": "CIE"
 }
 
 # Professionelle Benchmark-Indizes
 BENCHMARK_INDICES = {
-    "MSCIW": "MSCI World Index",
-    "BCOM": "Bloomberg Commodity Index", 
-    "LBUSTRUU": "Bloomberg Global Aggregate Bond",
-    "SPX": "S&P 500 Index",
-    "SMI": "Swiss Market Index",
-    "EUNL.DE": "iShares Core MSCI World UCITS ETF",
-    "IEGA": "iShares Core € Govt Bond UCITS ETF"
+    "MSCIW": "MSCI World Index", "BCOM": "Bloomberg Commodity Index", 
+    "LBUSTRUU": "Bloomberg Global Aggregate Bond", "SPX": "S&P 500 Index",
+    "SMI": "Swiss Market Index", "EUNL.DE": "iShares Core MSCI World UCITS ETF",
+    "IEGA": "iShares Core € Govt Bond UCITS ETF", "NDX": "NASDAQ 100",
+    "DJI": "Dow Jones Industrial Average", "RUT": "Russell 2000",
+    "VIX": "CBOE Volatility Index", "COMP": "NASDAQ Composite"
 }
 
-# Erweiterte Indizes
+# VOLLSTÄNDIGE Indizes-Liste - Alle Kategorien
 INDICES = {
-    "SMI": "Swiss Market Index", "SPX": "S&P 500 Index", "DAX": "DAX Germany",
-    "CAC": "CAC 40 France", "FTSE": "FTSE 100 UK", "NDX": "NASDAQ 100",
-    "N225": "Nikkei 225 Japan", "HSI": "Hang Seng Hong Kong", "ASX": "ASX 200 Australia",
-    "TSX": "TSX Canada", "BOVESPA": "Bovespa Brazil", "SSE": "Shanghai Composite",
-    "SENSEX": "Sensex India", "KOSPI": "KOSPI South Korea", "MIB": "FTSE MIB Italy",
-    "IBEX": "IBEX 35 Spain", "OMX": "OMX Stockholm 30", "AEX": "AEX Netherlands"
+    # US-Indizes
+    "SPX": "S&P 500 Index", "NDX": "NASDAQ 100", "DJI": "Dow Jones Industrial Average",
+    "RUT": "Russell 2000", "VIX": "CBOE Volatility Index", "COMP": "NASDAQ Composite",
+    "NYA": "NYSE Composite", "MID": "S&P MidCap 400", "SML": "S&P SmallCap 600",
+    "OEX": "S&P 100", "XAX": "NYSE AMEX Composite", "VXN": "NASDAQ Volatility",
+    "VXD": "DJIA Volatility", "TXX": "CBOE Technology Index", "DXY": "US Dollar Index",
+    "UIX": "CBOE Uranium Index", "CBOE": "CBOE Market Index", "RUI": "Russell 1000",
+    "RUA": "Russell 3000", "RAY": "Raymond James", "RMZ": "MSCI US REIT",
+    "HGX": "PHLX Housing Sector", "BKX": "KBW Bank Index", "XBD": "S&P Broker Dealer",
+    "XLF": "Financial Select Sector", "XLI": "Industrial Select Sector",
+    "XLY": "Consumer Discretionary", "XLP": "Consumer Staples", "XLE": "Energy Select Sector",
+    "XLU": "Utilities Select Sector", "XLV": "Health Care Select Sector",
+    "XLB": "Materials Select Sector", "XLK": "Technology Select Sector",
+    "XME": "S&P Metals & Mining", "XPH": "S&P Pharmaceuticals", "XRT": "S&P Retail",
+    "XHB": "S&P Homebuilders", "SOX": "PHLX Semiconductor", "OSX": "PHLX Oil Service",
+    "DRG": "NYSE Arca Pharmaceutical", "BTK": "NYSE Arca Biotech", "NBI": "NASDAQ Biotech",
+    "XNG": "NYSE Arca Natural Gas", "XAL": "NYSE Arca Airline", "XCI": "NYSE Arca Computer",
+    "XOI": "NYSE Arca Oil", "XSD": "S&P Semiconductor", "XSW": "S&P Software",
+    "XTH": "S&P Technology Hardware", "XTL": "S&P Telecom", "XES": "S&P Oil & Gas Equipment",
+    "KBE": "KBW Bank ETF", "KRE": "KBW Regional Banking", "IAK": "iShares Insurance",
+    "IAT": "iShares Regional Banks", "PSCE": "S&P SmallCap Energy", "PSCI": "S&P SmallCap Industrials",
+    "PSCH": "S&P SmallCap Health Care",
+    
+    # Europäische Indizes
+    "DAX": "DAX Germany", "CAC": "CAC 40 France", "FTSE": "FTSE 100 UK",
+    "STOXX50": "Euro Stoxx 50", "AEX": "AEX Netherlands", "IBEX": "IBEX 35 Spain",
+    "FTSE MIB": "FTSE MIB Italy", "SMI": "Swiss Market Index", "PSI20": "PSI 20 Portugal",
+    "OMX": "OMX Stockholm 30", "ATX": "ATX Austria", "BEL20": "BEL 20 Belgium",
+    "ISEQ": "ISEQ Ireland", "WIG": "WIG Poland", "BUX": "BUX Hungary",
+    "RTS": "RTS Russia", "BIST": "BIST Turkey", "SOFIX": "SOFIX Bulgaria",
+    "SBITOP": "SBITOP Slovenia", "UX": "UX Ukraine", "CEETX": "CEE TX",
+    "CROBEX": "CROBEX Croatia", "HEX": "HEX Finland", "LITIN": "LITIN Lithuania",
+    "OMXR": "OMX Riga", "OMXT": "OMX Tallinn", "PRAGUE SE PX": "Prague PX",
+    "SAX": "SAX Slovakia",
+    
+    # Asien-Pazifik Indizes
+    "NIKKEI": "Nikkei 225 Japan", "HSI": "Hang Seng Hong Kong", 
+    "SHCOMP": "Shanghai Composite", "SZCOMP": "Shenzhen Composite",
+    "CSI300": "CSI 300 China", "KOSPI": "KOSPI South Korea", "TWSE": "Taiwan Weighted",
+    "STI": "Straits Times Singapore", "ASX": "ASX 200 Australia", "SENSEX": "Sensex India",
+    "NIFTY50": "Nifty 50 India", "JKSE": "Jakarta Composite", "KLCI": "KLCI Malaysia",
+    "PSEI": "PSEi Philippines", "SET": "SET Thailand", "VNI": "VN Index Vietnam",
+    "COLOMBO": "Colombo Sri Lanka", "DSEX": "DSEX Bangladesh", "KS11": "KOSPI South Korea",
+    "TOPIX": "TOPIX Japan", "TPEX": "TPEX Taiwan", "NZX50": "NZX 50 New Zealand",
+    "MNI": "MNI China", "KOSDAQ": "KOSDAQ South Korea", "HSCEI": "Hang Seng China Enterprises",
+    "HSML": "Hang Seng MidCap", "CNX500": "CNX 500 India", "BSE500": "BSE 500 India",
+    "BSE100": "BSE 100 India", "BSE200": "BSE 200 India",
+    
+    # Globale/Internationale Indizes
+    "MSCIW": "MSCI World", "MSCIEM": "MSCI Emerging Markets", "MSCIEAFE": "MSCI EAFE",
+    "MSCIACWI": "MSCI ACWI", "FTSEALLW": "FTSE All-World", "SPGLOBAL100": "S&P Global 100",
+    "SPGLOBAL1200": "S&P Global 1200", "DJGLOBAL": "Dow Jones Global",
+    "RUSSELLGLOBAL": "Russell Global", "NYSEWL": "NYSE World Leaders",
+    "MSCIWEXUSA": "MSCI World ex USA", "MSCIPACIFIC": "MSCI Pacific",
+    "MSCIEUROPE": "MSCI Europe", "MSCIASIA": "MSCI Asia", "MSCICHINA": "MSCI China",
+    "MSCIJAPAN": "MSCI Japan", "MSCIUK": "MSCI UK", "MSCICANADA": "MSCI Canada",
+    "MSCIBRAZIL": "MSCI Brazil", "MSCIINDIA": "MSCI India",
+    
+    # Sektor-/Branchenindizes
+    "DJUS": "Dow Jones US", "SPDR": "SPDR Sectors", "ISHARES": "iShares Core",
+    "VANGUARD": "Vanguard Total", "INVESCO": "Invesco QQQ", "GLOBALX": "Global X",
+    "ARK": "ARK Innovation", "PHLX": "PHLX Sector", "KBW": "KBW Regional",
+    "NASDAQ": "NASDAQ Sector", "BLOOMBERG": "Bloomberg Commodity", "REFINITIV": "Refinitiv",
+    "FACTSET": "FactSet", "BARRONS": "Barron's 400", "WILSHIRE": "Wilshire 5000",
+    "COHEN": "Cohen & Steers", "ALERIAN": "Alerian MLP", "MVIS": "MVIS",
+    "BLUESTAR": "BlueStar", "SOLACTIVE": "Solactive", "STOXXS": "STOXX Europe 600",
+    "MSCISECTOR": "MSCI Sector", "SPSECTOR": "S&P Sector", "RUSSELLSECTOR": "Russell Sector",
+    "FTSEsECTOR": "FTSE Sector", "DJSECTOR": "Dow Jones Sector", "NASDAQSECTOR": "Nasdaq Sector",
+    "CBOESECTOR": "CBOE Sector"
 }
 
-# Erweiterte Assets
+# VOLLSTÄNDIGE Andere Assets
 OTHER_ASSETS = {
-    "GOLD": "Gold", "BTC-USD": "Bitcoin", "ETH-USD": "Ethereum", "SPY": "S&P 500 ETF",
-    "VNQ": "Immobilien ETF", "BND": "Staatsanleihen", "SI=F": "Silber",
-    "CL=F": "Rohöl", "PL=F": "Platin", "PA=F": "Palladium",
-    "HG=F": "Kupfer", "USD": "US Dollar", "EUR": "Euro", "GBP": "Britisches Pfund",
-    "JPY": "Japanischer Yen", "GLD": "Gold ETF", "TLT": "Technologie ETF",
-    "XLV": "Gesundheits ETF", "XLE": "Energie ETF", "XLB": "Rohstoffe ETF",
-    "XLU": "Versorger ETF", "IFRA": "Infrastruktur ETF"
+    # Rohstoffe & Futures
+    "GOLD": "Gold Spot", "BTC-USD": "Bitcoin", "ETH-USD": "Ethereum", 
+    "SPY": "S&P 500 ETF", "VNQ": "Real Estate ETF", "BND": "Total Bond Market",
+    "SI=F": "Silver Futures", "CL=F": "Crude Oil Futures", "PL=F": "Platinum Futures",
+    "PA=F": "Palladium Futures", "HG=F": "Copper Futures", "NG=F": "Natural Gas Futures",
+    "ZC=F": "Corn Futures", "ZW=F": "Wheat Futures", "ZS=F": "Soybean Futures",
+    "ZL=F": "Soybean Oil Futures", "ZM=F": "Soybean Meal Futures", "ZO=F": "Oats Futures",
+    "KE=F": "KC HRW Wheat Futures", "CC=F": "Cocoa Futures", "CT=F": "Cotton Futures",
+    "OJ=F": "Orange Juice Futures", "SB=F": "Sugar Futures", "LB=F": "Lumber Futures",
+    "HO=F": "Heating Oil Futures", "RB=F": "RBOB Gasoline Futures",
+    
+    # Währungen/Forex
+    "USD": "US Dollar", "EUR": "Euro", "GBP": "British Pound", "JPY": "Japanese Yen",
+    "CHF": "Swiss Franc", "CAD": "Canadian Dollar", "AUD": "Australian Dollar",
+    "NZD": "New Zealand Dollar", "CNY": "Chinese Yuan", "HKD": "Hong Kong Dollar",
+    "SGD": "Singapore Dollar", "SEK": "Swedish Krona", "NOK": "Norwegian Krone",
+    "DKK": "Danish Krone", "MXN": "Mexican Peso", "BRL": "Brazilian Real",
+    "RUB": "Russian Ruble", "INR": "Indian Rupee", "KRW": "South Korean Won",
+    "TRY": "Turkish Lira", "ZAR": "South African Rand",
+    
+    # Forex Paare
+    "EURUSD=X": "EUR/USD", "GBPUSD=X": "GBP/USD", "USDJPY=X": "USD/JPY",
+    "USDCHF=X": "USD/CHF", "AUDUSD=X": "AUD/USD", "USDCAD=X": "USD/CAD",
+    "NZDUSD=X": "NZD/USD", "EURGBP=X": "EUR/GBP", "EURJPY=X": "EUR/JPY",
+    "GBPJPY=X": "GBP/JPY", "EURCHF=X": "EUR/CHF", "GBPCHF=X": "GBP/CHF",
+    "CHFJPY=X": "CHF/JPY", "CADJPY=X": "CAD/JPY", "AUDJPY=X": "AUD/JPY",
+    "NZDJPY=X": "NZD/JPY",
+    
+    # ETFs
+    "GLD": "SPDR Gold Trust", "TLT": "iShares 20+ Year Treasury", "XLV": "Health Care Select Sector",
+    "XLE": "Energy Select Sector", "XLB": "Materials Select Sector", "XLU": "Utilities Select Sector",
+    "IFRA": "iShares Infrastructure", "XLK": "Technology Select Sector", "XLP": "Consumer Staples",
+    "XLY": "Consumer Discretionary", "XLI": "Industrial Select Sector", "XLF": "Financial Select Sector",
+    "XBI": "SPDR Biotech", "XRT": "SPDR Retail", "XHB": "SPDR Homebuilders",
+    "XOP": "SPDR Oil & Gas Exploration", "XME": "SPDR Metals & Mining", "XSD": "SPDR Semiconductor",
+    "XSW": "SPDR Software", "XTH": "SPDR Technology Hardware", "XTL": "SPDR Telecom",
+    "XES": "SPDR Oil & Gas Equipment", "KBE": "SPDR Banks", "KRE": "SPDR Regional Banks",
+    
+    # Spezialisierte ETFs
+    "REET": "iShares Global REIT", "REM": "iShares Mortgage Real Estate", "BDCS": "UBS ETRACS Business Development",
+    "CEF": "Closed-End Fund", "ESG": "iShares ESG Aware", "SRI": "iShares MSCI KLD 400 Social",
+    "ICLN": "iShares Global Clean Energy", "TAN": "Invesco Solar", "PBW": "Invesco WilderHill Clean Energy",
+    "BLOK": "Amplify Transformational Data", "HACK": "ETFMG Prime Cyber Security", "AIQ": "Global X Artificial Intelligence",
+    "BOTZ": "Global X Robotics & AI", "GNOM": "Global X Genomics", "FINX": "Global X FinTech",
+    "CLOU": "Global X Cloud Computing", "NERD": "Roundhill Video Games", "BETZ": "Roundhill Sports Betting",
+    "YOLO": "AdvisorShares Pure Cannabis", "LIT": "Global X Lithium & Battery Tech", "BATT": "Amplify Lithium & Battery Technology",
+    "FAN": "First Trust Global Wind Energy", "HYDR": "Global X Hydrogen", "CGW": "Invesco S&P Global Water",
+    "WOOD": "iShares Global Timber", "VEGI": "iShares MSCI Agriculture", "GDX": "VanEck Gold Miners",
+    "SIL": "Global X Silver Miners", "COPX": "Global X Copper Miners", "OIH": "VanEck Oil Services",
+    "SEA": "Invesco Shipping", "ITA": "iShares Aerospace & Defense", "LUX": "VanEck Luxury Goods",
+    "GAMR": "ETFMG Video Game Tech", "SOXX": "iShares PHLX Semiconductor",
+    
+    # Anleihen/Renten
+    "BND": "Vanguard Total Bond", "AGG": "iShares Core US Aggregate", "LQD": "iShares iBoxx Investment Grade",
+    "HYG": "iShares iBoxx High Yield", "JNK": "SPDR Bloomberg High Yield", "EMB": "iShares J.P. Morgan EM Bond",
+    "TLT": "iShares 20+ Year Treasury", "IEF": "iShares 7-10 Year Treasury", "SHY": "iShares 1-3 Year Treasury",
+    "GOVT": "iShares US Treasury", "MUB": "iShares National Muni", "PZA": "Invesco National AMT-Free Muni",
+    "BAB": "Invesco Taxable Municipal", "PIMIX": "PIMCO Income", "BOND": "PIMCO Active Bond",
+    "BLACKROCK": "BlackRock Total Return", "FIDELITY": "Fidelity Total Bond", "SCHWAB": "Schwab US Aggregate",
+    "INVESCOB": "Invesco Total Return", "SPDRB": "SPDR Portfolio Aggregate", "VANECK": "VanEck Investment Grade",
+    "GLOBALXB": "Global X Yield", "WISDOMTREE": "WisdomTree Yield"
 }
 
 # Schweizer Privatbank Portfolios (simuliert)
@@ -114,7 +315,7 @@ SCENARIOS = {
 # Übersetzungen
 TRANSLATIONS = {
     "de": {
-        "title": "Swiss Asset Manager",
+        "title": "Swiss Asset Pro",
         "dashboard": "Dashboard",
         "portfolio": "Portfolio Entwicklung",
         "strategieanalyse": "Strategie Analyse",
@@ -144,6 +345,11 @@ last_market_update = None
 def index():
     return render_template_string(HTML_TEMPLATE)
 
+# Manifest Route
+@app.route('/manifest.json')
+def serve_manifest():
+    return send_from_directory('.', 'manifest.json', mimetype='application/manifest+json')
+
 @app.route('/switch_language/<language>')
 def switch_language(language):
     global CURRENT_LANGUAGE
@@ -151,46 +357,222 @@ def switch_language(language):
         CURRENT_LANGUAGE = language
     return jsonify({"status": "success", "language": CURRENT_LANGUAGE})
 
-@app.route('/get_live_data/<symbol>')
-def get_live_data(symbol):
-    """Holt Live-Daten von Yahoo Finance"""
+# NEUE IMPORTS oben hinzufügen
+import requests
+from bs4 import BeautifulSoup
+import time
+
+# NEUE FUNKTIONEN EINFÜGEN:
+
+def get_yahoo_finance_data(symbol):
+    """Deine ursprüngliche Yahoo Logic als separate Funktion"""
     try:
-        ticker = yf.Ticker(symbol)
+        # Symbol-Korrektur für Yahoo Finance
+        yahoo_symbol = symbol
+        
+        # Für Schweizer Aktien .SW Endung sicherstellen
+        if symbol in SWISS_STOCKS and not symbol.endswith('.SW'):
+            yahoo_symbol = f"{symbol}.SW"
+        
+        # Für Indizes ^ voranstellen wenn nicht vorhanden
+        elif symbol in INDICES and not symbol.startswith('^'):
+            # Spezielle Behandlung für bekannte Indizes
+            index_mapping = {
+                "SPX": "^GSPC", "NDX": "^NDX", "DJI": "^DJI", 
+                "RUT": "^RUT", "VIX": "^VIX", "COMP": "^IXIC",
+                "DAX": "^GDAXI", "CAC": "^FCHI", "FTSE": "^FTSE",
+                "SMI": "^SSMI", "NIKKEI": "^N225", "HSI": "^HSI"
+            }
+            yahoo_symbol = index_mapping.get(symbol, f"^{symbol}")
+        
+        # Für Rohstoffe/Futures
+        elif "=F" in symbol:
+            yahoo_symbol = symbol  # Bereits korrekt
+        
+        # Für Forex
+        elif "=X" in symbol:
+            yahoo_symbol = symbol  # Bereits korrekt
+        
+        print(f"Yahoo fetching: {yahoo_symbol} (original: {symbol})")
+        
+        ticker = yf.Ticker(yahoo_symbol)
         info = ticker.info
-        hist = ticker.history(period="1d")
+        hist = ticker.history(period="2d", interval="1d")
         
         if hist.empty:
-            # Fallback zu simulierten Daten
-            return jsonify({
-                "symbol": symbol,
-                "price": round(random.uniform(50, 500), 2),
-                "change": round(random.uniform(-10, 10), 2),
-                "change_percent": round(random.uniform(-2, 2), 2),
-                "currency": "USD"
-            })
+            return None
         
         current_price = hist['Close'].iloc[-1]
-        previous_close = info.get('previousClose', current_price * 0.99)
+        
+        # Previous Close berechnen
+        if len(hist) > 1:
+            previous_close = hist['Close'].iloc[-2]
+        else:
+            previous_close = info.get('previousClose', current_price * 0.99)
+        
         change = current_price - previous_close
         change_percent = (change / previous_close) * 100
         
-        return jsonify({
+        return {
             "symbol": symbol,
+            "yahoo_symbol": yahoo_symbol,
             "price": round(current_price, 2),
             "change": round(change, 2),
             "change_percent": round(change_percent, 2),
-            "currency": info.get('currency', 'USD')
-        })
+            "currency": info.get('currency', 'USD'),
+            "name": info.get('longName', info.get('shortName', symbol))
+        }
     except Exception as e:
-        # Fallback zu simulierten Daten bei Fehler
-        return jsonify({
-            "symbol": symbol,
-            "price": round(random.uniform(50, 500), 2),
-            "change": round(random.uniform(-10, 10), 2),
-            "change_percent": round(random.uniform(-2, 2), 2),
-            "currency": "USD"
-        })
+        print(f"Yahoo error for {symbol}: {e}")
+        return None
 
+def get_alpha_vantage_data(symbol):
+    """Backup Daten von Alpha Vantage (kostenlose API)"""
+    try:
+        API_KEY = "demo"  # Kostenlos registrieren: https://www.alphavantage.co/support/#api-key
+        url = f"https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol={symbol}&apikey={API_KEY}"
+        
+        response = requests.get(url, timeout=10)
+        data = response.json()
+        
+        if "Global Quote" in data:
+            quote = data["Global Quote"]
+            price = float(quote["05. price"])
+            change = float(quote["09. change"])
+            change_percent = float(quote["10. change percent"].rstrip('%'))
+            
+            return {
+                "symbol": symbol,
+                "price": price,
+                "change": change,
+                "change_percent": change_percent,
+                "currency": "USD",
+                "name": symbol,
+                "source": "Alpha Vantage"
+            }
+    except Exception as e:
+        print(f"Alpha Vantage error for {symbol}: {e}")
+    return None
+
+def get_scraped_data(symbol):
+    """Web Scraping Fallback für spezielle Indizes"""
+    try:
+        # Hier kannst du später Investing.com, Bloomberg etc. scrapen
+        # Für jetzt: einfache Simulation basierend auf Symbol-Typ
+        return None  # Später implementieren
+    except:
+        return None
+
+# NEUE HAUPTFUNKTION:
+@app.route('/get_live_data/<symbol>')
+def get_live_data(symbol):
+    """Holt Live-Daten von MULTIPLEN Quellen mit Fallback"""
+    try:
+        # VERSUCH 1: Yahoo Finance (Primary Source)
+        yahoo_data = get_yahoo_finance_data(symbol)
+        if yahoo_data and yahoo_data.get('price', 0) > 0:
+            yahoo_data['source'] = 'Yahoo Finance'
+            return jsonify(yahoo_data)
+
+        # VERSUCH 2: Alpha Vantage (Backup)
+        alpha_data = get_alpha_vantage_data(symbol)
+        if alpha_data and alpha_data.get('price', 0) > 0:
+            alpha_data['source'] = 'Alpha Vantage'
+            return jsonify(alpha_data)
+
+        # VERSUCH 3: Web Scraping (Fallback)
+        scraped_data = get_scraped_data(symbol)
+        if scraped_data and scraped_data.get('price', 0) > 0:
+            scraped_data['source'] = 'Web Scraping'
+            return jsonify(scraped_data)
+
+        # Fallback: Simulierte Daten
+        simulated = get_simulated_data(symbol)
+        simulated['source'] = 'Simulated Data'
+        return jsonify(simulated)
+    except Exception as e:
+        print(f"Multi-source error for {symbol}: {e}")
+        simulated = get_simulated_data(symbol)
+        simulated['source'] = 'Error Fallback'
+        return jsonify(simulated)
+def get_simulated_data(symbol):
+    """Fallback zu simulierten Daten bei Fehlern"""
+    # Realistischere simulierte Daten basierend auf Asset-Typ
+    base_price = 100
+    if symbol in SWISS_STOCKS:
+        base_price = random.uniform(50, 500)
+    elif symbol in INDICES:
+        base_price = random.uniform(1000, 50000)
+    elif any(x in symbol for x in ['GOLD', 'SILVER']):
+        base_price = random.uniform(1500, 2500)
+    elif 'OIL' in symbol or 'CL' in symbol:
+        base_price = random.uniform(60, 120)
+    
+    price = round(base_price * random.uniform(0.95, 1.05), 2)
+    change_percent = round(random.uniform(-3, 3), 2)
+    change = round(price * change_percent / 100, 2)
+    
+    return jsonify({
+        "symbol": symbol,
+        "price": price,
+        "change": change,
+        "change_percent": change_percent,
+        "currency": "USD",
+        "name": "Simulated Data"
+    })
+@app.route('/refresh_all_markets')
+def refresh_all_markets():
+    """Aktualisiert alle Marktdaten mit erweiterten Symbolen"""
+    global live_market_data, last_market_update
+    
+    # Erweiterte Liste von Marktdaten
+    symbols_to_fetch = {
+        # Schweizer Indizes
+        'SMI': '^SSMI', 'Swiss Leader': '^SLI', 'Swiss Performance': '^SPI',
+        
+        # Globale Hauptindizes
+        'DAX': '^GDAXI', 'S&P 500': '^GSPC', 'NASDAQ': '^IXIC',
+        'FTSE 100': '^FTSE', 'CAC 40': '^FCHI', 'Nikkei 225': '^N225',
+        'Hang Seng': '^HSI', 'Shanghai': '000001.SS',
+        
+        # Rohstoffe
+        'Gold': 'GC=F', 'Silber': 'SI=F', 'Öl': 'CL=F', 
+        'Platin': 'PL=F', 'Kupfer': 'HG=F', 'Erdgas': 'NG=F',
+        
+        # Forex
+        'EUR/CHF': 'EURCHF=X', 'USD/CHF': 'USDCHF=X', 'EUR/USD': 'EURUSD=X',
+        'GBP/USD': 'GBPUSD=X', 'USD/JPY': 'USDJPY=X',
+        
+        # Kryptowährungen
+        'Bitcoin': 'BTC-USD', 'Ethereum': 'ETH-USD',
+        
+        # Wichtige Einzelaktien
+        'Nestlé': 'NESN.SW', 'Novartis': 'NOVN.SW', 'Roche': 'ROG.SW',
+        'UBS': 'UBSG.SW', 'Zurich Insurance': 'ZURN.SW'
+    }
+    
+    live_market_data = {}
+    for name, symbol in symbols_to_fetch.items():
+        try:
+            response = get_live_data(symbol)
+            data = response.get_json()
+            live_market_data[name] = data
+            time.sleep(0.1)  # Rate limiting
+        except Exception as e:
+            print(f"Error fetching {symbol}: {e}")
+        # Simulierte Daten als Fallback
+        # ✅ NEU (richtig):
+        live_market_data[name] = get_simulated_data(symbol)
+    
+    last_market_update = datetime.now()
+    
+    return jsonify({
+        "success": True,
+        "data": live_market_data,
+        "last_update": last_market_update.strftime("%H:%M:%S"),
+        "total_symbols": len(symbols_to_fetch),
+        "fetched_successfully": len(live_market_data)
+    })
 @app.route('/get_benchmark_data')
 def get_benchmark_data():
     """Holt Benchmark-Daten"""
@@ -324,40 +706,7 @@ def monte_carlo_simulation():
     except Exception as e:
         return jsonify({"success": False, "error": str(e)})
 
-@app.route('/refresh_all_markets')
-def refresh_all_markets():
-    """Aktualisiert alle Marktdaten"""
-    global live_market_data, last_market_update
-    
-    symbols_to_fetch = {
-        'SMI': '^SSMI',
-        'DAX': '^GDAXI', 
-        'S&P 500': '^GSPC',
-        'NASDAQ': '^IXIC',
-        'Gold': 'GC=F',
-        'Öl': 'CL=F',
-        'EUR/CHF': 'EURCHF=X',
-        'USD/CHF': 'USDCHF=X',
-        'Bitcoin': 'BTC-USD',
-        'Ethereum': 'ETH-USD'
-    }
-    
-    live_market_data = {}
-    for name, symbol in symbols_to_fetch.items():
-        try:
-            response = get_live_data(symbol)
-            data = response.get_json()
-            live_market_data[name] = data
-        except Exception as e:
-            print(f"Error fetching {symbol}: {e}")
-    
-    last_market_update = datetime.now()
-    
-    return jsonify({
-        "success": True,
-        "data": live_market_data,
-        "last_update": last_market_update.strftime("%H:%M:%S")
-    })
+
 @app.route('/api/verify_password', methods=['POST'])
 def verify_password():
     user_password = request.json.get('password')
@@ -665,7 +1014,7 @@ def generate_pdf_report():
         # Haupt-Header
         header_table_data = [
             [
-                Paragraph("SWISS ASSET MANAGER", title_style),
+                Paragraph("SWISS ASSET PRO", title_style),
                 Paragraph(f"Generiert: {current_time}", normal_style)
             ]
         ]
@@ -957,161 +1306,364 @@ HTML_TEMPLATE = '''
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Swiss Asset Manager</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Swiss Asset Pro">
+    <meta name="application-name" content="Swiss Asset Pro">
+    <meta name="theme-color" content="#0A0A0A">
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>Swiss Asset Pro – Invest Smart</title>
+    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" href="/static/icon-192x192.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="/static/icon-192x192.png">
+    <link rel="apple-touch-icon" sizes="512x512" href="/static/icon-512x512.png">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/static/sw.js').then(function(registration) {
+                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                }, function(err) {
+                    console.log('ServiceWorker registration failed: ', err);
+                });
+            });
+        }
+    </script>
     <style>
-        :root {
-            --color-primary: #0A1429;
-            --color-surface: #FFFFFF;
-            --bg-default: #F5F5F7;
-            --text-default: #333333;
-            --text-muted: #6C757D;
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap');
+    body { font-family: 'Inter', sans-serif; }
+    h1, h2, h3 { font-family: 'Playfair Display', serif; }
+
+    /* Farbpalette Schwarz / Dunkelgrau / Violett / Silber */
+    .bg-black-main { background-color: #0A0A0A; }      /* Haupt-Hintergrund */
+    .bg-panel { background: linear-gradient(145deg, #1F1F1F, #181818); }  /* Panels / Cards */
+    .text-primary { color: #E0E0E0; }                  /* Überschriften / Haupttext */
+    .text-secondary { color: #A0A0A0; }                /* Sekundärtext / Details */
+    .text-accent { color: #8A2BE2; }                   /* Violett für Akzente */
+    .text-silver { color: #D9D9D9; }                   /* Silber für Buttons / Lines */
+    .border-panel { border-color: #2C2C2C; }           /* Panel-Border */
+    .bg-accent { background-color: #8A2BE2; }
+    .bg-silver { background-color: #D9D9D9; }
+    .hover-accent:hover { background-color: #A64DF0 !important; color: #0A0A0A !important; }
+
+    :root {
+            --bg-black-main: #0A0A0A;
+            --bg-dark: #111111;
+            --bg-panel: linear-gradient(145deg, #252525, #1E1E1E); /* Deutlicherer Unterschied zum Hintergrund */
+            --text-primary: #E8E8E8; /* Etwas heller für besseren Kontrast */
+            --text-secondary: #B8B8B8; /* Etwas heller für besseren Kontrast */
+            --accent-violet: #8A2BE2;
+            --text-silver: #E6E6E6; /* Etwas heller für besseren Kontrast */
+            --border-panel: #3A3A3A; /* Deutlicherer Rand */
+            --glass: rgba(138, 43, 226, 0.08); /* Stärkerer Glaseffekt */
             --accent-positive: #28A745;
             --accent-negative: #DC3545;
-            --border-light: #EAEAEA;
+            --border-light: #454545; /* Noch deutlicherer Kontrast */
             --radius-lg: 12px;
-            --shadow-soft: 0 6px 18px rgba(10, 20, 41, 0.08);
-            --font-ui: 'Inter', sans-serif;
+            --shadow-soft: 0 8px 20px rgba(0, 0, 0, 0.4); /* Stärkerer Schatten */
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Inter', sans-serif;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { 
-    
-    font-family: var(--font-ui); 
-    background: transparent; 
-    color: var(--text-default); 
-    line-height: 1.6; 
+            font-family: var(--font-body); 
+            background: var(--bg-black-main); 
+            color: var(--text-primary); 
+            line-height: 1.5; 
+            font-size: 16px;
+            font-weight: 400;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            line-height: 1.3;
+            color: var(--text-primary);
+        }
+        
+        h1 { 
+            font-size: 34px; 
+            font-weight: 700; 
+            letter-spacing: -0.7px;
+        }
+        h2 { 
+            font-size: 28px; 
+            font-weight: 600; 
+            letter-spacing: -0.5px;
+        }
+        h3 { 
+            font-size: 24px; 
+            font-weight: 600; 
+            letter-spacing: -0.3px;
+        }
+        h4 { 
+            font-size: 20px; 
+            font-weight: 500; 
+            letter-spacing: -0.2px;
+        }
+        h5 { 
+            font-size: 18px; 
+            font-weight: 500; 
+        }
+        h6 { 
+            font-size: 16px; 
+            font-weight: 500; 
+        }
 }
         
         .password-protection {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: var(--bg-default); display: flex; justify-content: center; align-items: center; z-index: 10000;
+            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+            background: var(--bg-default); display: flex !important; justify-content: center !important; align-items: center !important; 
+            z-index: 10000; margin: 0; padding: 0; box-sizing: border-box;
         }
         .password-box {
-            background: var(--color-surface); padding: 40px; border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-soft); text-align: center; max-width: 400px; width: 90%;
+            background: var(--bg-panel); 
+            padding: 50px; 
+            border-radius: var(--radius-lg);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.3); 
+            text-align: center; 
+            max-width: 400px; 
+            width: 90%;
+            border: 1px solid rgba(138, 43, 226, 0.2);
+            position: relative;
+            margin: 0 auto;
+            transform: translateY(0);
         }
         .password-input {
             width: 100%; padding: 12px; border: 1px solid var(--border-light); border-radius: 8px;
             margin-bottom: 15px; font-size: 16px;
         }
         .btn {
-            padding: 12px 24px; background: var(--color-primary); color: white; border: none;
-            border-radius: 8px; cursor: pointer; font-weight: 500;
+            padding: 12px 28px; 
+            background-color: var(--bg-silver);
+            color: var(--bg-black-main); 
+            border: none;
+            border-radius: 10px; 
+            cursor: pointer; 
+            font-weight: 600;
+            font-family: var(--font-body);
+            font-size: 14px;
+            letter-spacing: 0.3px;
             transition: all 0.3s ease;
         }
         .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(10, 20, 41, 0.2);
+            transform: translateY(-3px);
+            background-color: var(--accent-violet);
+            color: var(--bg-black-main);
+        }
+        .btn:focus {
+            outline: 3px solid rgba(138, 43, 226, 0.2);
+            outline-offset: 3px;
         }
         .btn-calculate {
-            background: #28A745;
-            font-size: 18px;
+            background: linear-gradient(145deg, #3A3A3A, #303030);
+            font-size: 16px;
             padding: 15px 30px;
+            font-weight: 600;
+            color: #E8E8E8;
+            border: 1px solid var(--border-light);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+        .btn-calculate:hover {
+            background: linear-gradient(145deg, var(--accent-violet), #7223c7);
+            box-shadow: 0 6px 15px rgba(138, 43, 226, 0.4);
+            transform: translateY(-2px);
         }
         
         header { 
-    background: linear-gradient(
-        135deg, 
-        #1a0f42 0%,     
-        #0A1429 30%,    
-        #0A1429 70%,    
-        #1a0f42 100%    
-    );
+    background-color: var(--bg-black-main);
     color: white; 
-    padding: 20px 0; 
+    padding: 25px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-.header-top { display: flex; justify-content: space-between; align-items: center; }
-.logo { width: 50px; height: 50px; border-radius: 8px; object-fit: cover; }
+.header-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; }
+.logo { width: 55px; height: 55px; border-radius: 10px; object-fit: cover; box-shadow: 0 0 15px rgba(138, 43, 226, 0.5); }
 
-.nav-tabs { display: flex; gap: 10px; margin-top: 20px; flex-wrap: wrap; }
-.nav-tab { padding: 10px 20px; background: rgba(255,255,255,0.1); border-radius: 6px; cursor: pointer; white-space: nowrap; transition: all 0.3s ease; }
+.nav-tabs { display: flex; gap: 12px; flex-wrap: wrap; }
+.nav-tab { 
+    padding: 10px 18px; 
+    background: transparent; 
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 8px; 
+    cursor: pointer; 
+    white-space: nowrap; 
+    transition: all 0.3s ease; 
+    color: var(--text-silver);
+    font-size: 15px;
+}
 .nav-tab.active { 
-    background: rgba(10, 20, 41, 0.9);
-    color: white; 
+    background: rgba(138, 43, 226, 0.15);
+    border-color: rgba(138, 43, 226, 0.3);
+    color: var(--color-accent); 
 }
 .nav-tab:hover { 
-    background: rgba(10, 20, 41, 0.6);
+    color: var(--color-accent);
+    background: rgba(138, 43, 226, 0.1);
+    border-color: rgba(138, 43, 226, 0.2);
 }
 
 
         
         main { 
-    padding: 30px 0; 
+    padding: 40px 0; 
     position: relative;
     z-index: 1;
 }
-        .page { display: none; background: rgba(255, 255, 255, 0.95); padding: 30px; border-radius: var(--radius-lg); margin-bottom: 20px; position: relative; z-index: 2; }
+        .page { 
+    display: none; 
+    background: var(--bg-panel); 
+    padding: 35px; 
+    border-radius: var(--radius-lg); 
+    margin-bottom: 30px; 
+    position: relative; 
+    z-index: 2; 
+    border: 1px solid var(--border-panel);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
         .page.active { display: block; }
         
-        .page-header { margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px solid var(--border-light); }
-        .page-header h2 { color: var(--color-primary); margin-bottom: 10px; }
-        
-        .instruction-box { 
-            background: #f8f9fa; padding: 20px; border-radius: var(--radius-lg); 
-            margin-bottom: 20px; border-left: 4px solid var(--color-primary);
+        .page-header { 
+            margin-bottom: 30px; 
+            padding-bottom: 20px; 
+            border-bottom: 1px solid var(--border-panel); 
+            position: relative;
+        }
+        .page-header::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--color-accent), rgba(138, 43, 226, 0.3));
+            border-radius: 3px;
+        }
+        .page-header h2 { 
+            color: var(--color-primary); 
+            margin-bottom: 12px; 
+            font-family: 'Playfair Display', serif;
+            letter-spacing: -0.5px;
         }
         
-        .portfolio-setup { background: #f8f9fa; padding: 20px; border-radius: var(--radius-lg); margin-bottom: 20px; }
+        .instruction-box { 
+            background: rgba(138, 43, 226, 0.1); 
+            padding: 20px; 
+            border-radius: var(--radius-lg); 
+            margin-bottom: 20px; 
+            border-left: 4px solid var(--accent-violet);
+        }
+        
+        .portfolio-setup { 
+            background: linear-gradient(145deg, #2A2A2A, #232323); 
+            padding: 20px; 
+            border-radius: var(--radius-lg); 
+            margin-bottom: 20px; 
+            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow-soft);
+        }
         .investment-inputs { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-bottom: 15px; }
         .input-group { display: flex; flex-direction: column; gap: 5px; }
-        .input-group label { font-weight: 500; color: var(--color-primary); font-size: 14px; }
+        .input-group label { font-weight: 500; color: var(--text-silver); font-size: 14px; }
         
         .search-container { display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; }
-        .search-input { flex: 1; min-width: 200px; padding: 10px; border: 1px solid var(--border-light); border-radius: 6px; }
+        .search-input { 
+            flex: 1; 
+            min-width: 200px; 
+            padding: 10px; 
+            border: 1px solid var(--border-light); 
+            border-radius: 6px;
+            background-color: var(--bg-panel);
+            color: var(--text-primary);
+        }
+        select.search-input {
+            background-color: var(--bg-panel);
+            color: var(--text-primary);
+        }
+        select.search-input option {
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            padding: 8px;
+        }
         
         .selected-stocks { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; margin: 20px 0; }
-        .stock-card { background: white; padding: 15px; border-radius: var(--radius-lg); border: 1px solid var(--border-light); transition: all 0.3s ease; }
+        .stock-card { background: var(--bg-panel); padding: 15px; border-radius: var(--radius-lg); border: 1px solid var(--border-light); transition: all 0.3s ease; box-shadow: var(--shadow-soft); }
         .stock-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-soft); }
         .stock-header { display: flex; justify-content: space-between; margin-bottom: 10px; }
         .investment-controls { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
         .investment-controls input { padding: 8px; border: 1px solid var(--border-light); border-radius: 4px; }
         
-        .chart-container { height: 400px; margin: 20px 0; background: white; padding: 20px; border-radius: var(--radius-lg); border: 1px solid var(--border-light); }
+        .chart-container { height: 400px; margin: 20px 0; background: var(--bg-panel); padding: 20px; border-radius: var(--radius-lg); border: 1px solid var(--border-panel); }
         
         .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin: 20px 0; }
         .card { 
-    background: rgba(255, 255, 255, 0.95); 
-    padding: 20px; 
-    border-radius: var(--radius-lg); 
-    border-left: 4px solid var(--color-primary); 
-    transition: all 0.3s ease; 
+    background: linear-gradient(145deg, #2A2A2A, #232323); 
+    padding: 24px; 
+    border-radius: 16px; 
+    border-left: 4px solid var(--accent-violet); 
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 25px rgba(138, 43, 226, 0.1), 0 6px 12px rgba(0, 0, 0, 0.15);
+    border: 1px solid var(--border-light);
 }
-        .card:hover { transform: translateY(-2px); box-shadow: var(--shadow-soft); }
+        .card:hover { 
+    transform: translateY(-4px); 
+    box-shadow: 0 14px 30px rgba(138, 43, 226, 0.15), 0 8px 16px rgba(0, 0, 0, 0.1);
+    border-color: rgba(138, 43, 226, 0.3);
+    border-left-width: 5px;
+}
         
         .data-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
         .data-table th, .data-table td { padding: 12px 15px; text-align: left; border-bottom: 1px solid var(--border-light); }
         .data-table th { background: var(--color-primary); color: white; }
         
-        .positive { color: var(--accent-positive); font-weight: 600; }
-        .negative { color: var(--accent-negative); font-weight: 600; }
+        .positive { 
+    color: var(--accent-positive); 
+    font-weight: 600;
+    text-shadow: 0 0 8px rgba(138, 43, 226, 0.2);
+}
+        .negative { 
+    color: var(--accent-negative); 
+    font-weight: 600;
+    text-shadow: 0 0 8px rgba(220, 38, 38, 0.2);
+}
         
         .status-bar {
     display: flex; 
     justify-content: space-between; 
     padding: 15px; 
-    background: rgba(10, 20, 41, 0.9); 
+    background: var(--bg-panel); 
     border-radius: var(--radius-lg); 
     margin-bottom: 20px; 
     flex-wrap: wrap; 
     gap: 10px; 
-    color: white; 
+    color: var(--text-primary);
+    border: 1px solid var(--border-panel);
 }
         
         .market-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0; }
-        .market-item { background: white; padding: 15px; border-radius: var(--radius-lg); text-align: center; border: 1px solid var(--border-light); }
+        .market-item { background: var(--bg-panel); padding: 15px; border-radius: var(--radius-lg); text-align: center; border: 1px solid var(--border-panel); }
         
         .news-item { padding: 15px; border-bottom: 1px solid var(--border-light); }
         .news-item:last-child { border-bottom: none; }
         
         .assets-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin: 20px 0; }
-        .asset-card { background: white; padding: 20px; border-radius: var(--radius-lg); border: 1px solid var(--border-light); }
+        .asset-card { background: var(--bg-panel); padding: 20px; border-radius: var(--radius-lg); border: 1px solid var(--border-panel); }
         
-        .formula-box { background: #f8f9fa; padding: 15px; border-radius: var(--radius-lg); margin: 10px 0; font-family: monospace; } /* WINDOWS PERFORMANCE FIX - STUFE 1 */
+        .formula-box { 
+            background: #2A2A2A; 
+            color: #E6E6E6; 
+            padding: 15px; 
+            border-radius: var(--radius-lg); 
+            margin: 10px 0; 
+            font-family: monospace; 
+            border: 1px solid var(--accent-violet);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            font-size: 1.05rem;
+        } /* WINDOWS PERFORMANCE FIX - STUFE 1 */
 /* FINALE LÖSUNG - OPTIMIERT FÜR WINDOWS, ORIGINAL FÜR MAC */
 .performance-mode .layer {
     animation-duration: 40s, 50s, 60s !important;
@@ -1145,7 +1697,7 @@ HTML_TEMPLATE = '''
         .metric-label { color: var(--text-muted); font-size: 14px; }
         
         .fx-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin: 20px 0; }
-        .fx-item { background: white; padding: 15px; border-radius: var(--radius-lg); text-align: center; border: 1px solid var(--border-light); }
+        .fx-item { background: var(--bg-panel); padding: 15px; border-radius: var(--radius-lg); text-align: center; border: 1px solid var(--border-panel); }
         
         .methodology-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 20px; margin: 20px 0; }
         
@@ -1153,7 +1705,7 @@ HTML_TEMPLATE = '''
         
         /* Neue Styles für Strategie-Analyse */
         .strategy-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin: 20px 0; }
-        .strategy-card { background: white; padding: 20px; border-radius: var(--radius-lg); border: 1px solid var(--border-light); border-left: 4px solid; transition: all 0.3s ease; }
+        .strategy-card { background: var(--bg-panel); padding: 20px; border-radius: var(--radius-lg); border: 1px solid var(--border-panel); border-left: 4px solid; transition: all 0.3s ease; }
         .strategy-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-soft); }
         .strategy-1 { border-left-color: #0A1429; }
         .strategy-2 { border-left-color: #28A745; }
@@ -1163,22 +1715,92 @@ HTML_TEMPLATE = '''
         
         .comparison-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
         .comparison-table th, .comparison-table td { padding: 12px 15px; text-align: center; border: 1px solid var(--border-light); }
-        .comparison-table th { background: var(--color-primary); color: white; }
-        .comparison-table tr:nth-child(even) { background: #f8f9fa; }
+        .comparison-table th { background: #2A2A2A; color: #E8E8E8; font-weight: 600; }
+        .comparison-table tr:nth-child(even) { background: rgba(138, 43, 226, 0.08); }
+        .comparison-table tr:nth-child(odd) { background: rgba(42, 42, 42, 0.7); }
         
         .recommendation-badge { 
-            display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; 
+            display: inline-block; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; 
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
         }
-        .badge-optimal { background: #d4edda; color: #155724; }
-        .badge-balanced { background: #fff3cd; color: #856404; }
-        .badge-conservative { background: #cce7ff; color: #004085; }
-        .badge-aggressive { background: #f8d7da; color: #721c24; }
+        .badge-optimal { background: #0d6e32; color: #d4edda; border: 1px solid #28a745; }
+        .badge-balanced { background: #664d03; color: #fff3cd; border: 1px solid #ffc107; }
+        .badge-conservative { background: #002752; color: #cce7ff; border: 1px solid #0d6efd; }
+        .badge-aggressive { background: #4f0f16; color: #f8d7da; border: 1px solid #dc3545; }
         
         .strategy-comparison { display: grid; grid-template-columns: 2fr 1fr; gap: 20px; margin: 20px 0; }
         
         .optimization-result { 
-            background: #f8f9fa; padding: 15px; border-radius: var(--radius-lg); margin: 10px 0;
-            border-left: 4px solid var(--color-primary);
+            background: rgba(138, 43, 226, 0.1); 
+            padding: 15px; 
+            border-radius: var(--radius-lg); 
+            margin: 10px 0;
+            border-left: 4px solid var(--accent-violet);
+            color: #E0E0E0;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Landing Page Styles */
+        .landing-card {
+            background: linear-gradient(145deg, #1F1F1F, #222222);
+            border: 1px solid #2C2C2C;
+            border-radius: 16px;
+            padding: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            min-height: 200px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .landing-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4), 0 0 15px rgba(138, 43, 226, 0.2);
+            border-color: rgba(138, 43, 226, 0.4);
+        }
+        
+        .landing-card h3 {
+            font-family: 'Playfair Display', serif;
+            color: #FFFFFF;
+            font-size: 20px;
+            margin: 0 0 15px 0;
+        }
+        
+        .landing-card p {
+            font-family: 'Inter', sans-serif;
+            color: #D9D9D9;
+            font-size: 14px;
+            line-height: 1.5;
+            margin: 0;
+        }
+        
+        .landing-card-icon {
+            margin-bottom: 15px;
+            color: #8A2BE2;
+            font-size: 24px;
+            opacity: 0.9;
+        }
+        
+        /* Fade in animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            #landingPanelsContainer {
+                grid-template-columns: 1fr;
+            }
         }
         
         .rating-score { 
@@ -1194,13 +1816,13 @@ HTML_TEMPLATE = '''
         
         /* Neue Styles für Portfolio Entwicklung */
         .performance-metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 20px 0; }
-        .performance-card { background: white; padding: 20px; border-radius: var(--radius-lg); text-align: center; border: 1px solid var(--border-light); }
+        .performance-card { background: var(--bg-panel); padding: 20px; border-radius: var(--radius-lg); text-align: center; border: 1px solid var(--border-panel); }
         
         .path-simulation { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin: 20px 0; }
-        .path-card { background: white; padding: 20px; border-radius: var(--radius-lg); border: 1px solid var(--border-light); }
+        .path-card { background: var(--bg-panel); padding: 20px; border-radius: var(--radius-lg); border: 1px solid var(--border-panel); }
         
         .swot-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 20px 0; }
-        .swot-card { background: white; padding: 20px; border-radius: var(--radius-lg); border-left: 4px solid; }
+        .swot-card { background: var(--bg-panel); padding: 20px; border-radius: var(--radius-lg); border-left: 4px solid; }
         .strengths { border-left-color: #28A745; }
         .weaknesses { border-left-color: #DC3545; }
         .opportunities { border-left-color: #007BFF; }
@@ -1210,9 +1832,10 @@ HTML_TEMPLATE = '''
             text-align: center;
             margin: 30px 0;
             padding: 30px;
-            background: linear-gradient(135deg, #0A1429 0%, #1E3A5C 100%);
-            color: white;
+            background: var(--bg-panel);
+            color: var(--text-primary);
             border-radius: var(--radius-lg);
+            border: 1px solid var(--border-panel);
         }
         
         .password-error {
@@ -1229,7 +1852,7 @@ HTML_TEMPLATE = '''
         }
         
         .market-analysis-card {
-            background: white;
+            background: #1F1F1F;
             padding: 20px;
             border-radius: var(--radius-lg);
             border: 1px solid var(--border-light);
@@ -1279,7 +1902,7 @@ HTML_TEMPLATE = '''
         }
         
         .scenario-card {
-            background: white;
+            background: #1F1F1F;
             padding: 20px;
             border-radius: var(--radius-lg);
             border: 1px solid var(--border-light);
@@ -1338,7 +1961,7 @@ HTML_TEMPLATE = '''
         }
         
         .benchmark-card {
-            background: white;
+            background: #1F1F1F;
             padding: 20px;
             border-radius: var(--radius-lg);
             border: 1px solid var(--border-light);
@@ -1353,7 +1976,7 @@ HTML_TEMPLATE = '''
         }
         
         .peer-card {
-            background: white;
+            background: #1F1F1F;
             padding: 15px;
             border-radius: var(--radius-lg);
             border: 1px solid var(--border-light);
@@ -1378,12 +2001,14 @@ HTML_TEMPLATE = '''
         }
         
         .auto-refresh-info {
-            background: #e7f3ff;
-            padding: 10px 15px;
-            border-radius: 6px;
-            margin: 10px 0;
+            background: rgba(138, 43, 226, 0.15);
+            padding: 12px 16px;
+            border-radius: var(--radius-md);
+            margin: 15px 0;
             font-size: 14px;
-            border-left: 4px solid #007BFF;
+            border-left: 4px solid var(--color-accent);
+            color: var(--text-primary);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
         
         .notification {
@@ -1410,12 +2035,14 @@ HTML_TEMPLATE = '''
         }
         
         .price-update-info {
-            background: #fff3cd;
-            padding: 8px 12px;
-            border-radius: 6px;
-            margin: 5px 0;
-            font-size: 12px;
-            border-left: 4px solid #ffc107;
+            background: rgba(138, 43, 226, 0.15);
+            padding: 12px 16px;
+            border-radius: var(--radius-md);
+            margin: 12px 0;
+            font-size: 14px;
+            border-left: 4px solid var(--color-accent);
+            color: var(--text-primary);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
         
         .loading-spinner {
@@ -1551,7 +2178,7 @@ HTML_TEMPLATE = '''
         }
         
         .source-card {
-            background: white;
+            background: #1F1F1F;
             padding: 20px;
             border-radius: var(--radius-lg);
             border: 1px solid var(--border-light);
@@ -1670,7 +2297,7 @@ HTML_TEMPLATE = '''
         .loading-progress {
             width: 0%;
             height: 100%;
-            background: white;
+            background: #333333;
             animation: loadingFill 3s ease 1s forwards;
         }
 
@@ -1682,50 +2309,13 @@ HTML_TEMPLATE = '''
         }
 
         @keyframes loadingFill {
-            to { width: 100%; }
-        }
-        @keyframes loadingFill {
-            to { width: 100%; }
+            0% { width: 0%; }
+            60% { width: 70%; }
+            80% { width: 85%; }
+            100% { width: 100%; }
         }
         /* Finance Footer Styles */
-        .finance-footer {
-            background: linear-gradient(135deg, #0A1429 0%, #1a0f42 100%);
-            border-top: 1px solid rgba(255,255,255,0.1);
-            padding: 15px 20px;
-            margin-top: auto;
-        }
-
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .footer-links {
-            display: flex;
-            gap: 25px;
-        }
-
-        .footer-link {
-            color: rgba(255,255,255,0.7);
-            text-decoration: none;
-            font-size: 13px;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .footer-link:hover {
-            color: white;
-        }
-
-        .footer-info {
-            color: rgba(255,255,255,0.5);
-            font-size: 12px;
-        }
+        /* Footer styles are handled by utility classes in the HTML */
         .market-open { color: #28A745; font-weight: bold; }
         .market-closed { color: #DC3545; }
         .market-status { margin: 0 5px; }
@@ -1776,8 +2366,8 @@ HTML_TEMPLATE = '''
 /* Layer 1 - vorne (fein strukturiert, schneller) */
 .l1 {
     background-image:
-        radial-gradient(closest-side, rgba(10,15,44,0.98) 0%, rgba(10,15,44,0) 48%),
-        radial-gradient(circle at 18% 82%, rgba(26,11,56,0.90) 0%, rgba(26,11,56,0) 44%);
+        radial-gradient(closest-side, rgba(138,43,226,0.25) 0%, rgba(138,43,226,0) 48%),
+        radial-gradient(circle at 18% 82%, rgba(138,43,226,0.18) 0%, rgba(138,43,226,0) 44%);
     background-size: 1200px 1200px, 1600px 1600px;
     filter: blur(var(--blur1)) saturate(116%);
     opacity: var(--opa1);
@@ -1789,8 +2379,8 @@ HTML_TEMPLATE = '''
 /* Layer 2 - mitte (mittlere Tiefe, moderat) */
 .l2 {
     background-image:
-        radial-gradient(circle at 16% 86%, rgba(46,15,84,0.92) 0%, rgba(46,15,84,0) 42%),
-        radial-gradient(circle at 8% 92%, rgba(60,26,112,0.86) 0%, rgba(60,26,112,0) 38%);
+        radial-gradient(circle at 16% 86%, rgba(138,43,226,0.15) 0%, rgba(138,43,226,0) 42%),
+        radial-gradient(circle at 8% 92%, rgba(138,43,226,0.12) 0%, rgba(138,43,226,0) 38%);
     background-size: 1800px 1800px, 2200px 2200px;
     filter: blur(var(--blur2)) saturate(106%);
     opacity: var(--opa2);
@@ -1802,8 +2392,8 @@ HTML_TEMPLATE = '''
 /* Layer 3 - hinten (groß, sehr weich) */
 .l3 {
     background-image:
-        radial-gradient(circle at 12% 92%, rgba(26,11,56,0.88) 0%, rgba(26,11,56,0) 36%),
-        radial-gradient(circle at 22% 72%, rgba(40,8,68,0.82) 0%, rgba(40,8,68,0) 40%);
+        radial-gradient(circle at 12% 92%, rgba(138,43,226,0.10) 0%, rgba(138,43,226,0) 36%),
+        radial-gradient(circle at 22% 72%, rgba(138,43,226,0.08) 0%, rgba(138,43,226,0) 40%);
     background-size: 2600px 2600px, 3000px 3000px;
     filter: blur(var(--blur3)) saturate(102%);
     opacity: var(--opa3);
@@ -1901,6 +2491,7 @@ HTML_TEMPLATE = '''
 /* SMOOTH SCROLLING FIX */
 html, body {
     overflow-x: hidden;
+    overflow-y: auto;
     height: 100%;
     scroll-behavior: smooth;
 }
@@ -1909,23 +2500,227 @@ html, body {
     transform: translate3d(0, 0, 0);
     backface-visibility: hidden;
     will-change: transform;
+}
+
+/* Getting Started Page Styles */
+.steps-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.step {
+    display: flex;
+    align-items: flex-start;
+    background: linear-gradient(145deg, #262626, #1a1a1a);
+    border-radius: 10px;
+    padding: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.step:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.step-number {
+    background: linear-gradient(145deg, #8A2BE2, #6B24B2);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-right: 20px;
+    flex-shrink: 0;
+}
+
+.step-content {
+    flex: 1;
+}
+
+.step-btn {
+    margin-top: 10px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.feature-item {
+    background: linear-gradient(145deg, #262626, #1a1a1a);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: #8A2BE2;
+}
+
+.quick-links-container {
+    margin-top: 30px;
+}
+
+.quick-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.quick-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(145deg, #262626, #1a1a1a);
+    border-radius: 10px;
+    padding: 20px;
+    text-decoration: none;
+    color: #E0E0E0;
+    transition: all 0.3s;
+}
+
+.quick-link:hover {
+    background: linear-gradient(145deg, #2D2D2D, #212121);
+    transform: translateY(-5px);
+    color: #8A2BE2;
+}
+
+.quick-link i {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+/* Investing Page Styles */
+.principles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.principle-item {
+    background: linear-gradient(145deg, #262626, #1a1a1a);
+    border-radius: 10px;
+    padding: 20px;
+    transition: transform 0.3s;
+}
+
+.principle-item:hover {
+    transform: translateY(-5px);
+}
+
+.principle-image {
+    height: 150px;
+    margin-top: 15px;
+    border-radius: 8px;
+    background-color: #333;
+    background-size: cover;
+    background-position: center;
+}
+
+.tabs-container {
+    margin-top: 20px;
+}
+
+.tabs {
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #333;
+    margin-bottom: 20px;
+}
+
+.tab {
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.tab.active {
+    color: #8A2BE2;
+    border-bottom: 2px solid #8A2BE2;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+    animation: fade-in 0.3s ease-out;
+}
+
+.strategy-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.strategy-table th,
+.strategy-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #333;
+}
+
+.strategy-table th {
+    background-color: #222;
+    color: #E0E0E0;
+}
+
+.strategy-table tr:hover {
+    background-color: #282828;
+}
 }  </style>
+<script>
+    // Initial Footer ausblenden für Login-Bildschirm
+    window.onload = function() {
+        document.querySelector('footer').style.display = 'none';
+        
+        // Ensure login screen is properly centered
+        const loginScreen = document.getElementById('passwordProtection');
+        if (loginScreen) {
+            loginScreen.style.display = 'flex';
+            loginScreen.style.justifyContent = 'center';
+            loginScreen.style.alignItems = 'center';
+            loginScreen.style.width = '100vw';
+            loginScreen.style.height = '100vh';
+        }
+    }
+</script>
 </head>
-<body>
-    <div id="passwordProtection" class="password-protection">
-        <div class="password-box">
-            <h2>Swiss Asset Manager</h2>
-            <p id="passwordPrompt">Bitte geben Sie das Passwort ein:</p>
+<body style="margin: 0; padding: 0;">
+    <div id="passwordProtection" class="password-protection" style="display: flex; justify-content: center; align-items: center; width: 100vw; height: 100vh; position: fixed; top: 0; left: 0;">
+        <div class="password-box" style="margin: 0 auto; transform: translateY(0);">
+            <h1 class="text-accent" style="font-size: 38px; margin-bottom: 20px; font-family: 'Playfair Display', serif; letter-spacing: 1px;">Swiss Asset Pro</h1>
+            <p id="passwordPrompt" class="text-primary" style="margin-bottom: 20px;">Bitte geben Sie das Passwort ein:</p>
             <input type="password" id="passwordInput" class="password-input" placeholder="Passwort">
-            <button class="btn" onclick="checkPassword()" id="accessButton">Zugang erhalten</button>
+            <button class="btn" onclick="checkPassword()" id="accessButton" style="background: linear-gradient(145deg, var(--accent-violet), #7223c7); color: white; font-weight: 600; padding: 12px 25px; border-radius: 8px; box-shadow: 0 4px 15px rgba(138, 43, 226, 0.4); border: none; transition: all 0.3s ease;">Zugang erhalten</button>
             <p id="passwordError" class="password-error">Falsches Passwort. Bitte versuchen Sie es erneut.</p>
-            <p style="margin-top: 15px; font-size: 12px; color: #6C757D;" id="passwordHint">by Ahmed Choudhary</p>
+            <p style="margin-top: 15px; font-size: 12px; color: var(--text-secondary);" id="passwordHint">by Ahmed Choudhary</p>
         </div>
     </div>
 
 <div class="welcome-screen" id="welcomeScreen">
     <div class="welcome-content">
-        <h1 class="welcome-title">Swiss Asset Manager</h1>
+        <h1 class="welcome-title">Swiss Asset Pro</h1>
         <p class="welcome-subtitle">Professional Portfolio Simulation</p>
         <p class="welcome-author">by Ahmed Choudhary</p>
         
@@ -1950,7 +2745,7 @@ html, body {
     position: fixed;
     top: 0; left: 0;
     width: 100%; height: 100%;
-    background: linear-gradient(135deg, #1a0f42 0%, #0A1429 30%, #0A1429 70%, #1a0f42 100%);
+    background: #0A0A0A;
     display: none;
     justify-content: center;
     align-items: center;
@@ -1970,17 +2765,21 @@ html, body {
 }
 
 .welcome-title {
+    font-family: var(--font-heading);
     font-size: 3.5rem;
     font-weight: 700;
-    color: white;
-    margin-bottom: 1rem;
-    text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    color: var(--color-accent);
+    margin-bottom: 1.5rem;
+    text-shadow: 0 0 25px rgba(138, 43, 226, 0.3);
+    letter-spacing: -1px;
 }
 
 .welcome-subtitle {
+    font-family: var(--font-body);
     font-size: 1.2rem;
     color: rgba(255,255,255,0.8);
     font-weight: 300;
+    letter-spacing: 0.3px;
 }
 
 .welcome-author {
@@ -1991,22 +2790,21 @@ html, body {
 }
 
 .loading-bar {
-    width: 200px;
-    height: 3px;
-    background: rgba(255,255,255,0.2);
-    margin-top: 2rem;
-    border-radius: 2px;
+    width: 250px;
+    height: 4px;
+    background: rgba(255,255,255,0.1);
+    margin: 2.5rem auto 0;
+    border-radius: 4px;
     overflow: hidden;
 }
 
-.loading-progress {
-    width: 0%;
-    height: 100%;
-    background: white;
-    animation: loadingFill 3s ease 1s forwards;
-}
-
-/* NEUE AKTIEN-GRAPH ANIMATION */
+        .loading-progress {
+            width: 0%;
+            height: 100%;
+            background: linear-gradient(90deg, var(--color-accent), rgba(138, 43, 226, 0.5));
+            animation: loadingFill 3.5s cubic-bezier(0.34, 1.56, 0.64, 1) 1s forwards;
+            box-shadow: 0 0 15px rgba(138, 43, 226, 0.5);
+        }/* NEUE AKTIEN-GRAPH ANIMATION */
 .stock-graph-animation {
     margin-top: 40px;
     display: flex;
@@ -2033,14 +2831,14 @@ html, body {
     stroke-dasharray: 1000;
     stroke-dashoffset: 1000;
     animation: drawGraph 4s ease-in-out forwards;
-    filter: drop-shadow(0 0 8px rgba(100, 150, 255, 0.6));
+    filter: drop-shadow(0 0 8px rgba(138, 43, 226, 0.6));
 }
 
 .graph-dot {
-    fill: #63B3ED;
+    fill: #8A2BE2;
     stroke: white;
     stroke-width: 1;
-    filter: drop-shadow(0 0 6px #63B3ED);
+    filter: drop-shadow(0 0 6px #8A2BE2);
     animation: followPath 4s ease-in-out forwards;
 }
 
@@ -2093,29 +2891,64 @@ html, body {
 }
 </style>
 
-    <div id="mainContent" style="display: none;">
+    <!-- Intro Landing Page Overlay -->
+    <div id="landingPage" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: #0A0A0A; z-index: 1000; overflow-y: auto; opacity: 0; transition: opacity 0.5s ease;">
+        <div class="container" style="max-width: 1400px; margin: 0 auto; padding: 40px 20px;">
+            <!-- Hero Section -->
+            <div style="display: flex; flex-direction: column; margin-bottom: 40px; opacity: 0; transform: translateY(20px); transition: all 0.6s ease;" class="landing-hero-section">
+                <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
+                    <svg width="50" height="50" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="40" height="40" rx="8" fill="#1A1A1A"/>
+                        <path d="M10 20L15 30L30 10" stroke="#8A2BE2" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M10 18H30" stroke="#8A2BE2" stroke-width="1.5" stroke-opacity="0.6" stroke-dasharray="1 2"/>
+                        <path d="M10 25H30" stroke="#8A2BE2" stroke-width="1.5" stroke-opacity="0.6" stroke-dasharray="1 2"/>
+                    </svg>
+                    <h1 style="font-family: 'Playfair Display', serif; font-size: 42px; margin: 0; color: #FFFFFF; letter-spacing: -0.5px; background: linear-gradient(90deg, #8A2BE2, #B05EED); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Swiss Asset Pro</h1>
+                </div>
+                <h2 style="font-family: 'Playfair Display', serif; font-size: 32px; color: #FFFFFF; margin: 20px 0; font-weight: 500;">Willkommen zur professionellen Portfolio-Simulation</h2>
+                <p style="font-family: 'Inter', sans-serif; font-size: 16px; color: #D9D9D9; max-width: 800px; line-height: 1.6;">Wählen Sie einen Bereich, um direkt einzusteigen, oder erkunden Sie alle Funktionen für eine umfassende Finanzanalyse Ihres Portfolios.</p>
+            </div>
+            
+            <!-- Panels Container -->
+            <div id="landingPanelsContainer" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 25px; opacity: 0; transform: translateY(30px); transition: all 0.8s ease;">
+                <!-- Panels werden per JavaScript dynamisch erzeugt -->
+            </div>
+        </div>
+    </div>
+    
+    <div id="mainContent" style="display: none; overflow-y: auto;">
         <header>
             <div class="container">
                 <div class="header-top">
-                    <div style="display: flex; align-items: center; gap: 15px;">
-                        <div class="logo" style="background: #0A1429; color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 16px; text-align: center; line-height: 1.2; padding: 5px; border-radius: 8px; height: 60px;">INVEST<br>SMART</div>
+                    <div style="display: flex; align-items: center; gap: 20px;">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="40" height="40" rx="8" fill="#1A1A1A"/>
+                            <path d="M10 20L15 30L30 10" stroke="#8A2BE2" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M10 18H30" stroke="#8A2BE2" stroke-width="1.5" stroke-opacity="0.6" stroke-dasharray="1 2"/>
+                            <path d="M10 25H30" stroke="#8A2BE2" stroke-width="1.5" stroke-opacity="0.6" stroke-dasharray="1 2"/>
+                        </svg>
                         <div>
-                            <h1>Swiss Asset Manager</h1>
-                            <div style="opacity: 0.8;">Professionelle Portfolio Simulation</div>
+                            <h1 class="text-accent" style="font-family: 'Playfair Display', serif; font-size: 26px; margin: 0; letter-spacing: -0.5px; text-shadow: 0 0 20px rgba(138, 43, 226, 0.3); background: linear-gradient(90deg, #8A2BE2, #B05EED); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Swiss Asset Pro</h1>
+                            <div class="text-silver" style="font-size: 13px; opacity: 0.9;">Professionelle Portfolio Simulation</div>
                         </div>
                     </div>
                     <div>
-                        <div style="font-weight: bold; font-size: 18px;">Ahmed Choudhary</div>
-                        <a href="https://www.linkedin.com/in/ahmed-choudhary-3a61371b6" class="linkedin-link" target="_blank" style="color: white;">
-                            <i class="fab fa-linkedin"></i> LinkedIn Profil
-                        </a>
+                        <div style="font-weight: 600; font-size: 15px; margin-bottom: 5px;" class="text-primary">Ahmed Choudhary</div>
+                        <div class="flex items-center gap-2 justify-between">
+                            <a href="https://www.linkedin.com/in/ahmed-choudhary-3a61371b6" class="linkedin-link" target="_blank" style="color: var(--text-silver); display: flex; align-items: center; gap: 5px; font-size: 14px; transition: all 0.3s ease;">
+                                <i class="fab fa-linkedin" style="color: #0077B5;"></i> LinkedIn Profil
+                            </a>
+                        </div>
                     </div>
                 </div>
-                <div class="nav-tabs">
-                    <div class="nav-tab active" data-page="dashboard">Dashboard</div>
+                <div class="nav-tabs" id="headerNavTabs">
+                    <div class="nav-tab" id="startseiteLink" aria-label="Zurück zur Startseite">Startseite</div>
+                    <div class="nav-tab active" data-page="getting-started">Getting Started</div>
+                    <div class="nav-tab" data-page="dashboard">Dashboard</div>
                     <div class="nav-tab" data-page="portfolio">Portfolio Entwicklung</div>
                     <div class="nav-tab" data-page="strategieanalyse">Strategie Analyse</div>
                     <div class="nav-tab" data-page="simulation">Zukunfts-Simulation</div>
+                    <div class="nav-tab" data-page="investing">Investing</div>
                     <div class="nav-tab" data-page="bericht">Bericht & Analyse</div>
                     <div class="nav-tab" data-page="markets">Märkte & News</div>
                     <div class="nav-tab" data-page="assets">Assets & Investment</div>
@@ -2146,8 +2979,126 @@ html, body {
             <div id="marketStatusText">Markets: <span id="marketStatus">SIX: <span class="market-status">--</span> NYSE: <span class="market-status">--</span> FX: <span class="market-status">--</span></span></div>
             </div>
 
+            <!-- Getting Started -->
+            <section id="getting-started" class="page active">
+                <div class="page-header">
+                    <h2>Welcome to Swiss Asset Pro</h2>
+                    <p>Ihr Leitfaden für fundierte Anlageentscheidungen</p>
+                </div>
+                
+                <div class="card">
+                    <h3>Getting Started</h3>
+                    <div class="card-content">
+                        <p>Willkommen beim Swiss Asset Pro, Ihrem umfassenden Tool für Portfoliomanagement, Investmentanalyse und Finanzplanung. Diese Plattform wurde entwickelt, um Ihnen fundierte Anlageentscheidungen mit leistungsstarken Analysen und visuellen Erkenntnissen zu ermöglichen.</p>
+                        
+                        <div class="steps-container">
+                            <div class="step">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <h4>Dashboard erkunden</h4>
+                                    <p>Erhalten Sie einen vollständigen Überblick über die Performance Ihres Portfolios, die Vermögensallokation und wichtige Kennzahlen an einem Ort.</p>
+                                    <a href="#" class="btn secondary step-btn" onclick="document.querySelector('[data-page=dashboard]').click();">Zum Dashboard</a>
+                                </div>
+                            </div>
+                            
+                            <div class="step">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <h4>Portfolio aufbauen</h4>
+                                    <p>Fügen Sie Assets zu Ihrem Portfolio hinzu und verfolgen Sie deren Performance im Zeitverlauf mit umfassenden Analysen.</p>
+                                    <a href="#" class="btn secondary step-btn" onclick="document.querySelector('[data-page=portfolio]').click();">Portfolio verwalten</a>
+                                </div>
+                            </div>
+                            
+                            <div class="step">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <h4>Anlagestrategien analysieren</h4>
+                                    <p>Vergleichen Sie verschiedene Anlagestrategien und optimieren Sie Ihre Vermögensallokation basierend auf Ihrer Risikotoleranz.</p>
+                                    <a href="#" class="btn secondary step-btn" onclick="document.querySelector('[data-page=strategieanalyse]').click();">Strategien anzeigen</a>
+                                </div>
+                            </div>
+                            
+                            <div class="step">
+                                <div class="step-number">4</div>
+                                <div class="step-content">
+                                    <h4>Simulationen durchführen</h4>
+                                    <p>Projizieren Sie zukünftige Performance mit anspruchsvollen Simulationstools, die verschiedene Marktszenarien berücksichtigen.</p>
+                                    <a href="#" class="btn secondary step-btn" onclick="document.querySelector('[data-page=simulation]').click();">Simulationen starten</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h3>Plattform-Funktionen</h3>
+                    <div class="card-content">
+                        <div class="features-grid">
+                            <div class="feature-item">
+                                <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
+                                <h4>Portfolio-Tracking</h4>
+                                <p>Echtzeit-Überwachung Ihrer Anlagen mit Performance-Kennzahlen und Analysen.</p>
+                            </div>
+                            
+                            <div class="feature-item">
+                                <div class="feature-icon"><i class="fas fa-balance-scale"></i></div>
+                                <h4>Risikobewertung</h4>
+                                <p>Umfassende Risikobewertungstools zum Verständnis und Management Ihres Portfolio-Risikos.</p>
+                            </div>
+                            
+                            <div class="feature-item">
+                                <div class="feature-icon"><i class="fas fa-random"></i></div>
+                                <h4>Portfolio-Optimierung</h4>
+                                <p>Fortschrittliche Algorithmen zur Optimierung Ihrer Vermögensallokation für bessere Renditen.</p>
+                            </div>
+                            
+                            <div class="feature-item">
+                                <div class="feature-icon"><i class="fas fa-search-dollar"></i></div>
+                                <h4>Marktanalyse</h4>
+                                <p>Bleiben Sie informiert über die neuesten Markttrends, Nachrichten und Anlagemöglichkeiten.</p>
+                            </div>
+                            
+                            <div class="feature-item">
+                                <div class="feature-icon"><i class="fas fa-calculator"></i></div>
+                                <h4>Finanzplanung</h4>
+                                <p>Tools zur Planung Ihrer Altersvorsorge, Ausbildung oder anderer finanzieller Ziele.</p>
+                            </div>
+                            
+                            <div class="feature-item">
+                                <div class="feature-icon"><i class="fas fa-file-alt"></i></div>
+                                <h4>Individuelle Berichte</h4>
+                                <p>Erstellen Sie detaillierte Berichte und Analysen, um Ihre Anlageentwicklung zu verfolgen.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="quick-links-container">
+                    <h3>Schnellzugriff</h3>
+                    <div class="quick-links">
+                        <a href="#" class="quick-link" onclick="document.querySelector('[data-page=investing]').click();">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>Anlage-Bildung</span>
+                        </a>
+                        <a href="#" class="quick-link" onclick="document.querySelector('[data-page=markets]').click();">
+                            <i class="fas fa-newspaper"></i>
+                            <span>Marktnachrichten</span>
+                        </a>
+                        <a href="#" class="quick-link" onclick="document.querySelector('[data-page=assets]').click();">
+                            <i class="fas fa-coins"></i>
+                            <span>Assets erkunden</span>
+                        </a>
+                        <a href="#" class="quick-link" onclick="document.querySelector('[data-page=methodik]').click();">
+                            <i class="fas fa-book"></i>
+                            <span>Methodik</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
             <!-- Dashboard -->
-            <section id="dashboard" class="page active">
+            <section id="dashboard" class="page">
                 <div class="page-header">
                     <h2>Portfolio Dashboard</h2>
                     <p>Erstellen und verwalten Sie Ihr persönliches Aktienportfolio</p>
@@ -2157,7 +3108,7 @@ html, body {
                     <h4>📊 Was Sie hier tun können:</h4>
                     <p>Wählen Sie Schweizer Aktien, internationale Indizes und andere Assets aus. Legen Sie für jede Anlage den Investitionsbetrag fest und klicken Sie auf "Portfolio Berechnen", um die vollständige Analyse zu erhalten.</p>
                     <div class="price-update-info">
-                        <i class="fas fa-info-circle"></i> Aktuelle Aktienkurse werden automatisch geladen und alle 15 Minuten aktualisiert
+                        <i class="fas fa-chart-line" style="margin-right: 5px"></i> <strong>Live-Daten:</strong> Aktuelle Aktienkurse werden automatisch geladen und alle 15 Minuten aktualisiert
                     </div>
                 </div>
                 
@@ -2196,7 +3147,7 @@ html, body {
                     <select class="search-input" id="assetSelect">
                         <option value="">Weitere Assets...</option>
                     </select>
-                    <button class="btn" onclick="addStock()">Aktie hinzufügen</button>
+                    <button class="btn" onclick="addStock()" style="background: #444444;">Aktie hinzufügen</button>
                     <button class="btn" onclick="addIndex()" style="background: #6B46C1;">Index hinzufügen</button>
                     <button class="btn" onclick="addAsset()" style="background: #28A745;">Asset hinzufügen</button>
                 </div>
@@ -2441,6 +3392,168 @@ html, body {
                 </div>
             </section>
 
+            <!-- Investing -->
+            <section id="investing" class="page">
+                <div class="page-header">
+                    <h2>Investing</h2>
+                    <p>Verstehen von Anlageprinzipien und Strategien</p>
+                </div>
+                
+                <div class="card">
+                    <h3>Anlageprinzipien</h3>
+                    <div class="card-content">
+                        <p>Verstehen der grundlegenden Prinzipien, die erfolgreiche langfristige Anlagestrategien leiten.</p>
+                        <div class="principles-grid">
+                            <div class="principle-item">
+                                <h4>Diversifikation</h4>
+                                <p>Verteilung von Anlagen über verschiedene Anlageklassen, Sektoren und geografische Regionen zur Risikominderung.</p>
+                                <div class="principle-image" id="diversification-img"></div>
+                            </div>
+                            <div class="principle-item">
+                                <h4>Langfristiger Fokus</h4>
+                                <p>Die Kraft des Zinseszinseffekts und die Vorteile, durch Marktzyklen hindurch investiert zu bleiben.</p>
+                                <div class="principle-image" id="long-term-img"></div>
+                            </div>
+                            <div class="principle-item">
+                                <h4>Kostenmanagement</h4>
+                                <p>Verstehen, wie Gebühren und Kosten langfristige Renditen beeinflussen, und Strategien zu deren Minimierung.</p>
+                                <div class="principle-image" id="cost-img"></div>
+                            </div>
+                            <div class="principle-item">
+                                <h4>Risikobewertung</h4>
+                                <p>Bewertung Ihrer Risikotoleranz und Erstellung eines Portfolios, das mit Ihren finanziellen Zielen übereinstimmt.</p>
+                                <div class="principle-image" id="risk-img"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Anlageformen</h3>
+                    <div class="card-content">
+                        <p>Überblick über verschiedene Anlagemöglichkeiten und ihre Eigenschaften.</p>
+                        <div class="tabs-container">
+                            <div class="tabs">
+                                <div class="tab active" data-tab="stocks">Aktien</div>
+                                <div class="tab" data-tab="bonds">Anleihen</div>
+                                <div class="tab" data-tab="etfs">ETFs</div>
+                                <div class="tab" data-tab="real-estate">Immobilien</div>
+                                <div class="tab" data-tab="alternatives">Alternative</div>
+                            </div>
+                            <div class="tab-content active" id="stocks-content">
+                                <h4>Aktien</h4>
+                                <p>Eigentumsanteile an börsennotierten Unternehmen, die Kapitalzuwachs und Dividenden bieten können.</p>
+                                <ul>
+                                    <li><strong>Wachstumsaktien:</strong> Unternehmen, von denen ein überdurchschnittliches Wachstum erwartet wird</li>
+                                    <li><strong>Substanzwertaktien:</strong> Unternehmen, die basierend auf Fundamentaldaten unterbewertet erscheinen</li>
+                                    <li><strong>Dividendenaktien:</strong> Unternehmen, die regelmäßig Gewinne an Aktionäre ausschütten</li>
+                                </ul>
+                                <div class="chart-container" id="stocks-chart"></div>
+                            </div>
+                            <div class="tab-content" id="bonds-content">
+                                <h4>Anleihen (Festverzinsliche Wertpapiere)</h4>
+                                <p>Schuldverschreibungen, bei denen Sie einer Instanz Geld leihen, die die Mittel für einen festgelegten Zeitraum zu einem variablen oder festen Zinssatz aufnimmt.</p>
+                                <ul>
+                                    <li><strong>Staatsanleihen:</strong> Ausgegeben von nationalen Regierungen</li>
+                                    <li><strong>Unternehmensanleihen:</strong> Ausgegeben von Unternehmen</li>
+                                    <li><strong>Kommunalanleihen:</strong> Ausgegeben von Ländern, Städten oder Gemeinden</li>
+                                </ul>
+                                <div class="chart-container" id="bonds-chart"></div>
+                            </div>
+                            <div class="tab-content" id="etfs-content">
+                                <h4>ETFs (Exchange-Traded Funds)</h4>
+                                <p>Wertpapierkörbe, die einen zugrunde liegenden Index abbilden und wie Aktien an Börsen gehandelt werden.</p>
+                                <ul>
+                                    <li><strong>Index-ETFs:</strong> Bilden bestimmte Indizes wie S&P 500 oder MSCI World ab</li>
+                                    <li><strong>Sektor-ETFs:</strong> Konzentrieren sich auf bestimmte Branchen</li>
+                                    <li><strong>Anleihen-ETFs:</strong> Halten festverzinsliche Wertpapiere</li>
+                                    <li><strong>Rohstoff-ETFs:</strong> Bilden Rohstoffe wie Gold oder Öl ab</li>
+                                </ul>
+                                <div class="chart-container" id="etfs-chart"></div>
+                            </div>
+                            <div class="tab-content" id="real-estate-content">
+                                <h4>Immobilieninvestitionen</h4>
+                                <p>Immobilieninvestitionen, die durch Wertsteigerung und Mieteinnahmen Einkommen generieren können.</p>
+                                <ul>
+                                    <li><strong>REITs:</strong> Immobilien-Investmentfonds, die ertragsgenerierende Immobilien besitzen und betreiben</li>
+                                    <li><strong>Direktes Eigentum:</strong> Kauf von Wohn- oder Gewerbeimmobilien</li>
+                                    <li><strong>Immobilienfonds:</strong> Gebündelte Investitionen in Immobilienvermögen</li>
+                                </ul>
+                                <div class="chart-container" id="real-estate-chart"></div>
+                            </div>
+                            <div class="tab-content" id="alternatives-content">
+                                <h4>Alternative Anlagen</h4>
+                                <p>Nicht-traditionelle Vermögenswerte jenseits von Aktien, Anleihen und Bargeld, die Diversifikationsvorteile bieten können.</p>
+                                <ul>
+                                    <li><strong>Private Equity:</strong> Investitionen in private Unternehmen</li>
+                                    <li><strong>Hedge-Fonds:</strong> Aktiv verwaltete Investmentpools mit spezialisierten Strategien</li>
+                                    <li><strong>Rohstoffe:</strong> Physische Güter wie Gold, Öl oder Agrarprodukte</li>
+                                    <li><strong>Kryptowährungen:</strong> Digitale Vermögenswerte, die Blockchain-Technologie nutzen</li>
+                                </ul>
+                                <div class="chart-container" id="alternatives-chart"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Anlagestrategien</h3>
+                    <div class="card-content">
+                        <p>Verschiedene Ansätze zum Aufbau und zur Verwaltung Ihres Anlageportfolios.</p>
+                        <div class="strategy-comparison">
+                            <table class="strategy-table">
+                                <thead>
+                                    <tr>
+                                        <th>Strategie</th>
+                                        <th>Beschreibung</th>
+                                        <th>Risikoniveau</th>
+                                        <th>Zeithorizont</th>
+                                        <th>Am besten für</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Kaufen und Halten</td>
+                                        <td>Langfristiger Anlageansatz, der häufigen Handel vermeidet</td>
+                                        <td>Moderat</td>
+                                        <td>Lang (10+ Jahre)</td>
+                                        <td>Passive Anleger, die stetiges Wachstum suchen</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Kosten-Durchschnitts-Methode</td>
+                                        <td>Investieren fester Beträge in regelmäßigen Abständen unabhängig vom Preis</td>
+                                        <td>Niedrig bis Moderat</td>
+                                        <td>Mittel bis Lang</td>
+                                        <td>Regelmäßige Sparer, die Vermögen im Laufe der Zeit aufbauen</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Wertorientiertes Investieren</td>
+                                        <td>Suche nach unterbewerteten Vermögenswerten unter ihrem inneren Wert</td>
+                                        <td>Moderat</td>
+                                        <td>Mittel bis Lang</td>
+                                        <td>Forschungsorientierte Anleger</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Wachstumsorientiertes Investieren</td>
+                                        <td>Fokussierung auf Unternehmen mit überdurchschnittlichem Wachstumspotenzial</td>
+                                        <td>Hoch</td>
+                                        <td>Lang</td>
+                                        <td>Anleger, die Kapitalzuwachs anstreben</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Einkommensorientiertes Investieren</td>
+                                        <td>Aufbau eines Portfolios, das regelmäßiges Einkommen generiert</td>
+                                        <td>Niedrig bis Moderat</td>
+                                        <td>Mittel bis Lang</td>
+                                        <td>Rentner oder Personen, die Cashflow benötigen</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <!-- Bericht & Analyse -->
             <section id="bericht" class="page">
                 <div class="page-header">
@@ -2542,7 +3655,7 @@ html, body {
                     <h4>📰 Marktübersicht:</h4>
                     <p>Bleiben Sie über die aktuellen Entwicklungen an den Finanzmärkten informiert. Daten werden alle 15 Minuten automatisch aktualisiert.</p>
                     <div class="auto-refresh-info">
-                        <i class="fas fa-info-circle"></i> Nächste Aktualisierung in: <span id="nextRefresh">--:--</span>
+                        <i class="fas fa-sync-alt fa-spin-pulse" style="margin-right: 5px"></i> Nächste Aktualisierung in: <span id="nextRefresh" style="font-weight: 600">--:--</span>
                     </div>
                     <button class="refresh-button" onclick="refreshAllMarkets()">
                         <i class="fas fa-sync-alt"></i> Jetzt aktualisieren
@@ -2750,7 +3863,6 @@ html, body {
                 <div class="card">
                     <h3>Ahmed Choudhary</h3>
                     <p><strong>Portfolioanalyst & Finanzanalyst</strong></p>
-                    <p>Bachelor-Student in Banking & Finance an der Universität Zürich (UZH)</p>
                     
                     <div style="margin: 20px 0;">
                         <a href="https://www.linkedin.com/in/ahmed-choudhary-3a61371b6" class="linkedin-link" target="_blank">
@@ -2759,14 +3871,14 @@ html, body {
                     </div>
                     
                     <h4>Über mich:</h4>
-                    <p>Als Bachelor-Student in Banking & Finance an der Universität Zürich habe ich diese umfassende Portfolio-Simulationsplattform entwickelt, um quantitative Finanzanalyse mit praktischer Anwendung zu verbinden. Mein Fokus liegt auf der Optimierung von Portfolios unter Berücksichtigung modernster finanzieller Modelle und Risikomanagement-Techniken.</p>
+                    <p>Ich habe diese umfassende Portfolio-Simulationsplattform entwickelt, um quantitative Finanzanalyse mit praktischer Anwendung zu verbinden. Mein Fokus liegt auf der Optimierung von Portfolios unter Berücksichtigung modernster finanzieller Modelle und Risikomanagement-Techniken.</p>
                     
                     <h4>Kontakt:</h4>
                     <p>Email: <a href="mailto:ahmedch1999@gmail.com" class="email-link">ahmedch1999@gmail.com</a></p>
                     
-                    <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; margin-top: 20px;">
-                        <h4>Über diese Plattform:</h4>
-                        <p>Der Swiss Asset Manager kombiniert moderne Finanztechnologie mit wissenschaftlichen Berechnungsmethoden. Alle Analysen basieren auf etablierten finanziellen Modellen wie Markowitz-Portfolio-Optimierung, Monte Carlo Simulationen und Risikoparität. Die Plattform wurde entwickelt, um sowohl privaten Anlegern als auch professionellen Investoren tiefe Einblicke in Portfolio-Performance und Risikomanagement zu bieten.</p>
+                    <div style="background: #2A2A2A; padding: 15px; border-radius: 8px; margin-top: 20px; border: 1px solid var(--border-light); box-shadow: var(--shadow-soft);">
+                        <h4 style="color: #E8E8E8;">Über diese Plattform:</h4>
+                        <p style="color: #E0E0E0;">Der Swiss Asset Pro kombiniert moderne Finanztechnologie mit wissenschaftlichen Berechnungsmethoden. Alle Analysen basieren auf etablierten finanziellen Modellen wie Markowitz-Portfolio-Optimierung, Monte Carlo Simulationen und Risikoparität. Die Plattform wurde entwickelt, um sowohl privaten Anlegern als auch professionellen Investoren tiefe Einblicke in Portfolio-Performance und Risikomanagement zu bieten.</p>
                     </div>
                 </div>
 
@@ -2776,34 +3888,34 @@ html, body {
                     <p>Diese Plattform verwendet Daten von folgenden Quellen:</p>
                     
                     <div class="sources-grid">
-                        <div class="source-card">
-                            <h4>Yahoo Finance</h4>
-                            <p><strong>Verwendet für:</strong> Aktuelle Aktienkurse, historische Kursdaten, Marktinformationen</p>
-                            <p><strong>Website:</strong> <a href="https://finance.yahoo.com" class="news-link" target="_blank">finance.yahoo.com</a></p>
+                        <div class="source-card" style="background: linear-gradient(145deg, #2A2A2A, #232323); border: 1px solid var(--border-light); box-shadow: var(--shadow-soft);">
+                            <h4 style="color: #E8E8E8;">Yahoo Finance</h4>
+                            <p><strong style="color: #E8E8E8;">Verwendet für:</strong> <span style="color: #E0E0E0;">Aktuelle Aktienkurse, historische Kursdaten, Marktinformationen</span></p>
+                            <p><strong style="color: #E8E8E8;">Website:</strong> <a href="https://finance.yahoo.com" class="news-link" target="_blank" style="color: var(--accent-violet);">finance.yahoo.com</a></p>
                         </div>
                         
-                        <div class="source-card">
-                            <h4>Swiss Exchange (SIX)</h4>
-                            <p><strong>Verwendet für:</strong> Schweizer Aktienkurse, SMI Daten</p>
-                            <p><strong>Website:</strong> <a href="https://www.six-group.com" class="news-link" target="_blank">www.six-group.com</a></p>
+                        <div class="source-card" style="background: linear-gradient(145deg, #2A2A2A, #232323); border: 1px solid var(--border-light); box-shadow: var(--shadow-soft);">
+                            <h4 style="color: #E8E8E8;">Swiss Exchange (SIX)</h4>
+                            <p><strong style="color: #E8E8E8;">Verwendet für:</strong> <span style="color: #E0E0E0;">Schweizer Aktienkurse, SMI Daten</span></p>
+                            <p><strong style="color: #E8E8E8;">Website:</strong> <a href="https://www.six-group.com" class="news-link" target="_blank" style="color: var(--accent-violet);">www.six-group.com</a></p>
                         </div>
                         
-                        <div class="source-card">
-                            <h4>Bloomberg</h4>
-                            <p><strong>Verwendet für:</strong> Benchmark-Indizes, Marktdaten</p>
-                            <p><strong>Website:</strong> <a href="https://www.bloomberg.com" class="news-link" target="_blank">www.bloomberg.com</a></p>
+                        <div class="source-card" style="background: linear-gradient(145deg, #2A2A2A, #232323); border: 1px solid var(--border-light); box-shadow: var(--shadow-soft);">
+                            <h4 style="color: #E8E8E8;">Bloomberg</h4>
+                            <p><strong style="color: #E8E8E8;">Verwendet für:</strong> <span style="color: #E0E0E0;">Benchmark-Indizes, Marktdaten</span></p>
+                            <p><strong style="color: #E8E8E8;">Website:</strong> <a href="https://www.bloomberg.com" class="news-link" target="_blank" style="color: var(--accent-violet);">www.bloomberg.com</a></p>
                         </div>
                         
-                        <div class="source-card">
-                            <h4>Finanznachrichten</h4>
-                            <p><strong>Quellen:</strong> Finanz und Wirtschaft, Handelszeitung, NZZ, Financial Times</p>
-                            <p><strong>Verwendet für:</strong> Aktuelle Marktnews und Analysen</p>
+                        <div class="source-card" style="background: linear-gradient(145deg, #2A2A2A, #232323); border: 1px solid var(--border-light); box-shadow: var(--shadow-soft);">
+                            <h4 style="color: #E8E8E8;">Finanznachrichten</h4>
+                            <p><strong style="color: #E8E8E8;">Quellen:</strong> <span style="color: #E0E0E0;">Finanz und Wirtschaft, Handelszeitung, NZZ, Financial Times</span></p>
+                            <p><strong style="color: #E8E8E8;">Verwendet für:</strong> <span style="color: #E0E0E0;">Aktuelle Marktnews und Analysen</span></p>
                         </div>
                     </div>
                     
-                    <div style="background: #e7f3ff; padding: 15px; border-radius: 8px; margin-top: 20px;">
-                        <h4>Hinweis zu den Daten:</h4>
-                        <p>Alle Daten werden in Echtzeit von den genannten Quellen bezogen und automatisch verarbeitet. Bei Verbindungsproblemen werden simulierte Daten verwendet, die auf historischen Mustern basieren. Die Genauigkeit der Daten hängt von der Verfügbarkeit der Quellen ab.</p>
+                    <div style="background: rgba(138, 43, 226, 0.1); padding: 15px; border-radius: 8px; margin-top: 20px; border: 1px solid rgba(138, 43, 226, 0.3); box-shadow: var(--shadow-soft);">
+                        <h4 style="color: #E8E8E8;">Hinweis zu den Daten:</h4>
+                        <p style="color: #E0E0E0;">Alle Daten werden in Echtzeit von den genannten Quellen bezogen und automatisch verarbeitet. Bei Verbindungsproblemen werden simulierte Daten verwendet, die auf historischen Mustern basieren. Die Genauigkeit der Daten hängt von der Verfügbarkeit der Quellen ab.</p>
                     </div>
                 </div>
             </section>
@@ -2923,9 +4035,15 @@ html, body {
                     setTimeout(() => {
                         document.getElementById('welcomeScreen').style.display = 'none';
                         document.getElementById('mainContent').style.display = 'block';
+                        document.querySelector('footer').style.display = 'block';
                         initializeApplication();
                         startAutoRefresh();
                     }, 4500);
+                    
+                    // Setup Landing Page nach dem Laden
+                    setTimeout(() => {
+                        initializeLandingPage();
+                    }, 4600);
                     
                 } else {
                     errorElement.style.display = 'block';
@@ -2939,6 +4057,128 @@ html, body {
                 console.error('Error:', error);
                 errorElement.style.display = 'block';
             });
+            
+            /**
+             * Initialisiert die Landing-Page
+             * (a) Erzeugt dynamisch Panels aus den Header-Links
+             * (b) Zeigt das Overlay nach dem Loading an
+             * (c) Fügt Event Listener hinzu
+             */
+            function initializeLandingPage() {
+                // Panels aus Navigation-Tabs generieren
+                const panelsContainer = document.getElementById('landingPanelsContainer');
+                const navTabs = document.querySelectorAll('#headerNavTabs .nav-tab:not(#startseiteLink)');
+                
+                // Icons für die jeweiligen Tabs
+                const tabIcons = {
+                    'getting-started': 'fa-play-circle',
+                    'dashboard': 'fa-chart-line',
+                    'portfolio': 'fa-chart-pie',
+                    'strategieanalyse': 'fa-chart-bar',
+                    'simulation': 'fa-rocket',
+                    'investing': 'fa-hand-holding-usd',
+                    'bericht': 'fa-file-alt',
+                    'markets': 'fa-globe',
+                    'assets': 'fa-coins',
+                    'methodik': 'fa-calculator',
+                    'about': 'fa-user'
+                };
+                
+                // Beschreibungen für die jeweiligen Tabs
+                const tabDescriptions = {
+                    'getting-started': 'Einstieg und erste Schritte zur Portfolioerstellung',
+                    'dashboard': 'Überblick über Ihr Portfolio und aktuelle Kennzahlen',
+                    'portfolio': 'Detaillierte Entwicklung Ihrer Anlagen über Zeit',
+                    'strategieanalyse': 'Vergleich verschiedener Portfolio-Strategien',
+                    'simulation': 'Zukunftsprognosen und Szenarioanalyse',
+                    'investing': 'Anlagestrategien und Investmentmöglichkeiten',
+                    'bericht': 'Detaillierte Berichte und tiefergehende Analyse',
+                    'markets': 'Aktuelle Marktdaten und Finanznachrichten',
+                    'assets': 'Übersicht aller verfügbaren Anlageklassen',
+                    'methodik': 'Erklärung der verwendeten Berechnungsmethoden',
+                    'about': 'Informationen über den Entwickler'
+                };
+                
+                // HTML für die Panels erstellen
+                let panelDelay = 0;
+                navTabs.forEach(tab => {
+                    const pageName = tab.dataset.page;
+                    const tabText = tab.textContent;
+                    const iconClass = tabIcons[pageName] || 'fa-star';
+                    const description = tabDescriptions[pageName] || '';
+                    
+                    panelDelay += 0.1;
+                    
+                    const cardElement = document.createElement('div');
+                    cardElement.className = 'landing-card';
+                    cardElement.setAttribute('aria-label', `${tabText} öffnen`);
+                    cardElement.style.animation = `fadeInUp 0.6s ease ${panelDelay}s forwards`;
+                    cardElement.style.opacity = '0';
+                    
+                    cardElement.innerHTML = `
+                        <div class="landing-card-icon">
+                            <i class="fas ${iconClass}"></i>
+                        </div>
+                        <h3>${tabText}</h3>
+                        <p>${description}</p>
+                    `;
+                    
+                    // Event Listener für Klick auf Panel
+                    cardElement.addEventListener('click', () => {
+                        hideLandingPage();
+                        const pageName = tab.dataset.page;
+                        if (pageName) {
+                            switchToPage(pageName); // Direkt zur entsprechenden Seite wechseln
+                        }
+                    });
+                    
+                    panelsContainer.appendChild(cardElement);
+                });
+                
+                // Hero-Section Animation
+                setTimeout(() => {
+                    document.querySelector('.landing-hero-section').style.opacity = '1';
+                    document.querySelector('.landing-hero-section').style.transform = 'translateY(0)';
+                }, 100);
+                
+                // Panels Container Animation
+                setTimeout(() => {
+                    document.getElementById('landingPanelsContainer').style.opacity = '1';
+                    document.getElementById('landingPanelsContainer').style.transform = 'translateY(0)';
+                }, 300);
+                
+                // Landing Page anzeigen
+                const landingPage = document.getElementById('landingPage');
+                landingPage.style.display = 'block';
+                setTimeout(() => {
+                    landingPage.style.opacity = '1';
+                }, 50);
+                
+                // Event Listener für "Startseite" Tab
+                document.getElementById('startseiteLink').addEventListener('click', showLandingPage);
+            }
+            
+            /**
+             * Zeigt die Landing Page an
+             */
+            function showLandingPage() {
+                const landingPage = document.getElementById('landingPage');
+                landingPage.style.display = 'block';
+                setTimeout(() => {
+                    landingPage.style.opacity = '1';
+                }, 50);
+            }
+            
+            /**
+             * Blendet die Landing Page aus
+             */
+            function hideLandingPage() {
+                const landingPage = document.getElementById('landingPage');
+                landingPage.style.opacity = '0';
+                setTimeout(() => {
+                    landingPage.style.display = 'none';
+                }, 500);
+            }
         }
 
         // Enter-Taste für Passwort
@@ -2989,6 +4229,9 @@ html, body {
             updatePortfolioReturn();
             refreshMarketData();
             loadBenchmarkData();
+            
+            // Set Getting Started as the active page
+            setTimeout(switchToGettingStarted, 100);
         }
 
         function updateLastUpdateTime() {
@@ -3786,8 +5029,8 @@ html, body {
         }
 
         // Chart Funktionen
-        const stockColors = ['#0A1429', '#1E3A5C', '#2B6CB0', '#3182CE', '#4299E1', '#63B3ED'];
-        const indexColors = ['#6B46C1', '#805AD5', '#9F7AEA', '#B794F4', '#D6BCFA'];
+        const stockColors = ['#8A2BE2', '#9D42E8', '#B05EED', '#C47AF2', '#D8A6F7', '#E9D1FB'];
+        const indexColors = ['#3D3D3D', '#4F4F4F', '#666666', '#808080', '#9F9F9F'];
         const otherAssetColors = ['#28A745', '#34D399', '#10B981', '#059669', '#047857', '#065F46'];
 
         function createAllCharts() {
@@ -4463,9 +5706,9 @@ html, body {
                         <p>Hier sehen Sie Ihr Portfolio optimiert nach 5 wissenschaftlichen Methoden. Jede Strategie hat unterschiedliche Ziele: Maximale Rendite, minimales Risiko, oder optimale Balance.</p>
                     </div>
                     <div class="card" style="text-align: center; margin-bottom: 30px;">
-                        <h3>Portfolio Strategie-Vergleich</h3>
+                        <h3 style="color: #ffffff; font-weight: 600; text-shadow: 0 1px 3px rgba(0,0,0,0.3);">Portfolio Strategie-Vergleich</h3>
                         <p>Bitte erstellen Sie zuerst ein Portfolio im Dashboard und klicken Sie auf "Portfolio Berechnen".</p>
-                        <button class="btn" onclick="switchToDashboard()" style="margin-top: 15px;">Zum Dashboard</button>
+                        <button class="btn" onclick="switchToDashboard()" style="margin-top: 15px; background: linear-gradient(145deg, #3A3A3A, #303030); color: #E8E8E8; border: 1px solid var(--border-light);">Zum Dashboard</button>
                     </div>
                 `;
                 return;
@@ -4489,7 +5732,7 @@ html, body {
 
                 <div class="strategy-comparison">
                     <div>
-                        <h3>Strategie-Vergleich</h3>
+                        <h3 style="color: #ffffff; font-weight: 600; text-shadow: 0 1px 3px rgba(0,0,0,0.3);">Strategie-Vergleich</h3>
                         <table class="comparison-table">
                             <thead>
                                 <tr>
@@ -4503,10 +5746,10 @@ html, body {
                             <tbody>
                                 ${strategies.map(strategy => `
                                     <tr>
-                                        <td style="text-align: left; font-weight: bold;">${strategy.name}</td>
-                                        <td class="${strategy.return >= 0 ? 'positive' : 'negative'}">${strategy.return >= 0 ? '+' : ''}${strategy.return}%</td>
-                                        <td>${strategy.risk}%</td>
-                                        <td>${strategy.sharpe}</td>
+                                        <td style="text-align: left; font-weight: bold; color: #E8E8E8;">${strategy.name}</td>
+                                        <td class="${strategy.return >= 0 ? 'positive' : 'negative'}" style="font-weight: 600;">${strategy.return >= 0 ? '+' : ''}${strategy.return}%</td>
+                                        <td style="color: #C0C0FF; font-weight: 500;">${strategy.risk}%</td>
+                                        <td style="color: #FFD700; font-weight: 500;">${strategy.sharpe}</td>
                                         <td><span class="recommendation-badge ${strategy.badgeClass}">${strategy.recommendation}</span></td>
                                     </tr>
                                 `).join('')}
@@ -4530,22 +5773,22 @@ html, body {
                     <canvas id="strategyComparisonChart"></canvas>
                 </div>
 
-                <h3 style="margin-top: 30px;">Detaillierte Strategie-Analyse</h3>
+                <h3 style="margin-top: 30px; color: #E8E8E8;">Detaillierte Strategie-Analyse</h3>
                 <div class="strategy-grid">
                     ${strategies.map(strategy => `
-                        <div class="strategy-card ${strategy.cardClass}">
-                            <h4>${strategy.name}</h4>
-                            <p><strong>Ziel:</strong> ${strategy.description}</p>
-                            <div class="optimization-result">
-                                <p><strong>Optimierte Rendite:</strong> <span class="${strategy.return >= 0 ? 'positive' : 'negative'}">${strategy.return >= 0 ? '+' : ''}${strategy.return}%</span></p>
-                                <p><strong>Optimiertes Risiko:</strong> ${strategy.risk}%</p>
-                                <p><strong>Verbesserung:</strong> 
-                                    <span class="improvement-indicator ${strategy.improvement > 0 ? 'improvement-positive' : 'improvement-negative'}">
+                        <div class="strategy-card ${strategy.cardClass}" style="background: linear-gradient(145deg, #2A2A2A, #232323); border: 1px solid var(--border-light); box-shadow: var(--shadow-soft);">
+                            <h4 style="color: #E8E8E8;">${strategy.name}</h4>
+                            <p><strong style="color: #E8E8E8;">Ziel:</strong> <span style="color: #E0E0E0;">${strategy.description}</span></p>
+                            <div class="optimization-result" style="background: rgba(138, 43, 226, 0.1); padding: 12px; border-radius: 8px; margin: 10px 0;">
+                                <p><strong style="color: #E8E8E8;">Optimierte Rendite:</strong> <span class="${strategy.return >= 0 ? 'positive' : 'negative'}" style="font-weight: bold;">${strategy.return >= 0 ? '+' : ''}${strategy.return}%</span></p>
+                                <p><strong style="color: #E8E8E8;">Optimiertes Risiko:</strong> <span style="color: #E0E0E0;">${strategy.risk}%</span></p>
+                                <p><strong style="color: #E8E8E8;">Verbesserung:</strong> 
+                                    <span class="improvement-indicator ${strategy.improvement > 0 ? 'improvement-positive' : 'improvement-negative'}" style="font-weight: bold;">
                                         ${strategy.improvement > 0 ? '↗' : '↘'} ${strategy.improvement}%
                                     </span>
                                 </p>
                             </div>
-                            <p><strong>Empfehlung:</strong> ${strategy.detailedRecommendation}</p>
+                            <p><strong style="color: #E8E8E8;">Empfehlung:</strong> <span style="color: #E0E0E0;">${strategy.detailedRecommendation}</span></p>
                         </div>
                     `).join('')}
                 </div>
@@ -4802,24 +6045,52 @@ html, body {
             return "Ausgewogene Sektor-Allokation";
         }
 
-        function switchToDashboard() {
+        /**
+         * Wechselt zu einer bestimmten Seite anhand des Seitennamens
+         * @param {string} pageName - Name der Seite (z.B. "dashboard", "portfolio", etc.)
+         */
+        function switchToPage(pageName) {
             document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
-            document.querySelector('[data-page="dashboard"]').classList.add('active');
+            const targetTab = document.querySelector(`[data-page="${pageName}"]`);
+            if (targetTab) {
+                targetTab.classList.add('active');
+            }
+            
             document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
-            document.getElementById('dashboard').classList.add('active');
+            const targetPage = document.getElementById(pageName);
+            if (targetPage) {
+                targetPage.classList.add('active');
+                
+                // Spezielle Aktionen für bestimmte Seiten
+                if (pageName === 'strategieanalyse') {
+                    setTimeout(updateStrategyAnalysis, 100);
+                }
+            }
+        }
+        
+        function switchToDashboard() {
+            switchToPage('dashboard');
+        }
+        
+        function switchToGettingStarted() {
+            switchToPage('getting-started');
         }
 
         // Navigation
         document.querySelectorAll('.nav-tab').forEach(tab => {
             tab.addEventListener('click', () => {
-                document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
-                tab.classList.add('active');
-                document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
-                document.getElementById(tab.dataset.page).classList.add('active');
+                // Wenn es der "Startseite" Link ist, zeigen wir die Landing Page und beenden früh
+                if (tab.id === 'startseiteLink') {
+                    showLandingPage();
+                    return;
+                }
                 
-                // Strategie-Analyse aktualisieren wenn diese Seite aktiv wird
-                if (tab.dataset.page === 'strategieanalyse') {
-                    setTimeout(updateStrategyAnalysis, 100);
+                // Landing Page ausblenden, falls sie aktiv ist
+                hideLandingPage();
+                
+                // Zur entsprechenden Seite wechseln, falls ein data-page Attribut existiert
+                if (tab.dataset.page) {
+                    switchToPage(tab.dataset.page);
                 }
             });
         });
@@ -4882,25 +6153,88 @@ html, body {
 
         // Alle 60 Sekunden updaten
         setInterval(updateGlobalMarketStatus, 60000);
-        updateGlobalMarketStatus(); // Sofort ausführen        
+        updateGlobalMarketStatus(); // Sofort ausführen
+        
+        // Handle tabs in the Investing page
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabs = document.querySelectorAll('.tabs .tab');
+            
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    // Remove active class from all tabs and content
+                    document.querySelectorAll('.tabs .tab').forEach(t => t.classList.remove('active'));
+                    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                    
+                    // Add active class to clicked tab
+                    this.classList.add('active');
+                    
+                    // Show corresponding content
+                    const tabId = this.getAttribute('data-tab');
+                    document.getElementById(tabId + '-content').classList.add('active');
+                });
+            });
+            
+            // Initialize charts when visiting the investing page
+            document.querySelector('[data-page="investing"]').addEventListener('click', function() {
+                setTimeout(initInvestingCharts, 100);
+            });
+            
+            // Set the default active page to Getting Started
+            setTimeout(switchToGettingStarted, 100);
+        });
+        
+        function initInvestingCharts() {
+            // Stocks chart
+            if (document.getElementById('stocks-chart')) {
+                new Chart(document.getElementById('stocks-chart'), {
+                    type: 'line',
+                    data: {
+                        labels: ['2010', '2012', '2014', '2016', '2018', '2020', '2022'],
+                        datasets: [{
+                            label: 'Growth Stocks',
+                            data: [100, 120, 140, 180, 220, 260, 280],
+                            borderColor: 'rgba(75, 192, 192, 1)',
+                            tension: 0.1
+                        }, {
+                            label: 'Value Stocks',
+                            data: [100, 110, 125, 140, 160, 170, 190],
+                            borderColor: 'rgba(153, 102, 255, 1)',
+                            tension: 0.1
+                        }, {
+                            label: 'Dividend Stocks',
+                            data: [100, 115, 130, 150, 165, 180, 195],
+                            borderColor: 'rgba(255, 159, 64, 1)',
+                            tension: 0.1
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            title: {
+                                display: true,
+                                text: 'Stock Performance (Indexed)'
+                            }
+                        }
+                    }
+                });
+            }
+        }
     </script>
 
-    <!-- Finance Footer -->
-    <footer class="finance-footer">
-        <div class="footer-content">
-            <div class="footer-links">
-                <a href="https://www.six-group.com" target="_blank" class="footer-link">
-                    <i class="fas fa-chart-line"></i> SIX Swiss Exchange
+    <!-- Footer -->
+    <footer class="bg-black-main border-t border-panel" style="padding: 2rem 0; font-family: 'Playfair Display', serif;">
+        <div class="max-w-7xl mx-auto px-10 lg:px-12 flex flex-col md:flex-row justify-between items-center">
+            <span style="color: #E0E0E0; font-size: 0.9rem; letter-spacing: 0.5px; margin-left: 25px;">© 2025 Swiss Asset Pro – Invest Smarter</span>
+            <div style="display: flex; flex-direction: column; align-items: flex-end; margin-top: 1rem; margin-right: 35px;">
+                <a href="https://www.six-group.com" target="_blank" style="color: #E0E0E0; margin-bottom: 0.6rem; text-decoration: none; font-family: 'Inter', sans-serif; transition: all 0.3s; font-size: 0.9rem;">
+                    <i class="fas fa-chart-line" style="margin-right: 0.5rem;"></i> SIX Group
                 </a>
-                <a href="https://www.bloomberg.com/europe" target="_blank" class="footer-link">
-                    <i class="fas fa-globe"></i> Bloomberg Markets
+                <a href="https://finance.yahoo.com" target="_blank" style="color: #E0E0E0; margin-bottom: 0.6rem; text-decoration: none; font-family: 'Inter', sans-serif; transition: all 0.3s; font-size: 0.9rem;">
+                    <i class="fab fa-yahoo" style="margin-right: 0.5rem;"></i> Yahoo Finance
                 </a>
-                <a href="https://finance.yahoo.com" target="_blank" class="footer-link">
-                    <i class="fas fa-dollar-sign"></i> Yahoo Finance
+                <a href="https://www.bloomberg.com" target="_blank" style="color: #E0E0E0; text-decoration: none; font-family: 'Inter', sans-serif; transition: all 0.3s; font-size: 0.9rem;">
+                    <i class="fas fa-globe" style="margin-right: 0.5rem;"></i> Bloomberg
                 </a>
-            </div>
-            <div class="footer-info">
-                <span>Real-time Financial Data</span>
             </div>
         </div>
     </footer>
@@ -4910,7 +6244,7 @@ html, body {
 
 if __name__ == '__main__':
     print("=" * 80)
-    print("SWISS ASSET MANAGER - PROFESSIONELLE PORTFOLIO SIMULATION")
+    print("SWISS ASSET PRO - PROFESSIONELLE PORTFOLIO SIMULATION")
     print("=" * 80)
     print("📊 Die Anwendung ist jetzt verfügbar unter: http://localhost:8000")
     print("🔐 Passwort für den Zugang: swissassetmanagerAC")
@@ -4925,4 +6259,19 @@ if __name__ == '__main__':
     print("=" * 80)
     
     port = int(os.environ.get('PORT', 8000))
+    print(f"Versuchen Sie, die App auf Ihrem Handy mit dieser URL zu öffnen:")
+    import socket
+    # Alle IP-Adressen des Computers abrufen
+    hostname = socket.gethostname()
+    try:
+        # Versuchen, alle IP-Adressen zu erhalten
+        ip_addresses = socket.gethostbyname_ex(hostname)[2]
+        for ip in ip_addresses:
+            print(f"http://{ip}:{port}")
+    except:
+        # Fallback auf eine Standard-IP
+        print(f"http://192.168.1.9:{port}")
+    
+    print(f"Passwort für den Zugang: swissassetmanagerAC")
     app.run(host='0.0.0.0', port=port, debug=False)
+
