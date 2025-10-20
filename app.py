@@ -158,7 +158,7 @@ except Exception:
 
 app = Flask(__name__)
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
-app.config['SECRET_KEY'] = os.environ.get('FLASK_SECRET_KEY', 'CHANGE_ME_BEFORE_PRODUCTION')
+app.config['SECRET_KEY'] = 'swiss_asset_manager_secret_key_2025'
 socketio = SocketIO(app, cors_allowed_origins="*")
 app_start_time = time.time()
 
@@ -333,8 +333,8 @@ init_database()
 def serve_static(filename):
     return send_from_directory('static', filename)
 
-# Passwort-Schutz (aus Environment Variable)
-PASSWORD = os.environ.get('APP_PASSWORD', 'CHANGE_ME_BEFORE_USE')
+# Passwort-Schutz
+PASSWORD = "y4YpFgdLJD1tK19"
 
 # Spracheinstellung
 CURRENT_LANGUAGE = "de"
