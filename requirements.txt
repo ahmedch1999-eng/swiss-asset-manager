@@ -1,9 +1,30 @@
-flask
-yfinance
-numpy
-pandas
-scipy
-reportlab
-matplotlib
-seaborn
-gunicorn
+# Updated: 2025-10-17 - Free Data Sources Edition
+# Keine API-Keys erforderlich - Kostenlose öffentliche Endpunkte!
+
+# Core
+flask>=2.3.0
+flask-socketio>=5.3.0
+python-socketio>=5.10.0
+python-dotenv>=1.0.0
+
+# Data & Analysis
+yfinance>=0.2.30
+pandas>=2.0.0
+numpy>=1.24.0
+scipy>=1.11.0
+
+# Validation & Security  
+pydantic>=2.5.0
+
+# HTTP & Requests
+requests>=2.31.0
+urllib3>=2.0.0
+
+# PDF Generation
+reportlab>=4.0.0
+
+# Other
+beautifulsoup4>=4.12.0
+lxml>=4.9.0
+feedparser>=6.0.0
+

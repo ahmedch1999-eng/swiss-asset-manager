@@ -1,0 +1,12 @@
+✅ PDF Export Fix implementiert!
+
+Problem: "Unknown format code 'f' for object of type 'str'"
+
+Lösung:
+1. Portfolio investment & weight → safe float() conversion mit try/except
+2. Metriken → explizit als str() behandelt
+3. send_file import hinzugefügt
+
+Status: READY TO TEST
+Datum: 2025-10-20 01:42
+

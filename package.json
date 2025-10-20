@@ -1,0 +1,49 @@
+{
+  "name": "swiss-asset-pro",
+  "version": "1.0.0",
+  "description": "Professional Portfolio Simulation and Investment Analysis PWA",
+  "main": "app.py",
+  "scripts": {
+    "test": "pytest",
+    "lint": "flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics",
+    "format": "black .",
+    "format-check": "black --check --diff .",
+    "lighthouse": "lhci autorun",
+    "performance": "k6 run performance-tests.js",
+    "build": "echo 'No build step required for Python app'",
+    "start": "python app.py",
+    "dev": "python app.py",
+    "docker:build": "docker build -f Dockerfile.production -t swiss-asset-pro:latest .",
+    "docker:run": "docker run -p 3000:3000 swiss-asset-pro:latest",
+    "docker:compose": "docker-compose -f docker-compose.prod.yml up -d",
+    "docker:logs": "docker-compose -f docker-compose.prod.yml logs -f",
+    "docker:down": "docker-compose -f docker-compose.prod.yml down"
+  },
+  "keywords": [
+    "pwa",
+    "portfolio",
+    "investment",
+    "finance",
+    "swiss",
+    "asset-management",
+    "progressive-web-app"
+  ],
+  "author": "Swiss Asset Pro Team",
+  "license": "MIT",
+  "devDependencies": {
+    "@lhci/cli": "^0.12.0",
+    "k6": "^0.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "python": ">=3.8.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/swiss-asset-manager.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-username/swiss-asset-manager/issues"
+  },
+  "homepage": "https://swissassetpro.com"
+}

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug Login - Swiss Asset Manager</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #1a1d23 0%, #2d3748 100%);
+            color: #e9eef2;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .login-container {
+            background: rgba(45, 55, 72, 0.95);
+            padding: 40px;
+            border-radius: 16px;
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            text-align: center;
+            min-width: 350px;
+        }
+        .login-title {
+            color: #8b5cf6;
+            font-size: 24px;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+        .input-group {
+            margin-bottom: 20px;
+        }
+        input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            border-radius: 8px;
+            background: rgba(15, 17, 18, 0.6);
+            color: #e9eef2;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        button {
+            background: linear-gradient(145deg, #8b5cf6, #7223c7);
+            color: white;
+            font-weight: 600;
+            padding: 12px 25px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(138, 43, 226, 0.4);
+        }
+        .status {
+            margin-top: 15px;
+            font-size: 14px;
+        }
+        .success { color: #10b981; }
+        .error { color: #ef4444; }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2 class="login-title">🏦 Swiss Asset Manager</h2>
+        <div class="input-group">
+            <input type="password" id="passwordInput" placeholder="Passwort eingeben..." 
+                   onkeypress="if(event.key==='Enter') checkPassword()">
+        </div>
+        <button onclick="checkPassword()">Zugang erhalten</button>
+        <div id="status" class="status"></div>
+    </div>
+
+    <script>
+        function checkPassword() {
+            const password = document.getElementById('passwordInput').value;
+            const statusDiv = document.getElementById('status');
+            
+            if (!password) {
+                statusDiv.innerHTML = '<span class="error">Bitte Passwort eingeben</span>';
+                return;
+            }
+            
+            statusDiv.innerHTML = 'Überprüfe Passwort...';
+            
+            // Backend Password Check
+            fetch('/api/verify_password', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({password: password})
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    statusDiv.innerHTML = '<span class="success">✓ Login erfolgreich! Weiterleitung zur Hauptanwendung...</span>';
+                    setTimeout(() => {
+                        window.location.href = '/dashboard';
+                    }, 1500);
+                } else {
+                    statusDiv.innerHTML = '<span class="error">✗ Falsches Passwort</span>';
+                }
+            })
+            .catch(error => {
+                console.error('Login error:', error);
+                statusDiv.innerHTML = '<span class="error">✗ Login-Fehler</span>';
+            });
+        }
+    </script>
+</body>
+</html>

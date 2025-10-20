@@ -1,13 +1,47 @@
 {
   "name": "Swiss Asset Pro",
-  "short_name": "Swiss Asset",
-  "description": "Professionelle Portfolio Simulation",
+  "short_name": "SwissAP",
+  "description": "Professionelle Portfolio-Simulation und Investment-Analyse",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#0A0A0A",
-  "theme_color": "#8A2BE2",
-  "orientation": "portrait",
+  "orientation": "portrait-primary",
+  "theme_color": "#5d4037",
+  "background_color": "#5d4037",
+  "scope": "/",
+  "lang": "de",
+  "dir": "ltr",
+  "categories": ["finance", "business", "productivity"],
   "icons": [
+    {
+      "src": "/static/icon-72x72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/static/icon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/static/icon-128x128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/static/icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/static/icon-152x152.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "any"
+    },
     {
       "src": "/static/icon-192x192.png",
       "sizes": "192x192",
@@ -15,10 +49,76 @@
       "purpose": "any maskable"
     },
     {
+      "src": "/static/icon-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
       "src": "/static/icon-512x512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
     }
-  ]
+  ],
+  "screenshots": [
+    {
+      "src": "/static/screenshot-mobile-1.png",
+      "sizes": "390x844",
+      "type": "image/png",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "/static/screenshot-tablet-1.png",
+      "sizes": "1024x768",
+      "type": "image/png",
+      "form_factor": "wide"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Dashboard",
+      "short_name": "Dashboard",
+      "description": "Portfolio-Übersicht öffnen",
+      "url": "/?page=dashboard",
+      "icons": [
+        {
+          "src": "/static/icon-192x192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Backtesting",
+      "short_name": "Backtesting",
+      "description": "Strategie-Testing starten",
+      "url": "/?page=backtesting",
+      "icons": [
+        {
+          "src": "/static/icon-192x192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Investing",
+      "short_name": "Investing",
+      "description": "Investment-Tools öffnen",
+      "url": "/?page=investing",
+      "icons": [
+        {
+          "src": "/static/icon-192x192.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false,
+  "edge_side_panel": {
+    "preferred_width": 400
+  },
+  "launch_handler": {
+    "client_mode": "navigate-existing"
+  }
 }

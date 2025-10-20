@@ -1,0 +1,35 @@
+✅ PDF Enhanced - Umfangreicher Report!
+
+Neue Inhalte im PDF:
+=====================
+
+SEITE 1:
+--------
+✅ Swiss Asset Pro Header
+✅ Portfolio Zusammensetzung Tabelle (kompakt)
+✅ Portfolio-Kennzahlen (Rendite, Risiko, Div-Score, Sharpe)
+✅ Stress-Test Szenarien:
+   - Markt-Crash (-30%)
+   - Rezession (-20%)
+   - Moderate Korrektur (-10%)
+
+SEITE 2:
+--------
+✅ Wichtige Anlageprinzipien:
+   - Diversifikation
+   - Langfristigkeit
+   - Risikomanagement
+   - Rebalancing
+✅ Analyse-Zusammenfassung mit Empfehlung
+✅ Rechtlicher Hinweis (FINMA)
+
+Styling:
+--------
+- Kompakte Schriftgrößen (7-10pt)
+- Dunkelbraun (#5d4037) Header
+- Professionelle Tabellen
+- Max 2 Seiten!
+
+Status: READY TO TEST
+Datum: 2025-10-20 01:45
+

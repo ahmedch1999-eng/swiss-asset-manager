@@ -1,0 +1,35 @@
+✅ PDF mit LIVE Berechnungen!
+
+Neuer Flow:
+===========
+
+Beim Klick auf "PDF Erstellen":
+1. 🔄 Strategie-Optimierung (LIVE Backend-Call)
+2. 🔄 Monte Carlo Simulation (LIVE Backend-Call)  
+3. 🔄 PDF Generierung mit ALLEN Daten
+
+PDF Inhalt (max 2 Seiten):
+==========================
+
+SEITE 1:
+- Portfolio Zusammensetzung
+- Portfolio-Kennzahlen
+- Stress-Test Szenarien
+- Anlageprinzipien
+
+SEITE 2:
+- Optimierte Strategien (Max Sharpe, Min Variance, etc.)
+- Monte Carlo Simulation (Pessimistisch, Median, Optimistisch)
+- Analyse-Zusammenfassung
+- Rechtlicher Hinweis
+
+Features:
+=========
+✅ ALLE Berechnungen werden LIVE durchgeführt
+✅ Status-Updates während Berechnung (1/3, 2/3, 3/3)
+✅ Umfassende Daten
+✅ Professionelles Layout
+✅ Max 2 Seiten
+
+Datum: 2025-10-20 01:47
+

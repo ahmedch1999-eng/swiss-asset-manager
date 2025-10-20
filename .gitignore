@@ -1,6 +1,61 @@
+# Python
 __pycache__/
 *.pyc
-.env
+*.pyo
+*.pyd
+.Python
+
+# Virtual Environment
 venv/
+env/
+ENV/
+
+# Environment Variables (WICHTIG!)
+.env
+.env.local
+.env.production
+
+# Logs
 *.log
+logs/
+app.log
+app_output.log
+
+# Cache
+cache/
+*.cache
+
+# Datenbanken
+*.db
+*.sqlite
+*.sqlite3
+
+# Backups (ALLE!)
+*_backup*.py
+*_backup_*.py
+app_*.py
+!app.py
+
+# macOS
 .DS_Store
+.AppleDouble
+.LSOverride
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Temporary files
+*.tmp
+*.temp
+temp_*.js
+test.txt
+
+# Reports
+dev-reports/
+
+# Static generated files (optional)
+static/icon-*.png
+!static/profile.png
