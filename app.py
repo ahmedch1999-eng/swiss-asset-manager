@@ -4470,6 +4470,150 @@ html, body {
 </head>
 <body class="sap-theme-dark" style="margin: 0; padding: 0;">
     
+    <!-- ======================================================================================== -->
+    <!-- 🎨 PARTICLES HERO INTRO SCREEN -->
+    <!-- ======================================================================================== -->
+    <div id="particlesHeroScreen" style="display: block; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 20000; background: #0d0d0d; overflow: hidden;">
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+            
+            #particlesHeroScreen {
+                font-family: 'Montserrat', 'Geist', sans-serif;
+            }
+            
+            #particles-js-intro {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                background-color: #0d0d0d;
+                background-image: url('https://images.unsplash.com/photo-1536566416173-057bfd9c7336?q=80&w=2670&auto=format&fit=crop');
+                background-size: cover;
+                background-position: 50% 50%;
+                z-index: 0;
+            }
+            
+            .hero-content {
+                position: relative;
+                z-index: 1;
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                color: #f0f0f0;
+            }
+            
+            .hero-title-intro {
+                font-size: 4rem;
+                font-weight: 700;
+                margin: 0 0 20px 0;
+                letter-spacing: -2px;
+                color: #f0f0f0;
+            }
+            
+            .cta-btn-intro {
+                margin-top: 30px;
+                padding: 15px 40px;
+                font-size: 1rem;
+                font-weight: 700;
+                text-transform: uppercase;
+                background-color: #8b7355;
+                color: #ffffff;
+                border: none;
+                cursor: pointer;
+                transition: all 0.3s;
+            }
+            
+            .cta-btn-intro:hover {
+                background-color: #6d5a43;
+                transform: translateY(-2px);
+                box-shadow: 0 4px 12px rgba(139, 115, 85, 0.3);
+            }
+            
+            .creator-name {
+                margin-top: 40px;
+                font-family: 'Dancing Script', cursive;
+                font-size: 1.2rem;
+                color: #ffffff;
+                opacity: 0.7;
+                letter-spacing: 0.5px;
+            }
+        </style>
+        
+        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+        
+        <div id="particles-js-intro"></div>
+        
+        <div class="hero-content">
+            <h1 class="hero-title-intro">SWISS ASSET PRO</h1>
+            <button class="cta-btn-intro" onclick="accessApp()">Access</button>
+            <p class="creator-name">Ahmed Choudhary</p>
+        </div>
+        
+        <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
+        <script>
+            // Particles Configuration
+            tsParticles.load('particles-js-intro', {
+                background: {
+                    color: { value: "#0d0d0d" }
+                },
+                fpsLimit: 120,
+                interactivity: {
+                    events: {
+                        onHover: { enable: true, mode: "repulse" },
+                        onClick: { enable: true, mode: "push" },
+                        resize: true
+                    },
+                    modes: {
+                        repulse: { distance: 100, duration: 0.4 },
+                        push: { quantity: 4 }
+                    }
+                },
+                particles: {
+                    color: { value: "#ffffff" },
+                    links: {
+                        color: "#ffffff",
+                        distance: 150,
+                        enable: true,
+                        opacity: 0.5,
+                        width: 1
+                    },
+                    move: {
+                        direction: "none",
+                        enable: true,
+                        outModes: "bounce",
+                        random: false,
+                        speed: 1,
+                        straight: false
+                    },
+                    number: {
+                        density: { enable: true, area: 800 },
+                        value: 80
+                    },
+                    opacity: { value: 0.5 },
+                    shape: { type: "circle" },
+                    size: { value: { min: 1, max: 5 } }
+                }
+            });
+            
+            // Access Button Function
+            function accessApp() {
+                const heroScreen = document.getElementById('particlesHeroScreen');
+                const loginScreen = document.getElementById('passwordProtection');
+                
+                if (heroScreen) {
+                    heroScreen.style.display = 'none';
+                }
+                if (loginScreen) {
+                    loginScreen.style.display = 'flex';
+                }
+            }
+        </script>
+    </div>
+    
     <!-- Login Function - MUST be defined before login button -->
     <script>
         function checkPassword() {
@@ -4531,7 +4675,7 @@ html, body {
     <!-- 🔒 PROTECTED - LOGIN SCREEN - DO NOT MODIFY WITHOUT EXPLICIT PERMISSION -->
     <!-- Contains: Password Protection, Login Form, Authentication -->
     <!-- ======================================================================================== -->
-    <div id="passwordProtection" style="display: flex; justify-content: center; align-items: center; width: 100vw; height: 100vh; position: fixed; top: 0; left: 0; background: #000000; z-index: 10000;">
+    <div id="passwordProtection" style="display: none; justify-content: center; align-items: center; width: 100vw; height: 100vh; position: fixed; top: 0; left: 0; background: #000000; z-index: 10000;">
         <div style="background: #000000; padding: 60px; border-radius: 0; box-shadow: none; text-align: center; max-width: 500px; width: 90%; border: none; margin: 0 auto;">
             <!-- Title UPDATED - Swiss in BEIGE 52px -->
             <div style="margin-bottom: 30px; line-height: 1.1;">
@@ -5149,7 +5293,7 @@ html, body {
             #gettingStartedPage .gs-nav-dropdown-content a {
                 display: block !important;
                 padding: 10px 20px !important;
-                color: #666666 !important;
+                color: #000000 !important;
                 text-decoration: none !important;
                 font-size: 11px !important;
                 transition: all 0.2s ease !important;
@@ -7465,14 +7609,9 @@ html, body {
                             <h4 style="color: #2c3e50; margin-bottom: 12px; font-size: 18px; font-family: 'Inter', sans-serif; display: flex; align-items: center; gap: 8px; font-weight: 600;">
                                 <i class="fas fa-newspaper"></i> Marktübersicht
                             </h4>
-                            <p style="color: #333333; margin-bottom: 12px; line-height: 1.5; font-size: 14px;">Bleiben Sie über die aktuellen Entwicklungen an den Finanzmärkten informiert. Daten werden alle 15 Minuten automatisch aktualisiert.</p>
-                            <div style="background: #F8F8F8; padding: 10px 12px; border-radius: 0; margin-bottom: 12px; border: 1px solid #d0d0d0;">
-                                <i class="fas fa-sync-alt fa-spin" style="margin-right: 5px; color: #8B7355;"></i> 
-                                <span style="color: #333333; font-size: 13px;">Nächste Aktualisierung in:</span> 
-                                <span id="nextRefresh" style="font-weight: 600; color: var(--color-accent-rose);">--:--</span>
-                            </div>
-                            <button class="refresh-button" onclick="refreshAllMarkets()" style="background: var(--color-accent-rose); color: white; border: none; padding: 10px 20px; border-radius: 0; cursor: pointer; font-size: 14px; font-weight: 500; transition: all 0.3s ease;">
-                                <i class="fas fa-sync-alt"></i> Jetzt aktualisieren
+                            <p style="color: #333333; margin-bottom: 15px; line-height: 1.5; font-size: 14px;">Bleiben Sie über die aktuellen Entwicklungen an den Finanzmärkten informiert. Alle Daten sind live und werden automatisch aktualisiert.</p>
+                            <button class="refresh-button" onclick="refreshAllMarkets()" style="background: var(--color-accent-rose); color: white; border: none; padding: 12px 24px; border-radius: 0; cursor: pointer; font-size: 14px; font-weight: 500; transition: all 0.3s ease; box-shadow: 0 2px 8px rgba(139, 115, 85, 0.3);">
+                                <i class="fas fa-sync-alt"></i> Alle Daten aktualisieren
                             </button>
                         </div>
 
@@ -7506,63 +7645,57 @@ html, body {
                                 </div>
                             </div>
 
+                        <!-- Top/Flop Aktien -->
+                        <div style="background: var(--color-bg-light); border-radius: 0; padding: 25px; margin-bottom: 30px; box-shadow: 0 2px 8px rgba(89, 89, 89, 0.1);">
+                            <h3 style="font-family: 'Playfair Display', serif; font-size: 22px; color: var(--color-primary-dark); margin: 0 0 20px 0; font-weight: 600;">
+                                <i class="fas fa-chart-line" style="margin-right: 10px; color: #27ae60;"></i>Top & Flop Aktien
+                            </h3>
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                                <!-- Top Gainers -->
+                                <div style="background: #e8f5e9; border-radius: 0; padding: 20px; border-left: 4px solid #27ae60;">
+                                    <h4 style="color: #27ae60; margin: 0 0 15px 0; font-size: 18px; font-weight: 600; display: flex; align-items: center; gap: 8px;">
+                                        <i class="fas fa-arrow-up"></i> Top Gewinner
+                                    </h4>
+                                    <div id="topGainers" style="color: #1b5e20;">
+                                        <p style="text-align: center; color: #666;">Lade Daten...</p>
+                                    </div>
+                                </div>
+                                
+                                <!-- Top Losers -->
+                                <div style="background: #ffebee; border-radius: 0; padding: 20px; border-left: 4px solid #e74c3c;">
+                                    <h4 style="color: #e74c3c; margin: 0 0 15px 0; font-size: 18px; font-weight: 600; display: flex; align-items: center; gap: 8px;">
+                                        <i class="fas fa-arrow-down"></i> Top Verlierer
+                                    </h4>
+                                    <div id="topLosers" style="color: #c62828;">
+                                        <p style="text-align: center; color: #666;">Lade Daten...</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                         <!-- Financial News -->
                         <div style="background: var(--color-bg-light); border-radius: 0; padding: 25px; margin-bottom: 30px; box-shadow: 0 2px 8px rgba(89, 89, 89, 0.1);">
                             <div class="news-header" style="margin-bottom: 20px;">
-                                <h3 style="font-family: 'Playfair Display', serif; font-size: 22px; color: var(--color-primary-dark); margin: 0 0 8px 0; font-weight: 600;">Aktuelle Marktanalyse</h3>
-                                <p style="color: var(--color-text-gray); margin: 0; font-size: 13px;">Beispielhafte Finanznachrichten zur Orientierung • Für aktuelle News besuchen Sie die oben verlinkten Quellen</p>
+                                <h3 style="font-family: 'Playfair Display', serif; font-size: 22px; color: var(--color-primary-dark); margin: 0 0 8px 0; font-weight: 600;">
+                                    <i class="fas fa-newspaper" style="margin-right: 10px; color: #3498db;"></i>Live Finanznachrichten
+                                </h3>
+                                <p style="color: var(--color-text-gray); margin: 0; font-size: 13px;">Aktuelle Nachrichten aus der Finanzwelt • Aktualisiert alle 15 Minuten</p>
                             </div>
                             <div id="newsContainer" style="border-top: 1px solid var(--color-border-green); padding-top: 15px;">
-                                <div class="news-item" style="padding: 18px; border-bottom: 1px solid var(--color-border-green); transition: all 0.3s ease; background: var(--perlweiss); margin-bottom: 12px; border-radius: 0;">
-                                    <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 10px;">
-                                        <h4 style="color: var(--color-primary-dark); margin: 0; font-size: 15px; font-weight: 600; line-height: 1.4;">Schweizer Börse startet positiv in die Woche</h4>
-                                        <span style="background: var(--color-accent-rose); color: #ffffff; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 0;">Reuters</span>
-                                    </div>
-                                    <p style="color: var(--color-text-gray); margin: 10px 0; font-size: 13px; line-height: 1.6;">Der SMI zeigt eine stabile Entwicklung mit moderaten Gewinnen. Schweizer Blue-Chip-Aktien profitieren von der robusten Konjunktur und der starken Franken-Position.</p>
-                                    <div style="display: flex; gap: 15px; font-size: 11px; color: var(--color-text-gray);">
-                                        <span><i class="fas fa-clock" style="margin-right: 5px;"></i>Beispiel</span>
-                                        <span><i class="fas fa-tag" style="margin-right: 5px;"></i>Markt</span>
-                                    </div>
-                                </div>
-                                <div class="news-item" style="padding: 18px; border-bottom: 1px solid var(--color-border-green); transition: all 0.3s ease; background: var(--perlweiss); margin-bottom: 12px; border-radius: 0;">
-                                    <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 10px;">
-                                        <h4 style="color: var(--color-primary-dark); margin: 0; font-size: 15px; font-weight: 600; line-height: 1.4;">EZB signalisiert vorsichtige Geldpolitik</h4>
-                                        <span style="background: var(--color-accent-rose); color: #ffffff; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 0;">Bloomberg</span>
-                                    </div>
-                                    <p style="color: var(--color-text-gray); margin: 10px 0; font-size: 13px; line-height: 1.6;">Die Europäische Zentralbank bleibt bei ihrer aktuellen Zinspolitik und beobachtet die Inflation genau. Experten erwarten keine überraschenden Änderungen.</p>
-                                    <div style="display: flex; gap: 15px; font-size: 11px; color: var(--color-text-gray);">
-                                        <span><i class="fas fa-clock" style="margin-right: 5px;"></i>Beispiel</span>
-                                        <span><i class="fas fa-tag" style="margin-right: 5px;"></i>Zentralbank</span>
-                                    </div>
-                                </div>
-                                <div class="news-item" style="padding: 18px; border-bottom: 1px solid var(--color-border-green); transition: all 0.3s ease; background: var(--perlweiss); margin-bottom: 12px; border-radius: 0;">
-                                    <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 10px;">
-                                        <h4 style="color: var(--color-primary-dark); margin: 0; font-size: 15px; font-weight: 600; line-height: 1.4;">Tech-Sektor zeigt gemischte Signale</h4>
-                                        <span style="background: var(--color-accent-rose); color: #ffffff; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 0;">Financial Times</span>
-                                    </div>
-                                    <p style="color: var(--color-text-gray); margin: 10px 0; font-size: 13px; line-height: 1.6;">Während einige Tech-Giganten schwächeln, zeigen andere innovative Bereiche wie KI und Cloud-Computing Stärke. Diversifikation bleibt wichtig.</p>
-                                    <div style="display: flex; gap: 15px; font-size: 11px; color: var(--color-text-gray);">
-                                        <span><i class="fas fa-clock" style="margin-right: 5px;"></i>vor 5 Stunden</span>
-                                        <span><i class="fas fa-tag" style="margin-right: 5px;"></i>Technologie</span>
-                                    </div>
-                                </div>
-                                <div class="news-item" style="padding: 18px; transition: all 0.3s ease; background: var(--perlweiss); border-radius: 0;">
-                                    <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 10px;">
-                                        <h4 style="color: var(--color-primary-dark); margin: 0; font-size: 15px; font-weight: 600; line-height: 1.4;">Rohstoffmärkte stabilisieren sich</h4>
-                                        <span style="background: var(--color-accent-rose); color: #ffffff; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 0;">Wall Street Journal</span>
-                                    </div>
-                                    <p style="color: var(--color-text-gray); margin: 10px 0; font-size: 13px; line-height: 1.6;">Gold und Öl zeigen nach volatilen Wochen wieder stabilere Preise. Experten sehen langfristig positive Aussichten für Rohstoffinvestments.</p>
-                                    <div style="display: flex; gap: 15px; font-size: 11px; color: var(--color-text-gray);">
-                                        <span><i class="fas fa-clock" style="margin-right: 5px;"></i>vor 7 Stunden</span>
-                                        <span><i class="fas fa-tag" style="margin-right: 5px;"></i>Rohstoffe</span>
-                                    </div>
-                                </div>
+                                <p style="text-align: center; color: #666; padding: 40px;">
+                                    <i class="fas fa-spinner fa-spin" style="font-size: 24px; color: #8B7355; margin-bottom: 10px;"></i><br>
+                                    Lade aktuelle Finanznachrichten...
+                                </p>
                             </div>
                         </div>
                     </div>
                 `;
                 // Load live market data automatically
-                setTimeout(() => loadLiveMarkets(), 100);
+                setTimeout(() => {
+                    loadLiveMarkets();
+                    loadTopMovers();
+                    loadMarketNews();
+                }, 100);
             } else if (pageId === 'bericht') {
                 // Bericht & Analyse: Vollständiger Content
                 contentElement.innerHTML = `
@@ -8434,6 +8567,14 @@ html, body {
                                     <p style="color: #666; font-size: 12px; margin: 0 0 6px 0;">Tick-by-Tick & technische Indikatoren</p>
                                     <div style="color: #888; font-size: 11px;"><strong>Priorität:</strong> 6 | 5/Min</div>
                                 </div>
+                                
+                                <div style="background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%); padding: 15px; border-radius: 0; border-left: 3px solid #2196f3;">
+                                    <h4 style="color: #1a1a1a; margin: 0 0 8px 0; font-size: 14px; font-weight: 600; display: flex; align-items: center; gap: 6px;">
+                                        <i class="fas fa-newspaper" style="color: #2196f3;"></i> NewsAPI.org
+                                    </h4>
+                                    <p style="color: #666; font-size: 12px; margin: 0 0 6px 0;">Live Finanznachrichten & Top Headlines</p>
+                                    <div style="color: #888; font-size: 11px;"><strong>Priorität:</strong> 7 | 100/Tag</div>
+                                </div>
                             </div>
                         </div>
 
@@ -8636,7 +8777,7 @@ html, body {
                                     Mit einem Fokus auf den Schweizer Aktienmarkt und internationale Diversifikationsstrategien beschäftige ich mich damit, wie sich Portfolios effizient strukturieren und Risiken gezielt steuern lassen. Mein Ziel ist es, theoretisches Wissen in praktisch anwendbare, datengetriebene Lösungen umzusetzen.
                                 </p>
                             </div>
-                            
+
                             <div style="margin-bottom: 20px;">
                                 <h4 style="color: #2c3e50; margin: 0 0 10px 0; font-size: 16px; font-family: 'Inter', sans-serif; font-weight: 600; border-bottom: 2px solid #8B7355; padding-bottom: 6px;">Swiss Asset Pro – Das Projekt</h4>
                                 <p style="color: #333333; line-height: 1.6; margin-bottom: 12px; font-size: 14px;">
@@ -8655,7 +8796,7 @@ html, body {
                                 <p style="color: #333333; line-height: 1.6; margin-bottom: 0; font-size: 14px;">
                                     Das Projekt demonstriert meine Fähigkeit, komplexe finanzielle Konzepte in eine benutzerfreundliche, technisch anspruchsvolle Anwendung zu übersetzen – ein praktisches Beispiel für die Verbindung von Finance, Data Science und Software Engineering.
                                 </p>
-                            </div>
+                                    </div>
 
                             <div style="margin-bottom: 20px;">
                                 <h4 style="color: #2c3e50; margin: 0 0 10px 0; font-size: 16px; font-family: 'Inter', sans-serif; font-weight: 600; border-bottom: 2px solid #8B7355; padding-bottom: 6px;">Expertise</h4>
@@ -9439,12 +9580,15 @@ html, body {
             }
 
             // Navigation aktiv setzen mit !important durch setAttribute
-            document.querySelectorAll('.gs-header-nav a').forEach(link => {
+            // ✅ ABER: Dropdown-Links NICHT beeinflussen!
+            document.querySelectorAll('.gs-header-nav > a, .gs-nav-dropdown-trigger').forEach(link => {
                 link.style.setProperty('color', '#ffffff', 'important');
                 link.style.setProperty('font-weight', '400', 'important');
             });
+            
+            // ✅ NUR Haupt-Navigation-Links als "aktiv" markieren (NICHT Dropdown-Content!)
             const activeLink = document.getElementById('nav-' + pageId);
-            if (activeLink) {
+            if (activeLink && !activeLink.closest('.gs-nav-dropdown-content')) {
                 activeLink.style.setProperty('color', '#d7a882', 'important'); // Hellbraun
                 activeLink.style.setProperty('font-weight', '500', 'important');
             }
@@ -11885,7 +12029,9 @@ html, body {
                         html += `<td style="padding: 12px; text-align: right;">${asset.roe.toFixed(1)}%</td>`;
                         html += `<td style="padding: 12px; text-align: right;">${asset.debtToEquity.toFixed(1)}%</td>`;
                         html += `<td style="padding: 12px; text-align: right;">${asset.profitMargin.toFixed(1)}%</td>`;
-                        html += `<td style="padding: 12px; text-align: right;">${asset.divYield.toFixed(2)}%</td>`;
+                        // ✅ FIXED: Smart Dividend Display
+                        const displayDiv = asset.divYield ? (asset.divYield > 1 ? asset.divYield : asset.divYield * 100) : 0;
+                        html += `<td style="padding: 12px; text-align: right;">${displayDiv.toFixed(2)}%</td>`;
                         html += `<td style="padding: 12px; text-align: center;"><span style="background: ${asset.catColor}; color: white; padding: 6px 12px; border-radius: 0; font-weight: 600; font-size: 12px;">${asset.category}</span></td>`;
                         html += `<td style="padding: 12px; text-align: right;">${asset.qualityScore}/100</td>`;
                         html += '</tr>';
@@ -11994,7 +12140,9 @@ html, body {
                     data.results.forEach(asset => {
                         html += '<tr style="border-bottom: 1px solid #eee;">';
                         html += `<td style="padding: 12px; font-weight: 600;">${asset.symbol}</td>`;
-                        html += `<td style="padding: 12px; text-align: right;">${asset.divYield.toFixed(2)}%</td>`;
+                        // ✅ FIXED: Smart Dividend Display
+                        const displayDivCarry = asset.divYield ? (asset.divYield > 1 ? asset.divYield : asset.divYield * 100) : 0;
+                        html += `<td style="padding: 12px; text-align: right;">${displayDivCarry.toFixed(2)}%</td>`;
                         html += `<td style="padding: 12px; text-align: right; color: #f44336;">CHF ${asset.financingCost.toFixed(0)}</td>`;
                         const carryColor = asset.netCarry > 0 ? '#4caf50' : '#f44336';
                         html += `<td style="padding: 12px; text-align: right; color: ${carryColor}; font-weight: 600;">${asset.netCarry > 0 ? '+' : ''}${asset.netCarry.toFixed(2)}%</td>`;
@@ -13642,6 +13790,8 @@ html, body {
             console.log('Refreshing all markets...');
             showNotification('Marktdaten werden aktualisiert...', 'info');
             loadLiveMarkets();
+            loadTopMovers();
+            loadMarketNews();
         }
         
         function refreshMarketData() {
@@ -13649,9 +13799,122 @@ html, body {
             loadLiveMarkets();
         }
 
+        function loadTopMovers() {
+            console.log('🔄 Loading top movers...');
+            
+            fetch('/api/get_top_movers')
+                .then(response => response.json())
+                .then(data => {
+                    // Top Gainers
+                    const gainersContainer = document.getElementById('topGainers');
+                    if (gainersContainer && data.gainers) {
+                        let html = '';
+                        data.gainers.forEach((stock, idx) => {
+                            html += `
+                                <div style="padding: 12px; background: white; margin-bottom: 10px; border-radius: 0; border: 1px solid #c8e6c9;">
+                                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                                        <div>
+                                            <div style="font-weight: 600; font-size: 14px; color: #1b5e20;">${idx + 1}. ${stock.symbol}</div>
+                                            <div style="font-size: 12px; color: #666;">CHF ${stock.price}</div>
+                                        </div>
+                                        <div style="font-weight: 700; font-size: 16px; color: #27ae60;">
+                                            +${stock.changePercent.toFixed(2)}%
+                                        </div>
+                                    </div>
+                                </div>
+                            `;
+                        });
+                        gainersContainer.innerHTML = html || '<p style="text-align: center; color: #666;">Keine Daten</p>';
+                    }
+                    
+                    // Top Losers
+                    const losersContainer = document.getElementById('topLosers');
+                    if (losersContainer && data.losers) {
+                        let html = '';
+                        data.losers.reverse().forEach((stock, idx) => {
+                            html += `
+                                <div style="padding: 12px; background: white; margin-bottom: 10px; border-radius: 0; border: 1px solid #ffcdd2;">
+                                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                                        <div>
+                                            <div style="font-weight: 600; font-size: 14px; color: #c62828;">${idx + 1}. ${stock.symbol}</div>
+                                            <div style="font-size: 12px; color: #666;">CHF ${stock.price}</div>
+                                        </div>
+                                        <div style="font-weight: 700; font-size: 16px; color: #e74c3c;">
+                                            ${stock.changePercent.toFixed(2)}%
+                                        </div>
+                                    </div>
+                                </div>
+                            `;
+                        });
+                        losersContainer.innerHTML = html || '<p style="text-align: center; color: #666;">Keine Daten</p>';
+                    }
+                    
+                    console.log('✅ Top movers loaded');
+                })
+                .catch(error => {
+                    console.error('❌ Error loading top movers:', error);
+                });
+        }
+
+        function loadMarketNews() {
+            console.log('📰 Loading live financial news...');
+            const newsContainer = document.getElementById('newsContainer');
+            
+            if (!newsContainer) return;
+            
+            newsContainer.innerHTML = `
+                <p style="text-align: center; color: #666; padding: 40px;">
+                    <i class="fas fa-spinner fa-spin" style="font-size: 24px; color: #8B7355; margin-bottom: 10px;"></i><br>
+                    Lade aktuelle Finanznachrichten...
+                </p>
+            `;
+            
+            fetch('/api/get_market_news')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.articles && data.articles.length > 0) {
+                        let html = '';
+                        data.articles.forEach(article => {
+                            html += `
+                                <div class="news-item" style="padding: 18px; border-bottom: 1px solid var(--color-border-green); transition: all 0.3s ease; background: var(--perlweiss); margin-bottom: 12px; border-radius: 0; cursor: pointer;" onclick="window.open('${article.url}', '_blank')">
+                                    <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 10px;">
+                                        <h4 style="color: var(--color-primary-dark); margin: 0; font-size: 15px; font-weight: 600; line-height: 1.4; flex: 1; padding-right: 15px;">${article.title}</h4>
+                                        <span style="background: var(--color-accent-rose); color: #ffffff; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 0; white-space: nowrap;">${article.source}</span>
+                                    </div>
+                                    <p style="color: var(--color-text-gray); margin: 10px 0; font-size: 13px; line-height: 1.6;">${article.description}</p>
+                                    <div style="display: flex; gap: 15px; font-size: 11px; color: var(--color-text-gray);">
+                                        <span><i class="fas fa-clock" style="margin-right: 5px;"></i>${article.time}</span>
+                                        <span><i class="fas fa-tag" style="margin-right: 5px;"></i>${article.category}</span>
+                                    </div>
+                                </div>
+                            `;
+                        });
+                        newsContainer.innerHTML = html;
+                        console.log('✅ Live news loaded:', data.articles.length, 'articles');
+                        showNotification('Live Nachrichten aktualisiert!', 'success');
+                    } else {
+                        newsContainer.innerHTML = `
+                            <p style="text-align: center; color: #666; padding: 40px;">
+                                <i class="fas fa-info-circle" style="font-size: 24px; margin-bottom: 10px;"></i><br>
+                                Keine aktuellen Finanznachrichten verfügbar
+                            </p>
+                        `;
+                    }
+                })
+                .catch(error => {
+                    console.error('❌ Error loading news:', error);
+                    newsContainer.innerHTML = `
+                        <p style="text-align: center; color: #e74c3c; padding: 40px;">
+                            <i class="fas fa-exclamation-circle" style="font-size: 24px; margin-bottom: 10px;"></i><br>
+                            Fehler beim Laden der Nachrichten
+                        </p>
+                    `;
+                });
+        }
+
         function refreshFinancialNews() {
             console.log('Refreshing financial news...');
-            alert('Finanznachrichten werden analysiert... Diese Funktion wird in einer zukünftigen Version vollständig implementiert.');
+            loadMarketNews();
         }
 
         function showNotification(message, type) {
@@ -13969,7 +14232,7 @@ html, body {
                             <div style="font-size: 12px; font-weight: 600; color: #333; margin-bottom: 4px;">
                                 ${stats.free_sources_available ? '🟢' : '🔴'} Free Data Sources
                             </div>
-                            <div style="font-size: 10px; color: #666;">Yahoo Query, Stooq, ECB, CoinGecko, Binance</div>
+                            <div style="font-size: 10px; color: #666;">Yahoo Query, Stooq, ECB, CoinGecko, Binance, NewsAPI</div>
                         </div>
                         
                         <div style="background: ${stats.smart_fetcher_available ? '#e8f5e9' : '#ffebee'}; padding: 12px; border-radius: 0; border-left: 3px solid ${stats.smart_fetcher_available ? '#4caf50' : '#f44336'};">
@@ -14044,7 +14307,216 @@ html, body {
             }
         }
 
-        function loadTransparencyCalculations() {
+        // ✅ INVESTMENT STYLES - GENERATE DETAILED CALCULATIONS
+        async function generateInvestmentStylesSection() {
+            let html = '';
+            
+            try {
+                // Fetch all investment styles data
+                const [valueData, momentumData, buyholdData, carryData] = await Promise.all([
+                    fetch('/api/value_analysis', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ portfolio: userPortfolio })
+                    }).then(r => r.json()),
+                    fetch('/api/momentum_analysis', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ portfolio: userPortfolio })
+                    }).then(r => r.json()),
+                    fetch('/api/buyhold_analysis', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ portfolio: userPortfolio })
+                    }).then(r => r.json()),
+                    fetch('/api/carry_analysis', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ 
+                            portfolio: userPortfolio,
+                            financingCost: 3  // 3% Standard
+                        })
+                    }).then(r => r.json())
+                ]);
+                
+                // VALUE INVESTING SECTION
+                html += `
+                    <div style="background: #ffffff; padding: 20px; border-radius: 0; border: 2px solid #4caf50; margin-bottom: 20px;">
+                        <h4 style="color: #4caf50; margin: 0 0 15px 0; font-size: 18px; font-weight: 600; border-bottom: 2px solid #4caf50; padding-bottom: 8px;">
+                            <i class="fas fa-chart-line"></i> 6. VALUE INVESTING ANALYSE
+                        </h4>
+                        <div style="margin-bottom: 15px;">
+                            <strong>Portfolio Value Score:</strong> ${valueData.summary?.avgScore?.toFixed(0) || 'N/A'}/100
+                        </div>
+                `;
+                
+                if (valueData.results && valueData.results.length > 0) {
+                    valueData.results.forEach(asset => {
+                        const peText = asset.peRatio ? `KGV: ${asset.peRatio.toFixed(1)}` : 'KGV: N/A (Kein Equity)';
+                        const pbText = asset.pbRatio ? `KBV: ${asset.pbRatio.toFixed(2)}` : 'KBV: N/A';
+                        const fcfText = asset.fcf ? `FCF: CHF ${(asset.fcf / 1000000).toFixed(1)}M` : 'FCF: N/A';
+                        
+                        html += `
+                            <div style="background: #f5f5f5; padding: 15px; margin-bottom: 12px; border-left: 4px solid ${asset.recColor};">
+                                <div style="font-weight: 600; color: #333; margin-bottom: 8px; font-size: 15px;">
+                                    ${asset.symbol} - ${asset.recommendation}
+                                </div>
+                                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 8px; font-size: 12px;">
+                                    <div><strong>Aktuell:</strong> CHF ${asset.currentPrice.toFixed(2)}</div>
+                                    <div><strong>Fair Value:</strong> CHF ${asset.fairValue.toFixed(2)}</div>
+                                    <div><strong>Upside:</strong> ${asset.upside >= 0 ? '+' : ''}${asset.upside.toFixed(1)}%</div>
+                                    <div><strong>${peText}</strong></div>
+                                    <div><strong>${pbText}</strong></div>
+                                    <div><strong>Div:</strong> ${asset.divYield.toFixed(2)}%</div>
+                                    <div><strong>${fcfText}</strong></div>
+                                    <div><strong>Score:</strong> ${asset.score}/100</div>
+                                </div>
+                                <div style="margin-top: 10px; padding: 10px; background: #e8f5e9; border-radius: 4px; font-size: 11px;">
+                                    <strong>Berechnung:</strong><br>
+                                    Fair Value = Durchschnitt(Graham: ${asset.grahamNumber.toFixed(2)}, DCF: ${asset.dcfValue.toFixed(2)})<br>
+                                    ${asset.peRatio ? `→ P/E Ratio aus yfinance: ${asset.peRatio.toFixed(1)}` : '→ P/E nicht anwendbar (kein Equity)'}<br>
+                                    ${asset.fcf ? `→ FCF (echte Daten): CHF ${(asset.fcf / 1000000).toFixed(1)}M` : '→ FCF nicht verfügbar'}
+                                </div>
+                            </div>
+                        `;
+                    });
+                }
+                html += `</div>`;
+                
+                // MOMENTUM GROWTH SECTION
+                html += `
+                    <div style="background: #ffffff; padding: 20px; border-radius: 0; border: 2px solid #ff9800; margin-bottom: 20px;">
+                        <h4 style="color: #ff9800; margin: 0 0 15px 0; font-size: 18px; font-weight: 600; border-bottom: 2px solid #ff9800; padding-bottom: 8px;">
+                            <i class="fas fa-rocket"></i> 7. MOMENTUM GROWTH ANALYSE
+                        </h4>
+                        <div style="margin-bottom: 15px;">
+                            <strong>Durchschn. Momentum:</strong> ${momentumData.summary?.avgMomentum?.toFixed(1) || 'N/A'}%
+                        </div>
+                `;
+                
+                if (momentumData.results && momentumData.results.length > 0) {
+                    momentumData.results.forEach(asset => {
+                        html += `
+                            <div style="background: #f5f5f5; padding: 15px; margin-bottom: 12px; border-left: 4px solid ${asset.trend_color};">
+                                <div style="font-weight: 600; color: #333; margin-bottom: 8px; font-size: 15px;">
+                                    ${asset.symbol} - ${asset.trend}
+                                </div>
+                                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 8px; font-size: 12px;">
+                                    <div><strong>Momentum:</strong> ${asset.momentum_return >= 0 ? '+' : ''}${asset.momentum_return.toFixed(1)}%</div>
+                                    <div><strong>3M:</strong> ${asset.return_3m >= 0 ? '+' : ''}${asset.return_3m.toFixed(1)}%</div>
+                                    <div><strong>6M:</strong> ${asset.return_6m >= 0 ? '+' : ''}${asset.return_6m.toFixed(1)}%</div>
+                                    <div><strong>12M:</strong> ${asset.return_12m >= 0 ? '+' : ''}${asset.return_12m.toFixed(1)}%</div>
+                                    <div><strong>RSI:</strong> ${asset.rsi.toFixed(1)}</div>
+                                    <div><strong>MACD:</strong> ${asset.macd > asset.macd_signal ? '↗️ Bull' : '↘️ Bear'}</div>
+                                    <div><strong>Volatilität:</strong> ${asset.volatility.toFixed(1)}%</div>
+                                    <div><strong>Score:</strong> ${asset.momentum_score}/100</div>
+                                </div>
+                                <div style="margin-top: 10px; padding: 10px; background: #fff3e0; border-radius: 4px; font-size: 11px;">
+                                    <strong>Berechnung:</strong><br>
+                                    3M Return = (P_heute / P_-63d - 1) × 100 = ${asset.return_3m.toFixed(1)}%<br>
+                                    RSI = 100 - (100 / (1 + (Avg Gain / Avg Loss))) = ${asset.rsi.toFixed(1)}<br>
+                                    MACD = EMA12 - EMA26 = ${asset.macd.toFixed(2)}
+                                </div>
+                            </div>
+                        `;
+                    });
+                }
+                html += `</div>`;
+                
+                // BUY & HOLD SECTION
+                html += `
+                    <div style="background: #ffffff; padding: 20px; border-radius: 0; border: 2px solid #2196f3; margin-bottom: 20px;">
+                        <h4 style="color: #2196f3; margin: 0 0 15px 0; font-size: 18px; font-weight: 600; border-bottom: 2px solid #2196f3; padding-bottom: 8px;">
+                            <i class="fas fa-shield-alt"></i> 8. BUY & HOLD QUALITÄTSANALYSE
+                        </h4>
+                        <div style="margin-bottom: 15px;">
+                            <strong>Portfolio Qualität:</strong> ${buyholdData.summary?.avgQuality?.toFixed(0) || 'N/A'}/100 | 
+                            <strong>Core Positionen:</strong> ${buyholdData.summary?.coreCount || 0}
+                        </div>
+                `;
+                
+                if (buyholdData.results && buyholdData.results.length > 0) {
+                    buyholdData.results.forEach(asset => {
+                        html += `
+                            <div style="background: #f5f5f5; padding: 15px; margin-bottom: 12px; border-left: 4px solid ${asset.catColor};">
+                                <div style="font-weight: 600; color: #333; margin-bottom: 8px; font-size: 15px;">
+                                    ${asset.symbol} - ${asset.category}
+                                </div>
+                                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 8px; font-size: 12px;">
+                                    <div><strong>Market Cap:</strong> ${asset.market_cap ? 'CHF ' + (asset.market_cap / 1000000000).toFixed(1) + 'B' : 'N/A'}</div>
+                                    <div><strong>ROE:</strong> ${asset.roe.toFixed(1)}%</div>
+                                    <div><strong>Verschuldung:</strong> ${asset.debtToEquity.toFixed(1)}%</div>
+                                    <div><strong>Marge:</strong> ${asset.profitMargin.toFixed(1)}%</div>
+                                    <div><strong>Div:</strong> ${asset.dividend_yield.toFixed(2)}%</div>
+                                    <div><strong>Volatilität:</strong> ${asset.volatility.toFixed(1)}%</div>
+                                    <div><strong>Score:</strong> ${asset.qualityScore}/100</div>
+                                </div>
+                                <div style="margin-top: 10px; padding: 10px; background: #e3f2fd; border-radius: 4px; font-size: 11px;">
+                                    <strong>Berechnung:</strong><br>
+                                    Quality Score = ROE Punkte (${asset.roe > 15 ? '25' : asset.roe > 10 ? '15' : '0'}) 
+                                    + Debt Punkte (${asset.debtToEquity < 50 ? '20' : asset.debtToEquity < 100 ? '10' : '0'}) 
+                                    + weitere Faktoren = ${asset.qualityScore}/100<br>
+                                    Volatilität (echte Berechnung): σ = std(returns) × √252 = ${asset.volatility.toFixed(1)}%
+                                </div>
+                            </div>
+                        `;
+                    });
+                }
+                html += `</div>`;
+                
+                // CARRY STRATEGY SECTION
+                html += `
+                    <div style="background: #ffffff; padding: 20px; border-radius: 0; border: 2px solid #9c27b0; margin-bottom: 20px;">
+                        <h4 style="color: #9c27b0; margin: 0 0 15px 0; font-size: 18px; font-weight: 600; border-bottom: 2px solid #9c27b0; padding-bottom: 8px;">
+                            <i class="fas fa-coins"></i> 9. CARRY STRATEGY ANALYSE
+                        </h4>
+                        <div style="margin-bottom: 15px;">
+                            <strong>Portfolio Netto-Carry:</strong> ${carryData.summary?.netCarry?.toFixed(2) || 'N/A'}%
+                        </div>
+                `;
+                
+                if (carryData.results && carryData.results.length > 0) {
+                    carryData.results.forEach(asset => {
+                        html += `
+                            <div style="background: #f5f5f5; padding: 15px; margin-bottom: 12px; border-left: 4px solid ${asset.netCarry >= 0 ? '#4caf50' : '#f44336'};">
+                                <div style="font-weight: 600; color: #333; margin-bottom: 8px; font-size: 15px;">
+                                    ${asset.symbol} - ${asset.trend}
+                                </div>
+                                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 8px; font-size: 12px;">
+                                    <div><strong>Div-Rendite:</strong> ${asset.divYield.toFixed(2)}%</div>
+                                    <div><strong>Yield Diff:</strong> ${asset.yield_diff >= 0 ? '+' : ''}${asset.yield_diff.toFixed(2)}%</div>
+                                    <div><strong>Risk Premium:</strong> ${asset.risk_premium.toFixed(2)}</div>
+                                    <div><strong>Netto-Carry:</strong> ${asset.netCarry >= 0 ? '+' : ''}${asset.netCarry.toFixed(2)}%</div>
+                                    <div><strong>Jahresertrag:</strong> CHF ${asset.netAnnualIncome.toFixed(0)}</div>
+                                    <div><strong>Finanzierung:</strong> CHF ${asset.financingCost.toFixed(0)}</div>
+                                </div>
+                                <div style="margin-top: 10px; padding: 10px; background: #f3e5f5; border-radius: 4px; font-size: 11px;">
+                                    <strong>Berechnung:</strong><br>
+                                    Netto-Carry = Div-Rendite (${asset.divYield.toFixed(2)}%) - Finanzierung (3%) = ${asset.netCarry.toFixed(2)}%<br>
+                                    Yield Diff = Div-Rendite - Benchmark (0.5%) = ${asset.yield_diff.toFixed(2)}%<br>
+                                    Risk Premium = (Div/Volatilität) × 100 = ${asset.risk_premium.toFixed(2)}
+                                </div>
+                            </div>
+                        `;
+                    });
+                }
+                html += `</div>`;
+                
+            } catch (error) {
+                console.error('Error generating investment styles section:', error);
+                html += `
+                    <div style="background: #ffebee; padding: 20px; border-radius: 0; border-left: 4px solid #c62828; margin-bottom: 20px;">
+                        <h4 style="margin: 0 0 10px 0; color: #c62828;"><i class="fas fa-exclamation-circle"></i> Fehler</h4>
+                        <p style="color: #666; margin: 0; font-size: 14px;">Investment Styles konnten nicht geladen werden.</p>
+                    </div>
+                `;
+            }
+            
+            return html;
+        }
+
+        // ✅ OPTION B: VOLLSTÄNDIGE PORTFOLIO-ANALYSE MIT ALLEN BERECHNUNGEN
+        async function loadTransparencyCalculations() {
             try {
                 const calculationsDiv = document.getElementById('transparency-calculations');
                 if (!calculationsDiv) return;
@@ -14054,91 +14526,345 @@ html, body {
                 
                 if (userPortfolio.length === 0) {
                     calculationsDiv.innerHTML = `
-                        <div style="background: #fff3cd; padding: 20px; border-radius: 0; text-align: center;">
-                            <p style="color: #856404; margin: 0;">Erstellen Sie zuerst ein Portfolio im Dashboard, um die Rechnungswege zu sehen.</p>
+                        <div style="background: #fff3cd; padding: 20px; border-radius: 0; text-align: center; border-left: 4px solid #ffc107;">
+                            <h4 style="margin: 0 0 10px 0; color: #856404;"><i class="fas fa-info-circle"></i> Kein Portfolio</h4>
+                            <p style="color: #856404; margin: 0; font-size: 14px;">Erstellen Sie zuerst ein Portfolio im Dashboard, um alle Berechnungen live zu sehen.</p>
                         </div>
                     `;
                     return;
                 }
                 
-                // Calculate real portfolio metrics
+                // Calculate ALL portfolio metrics
                 const totalInvestment = userPortfolio.reduce((sum, asset) => sum + asset.investment, 0);
                 const expectedReturn = calculatePortfolioReturn() * 100;
                 const portfolioRisk = calculatePortfolioRisk() * 100;
                 const sharpeRatio = portfolioRisk > 0 ? (expectedReturn - 2) / portfolioRisk : 0;
-                
+                const var95 = expectedReturn - 1.645 * portfolioRisk;
+
+                // Fetch advanced calculations
+                let monteCarloData = null;
+                let strategyData = null;
+                let valueData = null;
+                let momentumData = null;
+                let buyHoldData = null;
+                let carryData = null;
+
+                try {
+                    // Monte Carlo Simulation
+                    const mcResponse = await fetch('/api/monte_carlo_correlated', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            portfolio: userPortfolio.map(a => ({ symbol: a.symbol, weight: parseFloat(a.weight) / 100 })),
+                            initial_investment: totalInvestment,
+                            time_horizon: 365,
+                            num_simulations: 1000
+                        })
+                    });
+                    if (mcResponse.ok) {
+                        monteCarloData = await mcResponse.json();
+                    }
+
+                    // Strategy Optimization (Markowitz)
+                    const stratResponse = await fetch('/api/strategy_optimization', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            symbols: userPortfolio.map(a => a.symbol),
+                            market_caps: userPortfolio.map(a => a.investment)
+                        })
+                    });
+                    if (stratResponse.ok) {
+                        strategyData = await stratResponse.json();
+                    }
+
+                    // Investment Styles
+                    const [valueResp, momentumResp, buyHoldResp, carryResp] = await Promise.all([
+                        fetch('/api/value_analysis', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ portfolio: userPortfolio })
+                        }),
+                        fetch('/api/momentum_analysis', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ portfolio: userPortfolio })
+                        }),
+                        fetch('/api/buyhold_analysis', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ portfolio: userPortfolio })
+                        }),
+                        fetch('/api/carry_analysis', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ portfolio: userPortfolio })
+                        })
+                    ]);
+
+                    if (valueResp.ok) valueData = await valueResp.json();
+                    if (momentumResp.ok) momentumData = await momentumResp.json();
+                    if (buyHoldResp.ok) buyHoldData = await buyHoldResp.json();
+                    if (carryResp.ok) carryData = await carryResp.json();
+
+                } catch (error) {
+                    console.error('Error fetching advanced calculations:', error);
+                }
+
+                // Build HTML
                 let html = `
-                    <div style="margin-bottom: 15px;">
-                        <h5 style="color: #000; margin: 0 0 15px 0; font-size: 16px; font-weight: 600;">📊 Aktuelle Portfolio-Berechnungen (${timestamp})</h5>
+                    <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 25px; border-radius: 0; margin-bottom: 25px; color: white; text-align: center;">
+                        <h3 style="margin: 0 0 10px 0; font-size: 22px; font-weight: 600;">
+                            <i class="fas fa-calculator"></i> VOLLSTÄNDIGE PORTFOLIO-ANALYSE
+                        </h3>
+                        <p style="margin: 0; font-size: 13px; opacity: 0.9;">Letzte Aktualisierung: ${timestamp}</p>
+                        <p style="margin: 5px 0 0 0; font-size: 12px; opacity: 0.8;">Alle Berechnungen basieren auf Ihrem aktuellen Portfolio</p>
+                    </div>
+
+                    <!-- Portfolio Zusammensetzung -->
+                    <div style="background: #ffffff; padding: 20px; border-radius: 0; border: 2px solid #8B7355; margin-bottom: 20px;">
+                        <h4 style="color: #8B7355; margin: 0 0 15px 0; font-size: 18px; font-weight: 600; border-bottom: 2px solid #8B7355; padding-bottom: 8px;">
+                            <i class="fas fa-chart-pie"></i> 1. PORTFOLIO-ZUSAMMENSETZUNG
+                        </h4>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-bottom: 15px;">
+                `;
+                
+                userPortfolio.forEach(asset => {
+                    html += `
+                        <div style="background: #f8f9fa; padding: 12px; border-left: 4px solid #8b7355;">
+                            <div style="font-weight: 600; color: #000; font-size: 14px; margin-bottom: 5px;">${asset.symbol}</div>
+                            <div style="font-size: 12px; color: #666;">CHF ${asset.investment.toLocaleString('de-CH')}</div>
+                            <div style="font-size: 12px; color: #666;">Gewicht: <strong>${asset.weight}%</strong></div>
+                            <div style="font-size: 11px; color: #888; margin-top: 3px;">E(R): ${(asset.expectedReturn * 100).toFixed(2)}% | σ: ${(asset.volatility * 100).toFixed(2)}%</div>
+                        </div>
+                    `;
+                });
+                
+                html += `
+                            </div>
+                        <div style="background: #e8f5e9; padding: 15px; border-radius: 0; border-left: 3px solid #4caf50;">
+                            <strong style="color: #2e7d32; font-size: 15px;">Gesamt-Investment: CHF ${totalInvestment.toLocaleString('de-CH')}</strong>
+                            </div>
+                        </div>
                         
-                        <!-- Portfolio Übersicht -->
-                        <div style="background: white; padding: 20px; border-radius: 0; border: 1px solid #ddd; margin-bottom: 15px;">
-                            <h6 style="color: #000; margin: 0 0 12px 0; font-size: 14px; font-weight: 600;">Portfolio Zusammensetzung</h6>
-                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin-bottom: 15px;">
+                    <!-- Erwartete Rendite -->
+                    <div style="background: #ffffff; padding: 20px; border-radius: 0; border: 2px solid #4a9d5f; margin-bottom: 20px;">
+                        <h4 style="color: #4a9d5f; margin: 0 0 15px 0; font-size: 18px; font-weight: 600; border-bottom: 2px solid #4a9d5f; padding-bottom: 8px;">
+                            <i class="fas fa-chart-line"></i> 2. ERWARTETE PORTFOLIO-RENDITE: ${expectedReturn.toFixed(2)}% p.a.
+                        </h4>
+                        <div style="background: #f0f8ff; padding: 15px; border-left: 4px solid #4a9d5f; margin-bottom: 10px;">
+                            <p style="font-family: 'Courier New', monospace; margin: 0 0 10px 0; font-size: 13px; color: #333;">
+                                <strong>Formel:</strong> E(R<sub>p</sub>) = Σ (w<sub>i</sub> × E(R<sub>i</sub>))
+                            </p>
+                            <p style="margin: 0 0 10px 0; font-size: 12px; color: #666;"><strong>Berechnung:</strong></p>
+                `;
+
+                userPortfolio.forEach(asset => {
+                    const contribution = (parseFloat(asset.weight) / 100 * asset.expectedReturn * 100);
+                    html += `
+                        <div style="font-family: 'Courier New', monospace; font-size: 12px; color: #333; margin: 3px 0; padding-left: 10px;">
+                            → ${asset.symbol}: ${asset.weight}% × ${(asset.expectedReturn * 100).toFixed(2)}% = <strong style="color: #4a9d5f;">${contribution.toFixed(2)}%</strong>
+                                </div>
+                    `;
+                });
+
+                html += `
+                            <div style="margin-top: 10px; padding-top: 10px; border-top: 2px solid #4a9d5f;">
+                                <strong style="font-size: 14px; color: #2e7d32;">Total: ${expectedReturn.toFixed(2)}% p.a.</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Portfolio-Risiko -->
+                    <div style="background: #ffffff; padding: 20px; border-radius: 0; border: 2px solid #ff9800; margin-bottom: 20px;">
+                        <h4 style="color: #ff9800; margin: 0 0 15px 0; font-size: 18px; font-weight: 600; border-bottom: 2px solid #ff9800; padding-bottom: 8px;">
+                            <i class="fas fa-exclamation-triangle"></i> 3. PORTFOLIO-RISIKO (VOLATILITÄT): ${portfolioRisk.toFixed(2)}% p.a.
+                        </h4>
+                        <div style="background: #fff8f0; padding: 15px; border-left: 4px solid #ff9800; margin-bottom: 10px;">
+                            <p style="font-family: 'Courier New', monospace; margin: 0 0 10px 0; font-size: 13px; color: #333;">
+                                <strong>Vereinfacht:</strong> σ<sub>p</sub> ≈ Σ (w<sub>i</sub> × σ<sub>i</sub>)
+                            </p>
+                            <p style="margin: 0 0 10px 0; font-size: 12px; color: #666;"><strong>Berechnung:</strong></p>
                 `;
                 
                 userPortfolio.forEach(asset => {
+                    const contribution = (parseFloat(asset.weight) / 100 * asset.volatility * 100);
                     html += `
-                        <div style="background: #f8f9fa; padding: 10px; border-left: 3px solid #8b7355;">
-                            <div style="font-weight: 600; color: #000; font-size: 13px;">${asset.symbol}</div>
-                            <div style="font-size: 11px; color: #666;">CHF ${asset.investment.toLocaleString('de-CH')}</div>
-                            <div style="font-size: 11px; color: #666;">Gewicht: ${asset.weight}%</div>
+                        <div style="font-family: 'Courier New', monospace; font-size: 12px; color: #333; margin: 3px 0; padding-left: 10px;">
+                            → ${asset.symbol}: ${asset.weight}% × ${(asset.volatility * 100).toFixed(2)}% = <strong style="color: #ff9800;">${contribution.toFixed(2)}%</strong>
+                        </div>
+                    `;
+                });
+                
+                html += `
+                            <div style="margin-top: 10px; padding-top: 10px; border-top: 2px solid #ff9800;">
+                                <strong style="font-size: 14px; color: #e65100;">Total: ${portfolioRisk.toFixed(2)}% p.a.</strong>
+                            </div>
+                        </div>
+                        <div style="background: #fff3cd; padding: 12px; border-radius: 0; font-size: 11px; color: #856404; margin-top: 10px;">
+                            <strong>Hinweis:</strong> Die vollständige Formel berücksichtigt Korrelationen: σ<sub>p</sub> = √(Σ Σ w<sub>i</sub> w<sub>j</sub> σ<sub>i</sub> σ<sub>j</sub> ρ<sub>ij</sub>)
+                        </div>
+                            </div>
+                            
+                    <!-- Sharpe Ratio -->
+                    <div style="background: #ffffff; padding: 20px; border-radius: 0; border: 2px solid #2196f3; margin-bottom: 20px;">
+                        <h4 style="color: #2196f3; margin: 0 0 15px 0; font-size: 18px; font-weight: 600; border-bottom: 2px solid #2196f3; padding-bottom: 8px;">
+                            <i class="fas fa-balance-scale"></i> 4. SHARPE RATIO: ${sharpeRatio.toFixed(3)}
+                        </h4>
+                        <div style="background: #f0f8ff; padding: 15px; border-left: 4px solid #2196f3;">
+                            <p style="font-family: 'Courier New', monospace; margin: 0 0 10px 0; font-size: 13px; color: #333;">
+                                <strong>Formel:</strong> SR = (E(R<sub>p</sub>) - R<sub>f</sub>) / σ<sub>p</sub>
+                            </p>
+                            <p style="margin: 0 0 10px 0; font-size: 12px; color: #666;"><strong>Berechnung:</strong></p>
+                            <div style="font-family: 'Courier New', monospace; font-size: 12px; color: #333; margin: 5px 0; padding-left: 10px;">
+                                SR = (${expectedReturn.toFixed(2)}% - 2.00%) / ${portfolioRisk.toFixed(2)}%<br>
+                                SR = ${(expectedReturn - 2).toFixed(2)}% / ${portfolioRisk.toFixed(2)}%<br>
+                                <strong style="color: #2196f3;">SR = ${sharpeRatio.toFixed(3)}</strong>
+                            </div>
+                            <div style="background: #e3f2fd; padding: 10px; margin-top: 10px; border-radius: 0; font-size: 11px; color: #1565c0;">
+                                <strong>Interpretation:</strong> ${sharpeRatio > 1 ? '✅ Sehr gut!' : sharpeRatio > 0.5 ? '✓ Gut' : '⚠️ Verbesserungspotenzial'}
+                                Pro Einheit Risiko (1% Volatilität) erzielen Sie ${sharpeRatio.toFixed(3)}% Überrendite.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Value-at-Risk -->
+                    <div style="background: #ffffff; padding: 20px; border-radius: 0; border: 2px solid #ff5722; margin-bottom: 20px;">
+                        <h4 style="color: #ff5722; margin: 0 0 15px 0; font-size: 18px; font-weight: 600; border-bottom: 2px solid #ff5722; padding-bottom: 8px;">
+                            <i class="fas fa-chart-area"></i> 5. VALUE-AT-RISK (95% Konfidenz): ${var95.toFixed(2)}%
+                        </h4>
+                        <div style="background: #fff8f0; padding: 15px; border-left: 4px solid #ff5722;">
+                            <p style="font-family: 'Courier New', monospace; margin: 0 0 10px 0; font-size: 13px; color: #333;">
+                                <strong>Formel:</strong> VaR<sub>95%</sub> = μ<sub>p</sub> - 1.645 × σ<sub>p</sub>
+                            </p>
+                            <p style="margin: 0 0 10px 0; font-size: 12px; color: #666;"><strong>Berechnung:</strong></p>
+                            <div style="font-family: 'Courier New', monospace; font-size: 12px; color: #333; margin: 5px 0; padding-left: 10px;">
+                                VaR<sub>95%</sub> = ${expectedReturn.toFixed(2)}% - 1.645 × ${portfolioRisk.toFixed(2)}%<br>
+                                VaR<sub>95%</sub> = ${expectedReturn.toFixed(2)}% - ${(1.645 * portfolioRisk).toFixed(2)}%<br>
+                                <strong style="color: #ff5722;">VaR<sub>95%</sub> = ${var95.toFixed(2)}%</strong>
+                            </div>
+                            <div style="background: ${var95 < 0 ? '#ffebee' : '#e8f5e9'}; padding: 10px; margin-top: 10px; border-radius: 0; font-size: 11px; color: ${var95 < 0 ? '#c62828' : '#2e7d32'};">
+                                <strong>Interpretation:</strong> Mit 95% Wahrscheinlichkeit wird Ihre jährliche Rendite nicht unter ${var95.toFixed(2)}% fallen.
+                                ${var95 < 0 ? ' ⚠️ Verlustrisiko vorhanden!' : ' ✅ Positiver Worst-Case!'}
+                            </div>
+                        </div>
+                                </div>
+                `;
+                
+                // Monte Carlo Results
+                if (monteCarloData && monteCarloData.percentiles) {
+                    html += `
+                        <!-- Monte Carlo Simulation -->
+                        <div style="background: #ffffff; padding: 20px; border-radius: 0; border: 2px solid #9c27b0; margin-bottom: 20px;">
+                            <h4 style="color: #9c27b0; margin: 0 0 15px 0; font-size: 18px; font-weight: 600; border-bottom: 2px solid #9c27b0; padding-bottom: 8px;">
+                                <i class="fas fa-dice"></i> 6. MONTE CARLO SIMULATION (1000 Szenarien, 1 Jahr)
+                            </h4>
+                            <div style="background: #f8f0ff; padding: 15px; border-left: 4px solid #9c27b0;">
+                                <p style="font-family: 'Courier New', monospace; margin: 0 0 10px 0; font-size: 13px; color: #333;">
+                                    <strong>Formel (GBM):</strong> S<sub>t+1</sub> = S<sub>t</sub> × exp((μ - σ²/2)Δt + σε√Δt)
+                                </p>
+                                <p style="margin: 0 0 10px 0; font-size: 12px; color: #666;"><strong>Ergebnisse nach 1 Jahr:</strong></p>
+                                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 10px;">
+                                    <div style="background: #ffebee; padding: 12px; text-align: center; border-left: 3px solid #c62828;">
+                                        <div style="font-size: 11px; color: #666; margin-bottom: 3px;">Pessimistisch (5%)</div>
+                                        <div style="font-size: 16px; font-weight: 600; color: #c62828;">CHF ${monteCarloData.percentiles[5].toLocaleString('de-CH', {maximumFractionDigits: 0})}</div>
+                                    </div>
+                                    <div style="background: #fff3cd; padding: 12px; text-align: center; border-left: 3px solid #ff9800;">
+                                        <div style="font-size: 11px; color: #666; margin-bottom: 3px;">Erwartungswert (50%)</div>
+                                        <div style="font-size: 16px; font-weight: 600; color: #ff9800;">CHF ${monteCarloData.percentiles[50].toLocaleString('de-CH', {maximumFractionDigits: 0})}</div>
+                                    </div>
+                                    <div style="background: #e8f5e9; padding: 12px; text-align: center; border-left: 3px solid #4caf50;">
+                                        <div style="font-size: 11px; color: #666; margin-bottom: 3px;">Optimistisch (95%)</div>
+                                        <div style="font-size: 16px; font-weight: 600; color: #4caf50;">CHF ${monteCarloData.percentiles[95].toLocaleString('de-CH', {maximumFractionDigits: 0})}</div>
+                                    </div>
+                                </div>
+                                <div style="background: #e3f2fd; padding: 10px; margin-top: 12px; border-radius: 0; font-size: 11px; color: #1565c0;">
+                                    Start-Investment: CHF ${totalInvestment.toLocaleString('de-CH')} →
+                                    Erwarteter Wert: CHF ${monteCarloData.percentiles[50].toLocaleString('de-CH', {maximumFractionDigits: 0})}
+                                    (${((monteCarloData.percentiles[50] / totalInvestment - 1) * 100).toFixed(1)}% Rendite)
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }
+
+                // Markowitz Optimization
+                if (strategyData && strategyData.strategies && strategyData.strategies.markowitz) {
+                    const markowitz = strategyData.strategies.markowitz;
+                    html += `
+                        <!-- Markowitz Optimierung -->
+                        <div style="background: #ffffff; padding: 20px; border-radius: 0; border: 2px solid #4caf50; margin-bottom: 20px;">
+                            <h4 style="color: #4caf50; margin: 0 0 15px 0; font-size: 18px; font-weight: 600; border-bottom: 2px solid #4caf50; padding-bottom: 8px;">
+                                <i class="fas fa-bullseye"></i> 7. MARKOWITZ PORTFOLIO-OPTIMIERUNG
+                            </h4>
+                            <div style="background: #f0fff8; padding: 15px; border-left: 4px solid #4caf50;">
+                                <p style="font-family: 'Courier New', monospace; margin: 0 0 10px 0; font-size: 13px; color: #333;">
+                                    <strong>Optimierungsziel:</strong> max SR = (w<sup>T</sup>μ - R<sub>f</sub>) / √(w<sup>T</sup>Σw)<br>
+                                    <strong>Constraints:</strong> Σw<sub>i</sub> = 1, w<sub>i</sub> ≥ 0
+                                </p>
+                                <p style="margin: 0 0 10px 0; font-size: 12px; color: #666;"><strong>Optimale Gewichte (Max. Sharpe Ratio):</strong></p>
+                                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin: 10px 0;">
+                    `;
+
+                    Object.entries(markowitz.weights).forEach(([symbol, weight]) => {
+                        html += `
+                            <div style="background: #ffffff; padding: 10px; border: 1px solid #e0e0e0; border-left: 3px solid #4caf50;">
+                                <div style="font-weight: 600; color: #000; font-size: 13px;">${symbol}</div>
+                                <div style="font-size: 16px; font-weight: 700; color: #4caf50;">${(weight * 100).toFixed(1)}%</div>
                         </div>
                     `;
                 });
                 
                 html += `
                             </div>
-                            <div style="background: #e8f5e9; padding: 12px; border-radius: 0; margin-top: 10px;">
-                                <strong style="color: #2e7d32;">Gesamt-Investment: CHF ${totalInvestment.toLocaleString('de-CH')}</strong>
-                            </div>
-                        </div>
-                        
-                        <!-- Berechnungs-Details -->
-                        <div style="background: white; padding: 20px; border-radius: 0; border: 1px solid #ddd;">
-                            <h6 style="color: #000; margin: 0 0 12px 0; font-size: 14px; font-weight: 600;">Berechnungs-Details</h6>
-                            
-                            <div style="margin-bottom: 15px; padding: 12px; background: #f8f9fa; border-left: 3px solid #4caf50;">
-                                <strong style="color: #2e7d32;">Erwartete Rendite:</strong> ${expectedReturn.toFixed(2)}% p.a.
-                                <div style="font-size: 11px; color: #666; margin-top: 5px;">
-                                    Berechnung: Σ (Gewicht<sub>i</sub> × ErwarteteRendite<sub>i</sub>)
+                                <div style="background: #e8f5e9; padding: 12px; margin-top: 12px; border-radius: 0;">
+                                    <div style="font-size: 12px; color: #2e7d32; margin: 3px 0;">
+                                        <strong>Optimierte Rendite:</strong> ${markowitz.expected_return.toFixed(2)}% p.a.
+                                    </div>
+                                    <div style="font-size: 12px; color: #2e7d32; margin: 3px 0;">
+                                        <strong>Optimierte Volatilität:</strong> ${markowitz.volatility.toFixed(2)}% p.a.
+                                    </div>
+                                    <div style="font-size: 12px; color: #2e7d32; margin: 3px 0;">
+                                        <strong>Optimierte Sharpe Ratio:</strong> ${markowitz.sharpe_ratio.toFixed(3)}
+                                    </div>
                                 </div>
-                `;
-                
-                userPortfolio.forEach(asset => {
-                    html += `
-                        <div style="font-size: 11px; color: #666; margin-top: 3px; padding-left: 10px;">
-                            → ${asset.symbol}: ${asset.weight}% × ${(asset.expectedReturn * 100).toFixed(2)}% = ${(parseFloat(asset.weight) / 100 * asset.expectedReturn * 100).toFixed(2)}%
+                                <div style="background: #fff3cd; padding: 10px; margin-top: 10px; border-radius: 0; font-size: 11px; color: #856404;">
+                                    <strong>Vergleich:</strong>
+                                    Aktuelle SR: ${sharpeRatio.toFixed(3)} →
+                                    Optimierte SR: ${markowitz.sharpe_ratio.toFixed(3)}
+                                    (${markowitz.sharpe_ratio > sharpeRatio ? '✅ Verbesserung: +' + ((markowitz.sharpe_ratio - sharpeRatio) * 100).toFixed(1) + '%' : '→ Keine Verbesserung'})
+                                </div>
+                            </div>
                         </div>
                     `;
-                });
+                }
+
+                // ✅ INVESTMENT STYLES SECTION - VOLLSTÄNDIGE BERECHNUNGEN
+                html += await generateInvestmentStylesSection();
                 
+                // Summary Box
                 html += `
-                            </div>
-                            
-                            <div style="margin-bottom: 15px; padding: 12px; background: #f8f9fa; border-left: 3px solid #ff9800;">
-                                <strong style="color: #e65100;">Portfolio-Risiko (Volatilität):</strong> ${portfolioRisk.toFixed(2)}% p.a.
-                                <div style="font-size: 11px; color: #666; margin-top: 5px;">
-                                    Berechnung: Σ (Gewicht<sub>i</sub> × Volatilität<sub>i</sub>)
+                    <!-- Zusammenfassung -->
+                    <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 20px; border-radius: 0; color: white;">
+                        <h4 style="margin: 0 0 15px 0; font-size: 18px; font-weight: 600; text-align: center;">
+                            <i class="fas fa-check-circle"></i> ZUSAMMENFASSUNG ALLER BERECHNUNGEN
+                        </h4>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+                            <div style="background: rgba(255,255,255,0.15); padding: 15px; border-radius: 0;">
+                                <div style="font-size: 11px; opacity: 0.9; margin-bottom: 5px;">Portfolio-Assets</div>
+                                <div style="font-size: 20px; font-weight: 700;">${userPortfolio.length}</div>
                                 </div>
-                `;
-                
-                userPortfolio.forEach(asset => {
-                    html += `
-                        <div style="font-size: 11px; color: #666; margin-top: 3px; padding-left: 10px;">
-                            → ${asset.symbol}: ${asset.weight}% × ${(asset.volatility * 100).toFixed(2)}% = ${(parseFloat(asset.weight) / 100 * asset.volatility * 100).toFixed(2)}%
-                        </div>
-                    `;
-                });
-                
-                html += `
+                            <div style="background: rgba(255,255,255,0.15); padding: 15px; border-radius: 0;">
+                                <div style="font-size: 11px; opacity: 0.9; margin-bottom: 5px;">Erwartete Rendite</div>
+                                <div style="font-size: 20px; font-weight: 700;">${expectedReturn.toFixed(2)}%</div>
                             </div>
-                            
-                            <div style="padding: 12px; background: #f8f9fa; border-left: 3px solid #2196f3;">
-                                <strong style="color: #1565c0;">Sharpe Ratio:</strong> ${sharpeRatio.toFixed(2)}
-                                <div style="font-size: 11px; color: #666; margin-top: 5px;">
-                                    Berechnung: (Rendite - Risikofreier Zins) / Volatilität = (${expectedReturn.toFixed(2)}% - 2%) / ${portfolioRisk.toFixed(2)}% = ${sharpeRatio.toFixed(2)}
-                                </div>
+                            <div style="background: rgba(255,255,255,0.15); padding: 15px; border-radius: 0;">
+                                <div style="font-size: 11px; opacity: 0.9; margin-bottom: 5px;">Portfolio-Risiko</div>
+                                <div style="font-size: 20px; font-weight: 700;">${portfolioRisk.toFixed(2)}%</div>
+                            </div>
+                            <div style="background: rgba(255,255,255,0.15); padding: 15px; border-radius: 0;">
+                                <div style="font-size: 11px; opacity: 0.9; margin-bottom: 5px;">Sharpe Ratio</div>
+                                <div style="font-size: 20px; font-weight: 700;">${sharpeRatio.toFixed(3)}</div>
                             </div>
                         </div>
                     </div>
@@ -14147,6 +14873,15 @@ html, body {
                 calculationsDiv.innerHTML = html;
             } catch (error) {
                 console.error('Error loading transparency calculations:', error);
+                const calculationsDiv = document.getElementById('transparency-calculations');
+                if (calculationsDiv) {
+                    calculationsDiv.innerHTML = `
+                        <div style="background: #ffebee; padding: 20px; border-radius: 0; border-left: 4px solid #c62828;">
+                            <h4 style="margin: 0 0 10px 0; color: #c62828;"><i class="fas fa-exclamation-circle"></i> Fehler beim Laden</h4>
+                            <p style="color: #666; margin: 0; font-size: 14px;">Die Berechnungen konnten nicht geladen werden. Bitte aktualisieren Sie die Seite.</p>
+                        </div>
+                    `;
+                }
             }
         }
 
@@ -14545,6 +15280,152 @@ def get_market_overview():
             'error': str(e)
         })
 
+@app.route('/api/get_market_news')
+def get_market_news():
+    """Get live financial news from NewsAPI.org"""
+    try:
+        # Check cache (refresh every 15 minutes)
+        cache_key = 'market_news'
+        cached_data = cache.get(cache_key)
+        if cached_data:
+            return jsonify(cached_data)
+        
+        # NewsAPI.org - Financial News
+        NEWS_API_KEY = 'ed51bfe72a554a9ca864b027e2bb78cb'
+        url = f'https://newsapi.org/v2/top-headlines?category=business&language=en&pageSize=8&apiKey={NEWS_API_KEY}'
+        
+        response = requests.get(url, timeout=10)
+        response.raise_for_status()
+        news_data = response.json()
+        
+        articles = []
+        for article in news_data.get('articles', [])[:6]:
+            # Filter nur Finanz-relevante News
+            title = article.get('title', '')
+            description = article.get('description', '')
+            
+            # Skip non-financial news
+            financial_keywords = ['stock', 'market', 'trading', 'finance', 'bank', 'invest', 'economy', 'fed', 'ecb', 'gold', 'oil', 'currency', 'bond', 'rate', 'inflation']
+            if not any(kw in title.lower() or kw in description.lower() for kw in financial_keywords):
+                continue
+            
+            # Parse time
+            published = article.get('publishedAt', '')
+            try:
+                from datetime import datetime, timezone
+                pub_time = datetime.fromisoformat(published.replace('Z', '+00:00'))
+                now = datetime.now(timezone.utc)
+                diff = now - pub_time
+                
+                hours = int(diff.total_seconds() / 3600)
+                if hours < 1:
+                    time_ago = 'vor wenigen Minuten'
+                elif hours < 24:
+                    time_ago = f'vor {hours} Stunden'
+                else:
+                    days = int(hours / 24)
+                    time_ago = f'vor {days} Tagen'
+            except:
+                time_ago = 'kürzlich'
+            
+            # Category based on keywords
+            if any(kw in title.lower() for kw in ['gold', 'oil', 'commodity', 'rohstoff']):
+                category = 'Rohstoffe'
+            elif any(kw in title.lower() for kw in ['tech', 'apple', 'microsoft', 'ai']):
+                category = 'Technologie'
+            elif any(kw in title.lower() for kw in ['fed', 'ecb', 'rate', 'inflation', 'central bank']):
+                category = 'Zentralbank'
+            elif any(kw in title.lower() for kw in ['market', 'index', 'dow', 'nasdaq', 's&p']):
+                category = 'Markt'
+            else:
+                category = 'Wirtschaft'
+            
+            articles.append({
+                'title': title,
+                'description': description[:150] + '...' if len(description) > 150 else description,
+                'source': article.get('source', {}).get('name', 'Unknown'),
+                'url': article.get('url', '#'),
+                'time': time_ago,
+                'category': category,
+                'image': article.get('urlToImage', '')
+            })
+        
+        data = {
+            'articles': articles,
+            'timestamp': time.time()
+        }
+        
+        # Cache for 15 minutes
+        cache.set(cache_key, data, ttl=900)
+        
+        return jsonify(data)
+        
+    except Exception as e:
+        print(f"Error fetching market news: {str(e)}")
+        return jsonify({
+            'articles': [],
+            'error': str(e)
+        })
+
+@app.route('/api/get_top_movers')
+def get_top_movers():
+    """Get top gaining and losing stocks"""
+    try:
+        # Check cache (refresh every 5 minutes)
+        cache_key = 'top_movers'
+        cached_data = cache.get(cache_key)
+        if cached_data:
+            return jsonify(cached_data)
+        
+        # Liste der zu überwachenden Schweizer Aktien
+        swiss_stocks = [
+            'NESN.SW', 'NOVN.SW', 'ROG.SW', 'ZURN.SW', 'UHR.SW',
+            'ABBN.SW', 'CSGN.SW', 'LONN.SW', 'SREN.SW', 'GIVN.SW',
+            'SCMN.SW', 'GEBN.SW', 'SLHN.SW', 'SIKA.SW', 'BEAN.SW',
+            'VONN.SW', 'ARYN.SW', 'HELN.SW', 'PGHN.SW', 'ALC.SW'
+        ]
+        
+        movers = []
+        for symbol in swiss_stocks:
+            try:
+                ticker = yf.Ticker(symbol)
+                hist = ticker.history(period='2d')
+                if not hist.empty and len(hist) > 1:
+                    current = float(hist['Close'].iloc[-1])
+                    prev = float(hist['Close'].iloc[-2])
+                    change_pct = ((current - prev) / prev) * 100
+                    
+                    movers.append({
+                        'symbol': symbol,
+                        'name': symbol.replace('.SW', ''),
+                        'price': round(current, 2),
+                        'changePercent': round(change_pct, 2)
+                    })
+            except:
+                continue
+        
+        # Sort by change
+        movers.sort(key=lambda x: x['changePercent'], reverse=True)
+        
+        data = {
+            'gainers': movers[:5],  # Top 5
+            'losers': movers[-5:],  # Bottom 5 (reversed)
+            'timestamp': time.time()
+        }
+        
+        # Cache for 5 minutes
+        cache.set(cache_key, data, ttl=300)
+        
+        return jsonify(data)
+        
+    except Exception as e:
+        print(f"Error fetching top movers: {str(e)}")
+        return jsonify({
+            'gainers': [],
+            'losers': [],
+            'error': str(e)
+        })
+
 @app.route('/api/get_asset_stats/<symbol>')
 def get_asset_stats(symbol):
     """Get detailed statistics for an asset from multiple sources"""
@@ -14680,11 +15561,31 @@ def value_analysis():
                 
                 # Get fundamental data
                 market_cap = info.get('marketCap', 0)
-                pe_ratio = info.get('trailingPE', info.get('forwardPE', 15))
-                pb_ratio = info.get('priceToBook', 2)
-                div_yield = info.get('dividendYield', 0) * 100 if info.get('dividendYield') else 0
+                
+                # ✅ SMART P/E & P/B - Nur für Aktien!
+                asset_type = info.get('quoteType', '').lower()
+                if asset_type in ['equity', 'stock']:
+                    pe_ratio = info.get('trailingPE', info.get('forwardPE', None))
+                    pb_ratio = info.get('priceToBook', None)
+                else:
+                    pe_ratio = None  # Indizes, Rohstoffe, Crypto haben kein P/E
+                    pb_ratio = None
+                
+                # Dividend Yield - ✅ SMART DETECTION
+                raw_div = info.get('dividendYield', 0)
+                if raw_div and raw_div > 1:  # Schon in Prozent!
+                    div_yield = raw_div  # NICHT × 100
+                elif raw_div:
+                    div_yield = raw_div * 100  # Dezimal → Prozent
+                else:
+                    div_yield = 0
+                
+                # Safety Cap
+                if div_yield > 20:
+                    div_yield = 0  # Offensichtlich falsch
+                
                 eps = info.get('trailingEps', info.get('forwardEps', 0))
-                book_value = info.get('bookValue', current_price / pb_ratio if pb_ratio > 0 else current_price)
+                book_value = info.get('bookValue', current_price / pb_ratio if pb_ratio and pb_ratio > 0 else current_price)
                 beta = info.get('beta', 1.0)
                 
                 # Get historical data for risk metrics
@@ -14720,18 +15621,28 @@ def value_analysis():
                 
                 # Graham Number calculation (intrinsic value)
                 graham_number = 0
-                if eps > 0 and book_value > 0:
+                if eps and book_value and eps > 0 and book_value > 0:
                     graham_number = math.sqrt(22.5 * eps * book_value)
                 
-                # Simple DCF estimation
-                if eps > 0:
-                    fcf = eps * 0.8  # Rough estimate: 80% of EPS as FCF
+                # ✅ FCF: Pro Aktie verwenden!
+                fcf_total = info.get('freeCashflow', None)
+                shares_outstanding = info.get('sharesOutstanding', None)
+                
+                if fcf_total and shares_outstanding and shares_outstanding > 0:
+                    fcf_per_share = fcf_total / shares_outstanding
+                elif eps and eps > 0:
+                    fcf_per_share = eps * 0.8  # Fallback: 80% of EPS
+                else:
+                    fcf_per_share = 0
+                
+                # Simple DCF estimation (per share!)
+                if fcf_per_share > 0:
                     dcf_value = 0
                     for year in range(1, 11):
                         growth = terminal_growth if year > 5 else terminal_growth * 1.5
-                        future_fcf = fcf * ((1 + growth) ** year)
+                        future_fcf = fcf_per_share * ((1 + growth) ** year)
                         dcf_value += future_fcf / ((1 + discount_rate) ** year)
-                    terminal_value = (fcf * ((1 + terminal_growth) ** 10) * (1 + terminal_growth)) / (discount_rate - terminal_growth)
+                    terminal_value = (fcf_per_share * ((1 + terminal_growth) ** 10) * (1 + terminal_growth)) / (discount_rate - terminal_growth)
                     dcf_value += terminal_value / ((1 + discount_rate) ** 10)
                 else:
                     dcf_value = current_price
@@ -14740,12 +15651,12 @@ def value_analysis():
                 fair_values = [v for v in [graham_number, dcf_value, current_price * 1.1] if v > 0]
                 fair_value = sum(fair_values) / len(fair_values) if fair_values else current_price
                 
-                # Scoring
+                # Scoring (mit None-Checks!)
                 score = 0
-                if pe_ratio > 0 and pe_ratio < 15: score += 25
-                elif pe_ratio > 0 and pe_ratio < 20: score += 15
-                if pb_ratio > 0 and pb_ratio < 1.5: score += 20
-                elif pb_ratio > 0 and pb_ratio < 3: score += 10
+                if pe_ratio and pe_ratio > 0 and pe_ratio < 15: score += 25
+                elif pe_ratio and pe_ratio > 0 and pe_ratio < 20: score += 15
+                if pb_ratio and pb_ratio > 0 and pb_ratio < 1.5: score += 20
+                elif pb_ratio and pb_ratio > 0 and pb_ratio < 3: score += 10
                 if div_yield > 3: score += 20
                 elif div_yield > 1.5: score += 10
                 if fair_value > current_price * 1.1: score += 35
@@ -14781,6 +15692,10 @@ def value_analysis():
                     'peRatio': pe_ratio,
                     'pbRatio': pb_ratio,
                     'divYield': div_yield,
+                    'eps': eps,
+                    'fcf': fcf_total if fcf_total else None,  # Total FCF für Display
+                    'fcf_per_share': fcf_per_share,  # FCF pro Aktie für Berechnungen
+                    'bookValue': book_value,
                     'upside': upside,
                     'score': score,
                     'recommendation': recommendation,
@@ -14891,6 +15806,11 @@ def momentum_analysis():
                 # Calculate momentum (% change over lookback period)
                 momentum_return = ((hist['Close'].iloc[-1] / hist['Close'].iloc[-lookback_months*21]) - 1) * 100 if len(hist) >= lookback_months*21 else 0
                 
+                # ✅ 3M, 6M, 12M Returns
+                return_3m = ((hist['Close'].iloc[-1] / hist['Close'].iloc[-63]) - 1) * 100 if len(hist) >= 63 else 0
+                return_6m = ((hist['Close'].iloc[-1] / hist['Close'].iloc[-126]) - 1) * 100 if len(hist) >= 126 else 0
+                return_12m = ((hist['Close'].iloc[-1] / hist['Close'].iloc[-252]) - 1) * 100 if len(hist) >= 252 else 0
+                
                 # Calculate RSI
                 delta = hist['Close'].diff()
                 gain = (delta.where(delta > 0, 0)).rolling(window=14).mean()
@@ -14960,6 +15880,9 @@ def momentum_analysis():
                     'symbol': symbol,
                     'quantity': quantity,
                     'momentum_return': momentum_return,
+                    'return_3m': return_3m,
+                    'return_6m': return_6m,
+                    'return_12m': return_12m,
                     'rsi': current_rsi,
                     'volatility': volatility,
                     'sharpe_ratio': sharpe_ratio,
@@ -15030,9 +15953,31 @@ def buyhold_analysis():
                 revenue_growth = info.get('revenueGrowth', 0) * 100 if info.get('revenueGrowth') else 0
                 earnings_growth = info.get('earningsQuarterlyGrowth', 0) * 100 if info.get('earningsQuarterlyGrowth') else 0
                 
-                # Dividend metrics
-                div_yield = info.get('dividendYield', 0) * 100 if info.get('dividendYield') else 0
+                # Dividend metrics - ✅ SMART DETECTION
+                raw_div = info.get('dividendYield', 0)
+                if raw_div and raw_div > 1:  # Schon in Prozent!
+                    div_yield = raw_div  # NICHT × 100
+                elif raw_div:
+                    div_yield = raw_div * 100  # Dezimal → Prozent
+                else:
+                    div_yield = 0
+                
+                # Safety Cap
+                if div_yield > 20:
+                    div_yield = 0  # Offensichtlich falsch
+                
                 payout_ratio = info.get('payoutRatio', 0) * 100 if info.get('payoutRatio') else 0
+                
+                # ✅ Market Cap
+                market_cap = info.get('marketCap', 0)
+                
+                # ✅ Volatility (echte Berechnung!)
+                hist = ticker.history(period='1y')
+                if not hist.empty and len(hist) > 20:
+                    returns = hist['Close'].pct_change().dropna()
+                    volatility = returns.std() * np.sqrt(252) * 100  # Annualized
+                else:
+                    volatility = 0
                 
                 # Quality score
                 quality_score = 0
@@ -15063,6 +16008,9 @@ def buyhold_analysis():
                 results.append({
                     'symbol': symbol,
                     'quantity': quantity,
+                    'market_cap': market_cap,
+                    'dividend_yield': div_yield,
+                    'volatility': volatility,
                     'roe': roe,
                     'debtToEquity': debt_to_equity,
                     'currentRatio': current_ratio,
@@ -15126,7 +16074,19 @@ def carry_analysis():
                 info = ticker.info
                 
                 current_price = info.get('currentPrice', info.get('regularMarketPrice', 0))
-                div_yield = info.get('dividendYield', 0) * 100 if info.get('dividendYield') else 0
+                
+                # Dividend Yield - ✅ SMART DETECTION
+                raw_div = info.get('dividendYield', 0)
+                if raw_div and raw_div > 1:  # Schon in Prozent!
+                    div_yield = raw_div  # NICHT × 100
+                elif raw_div:
+                    div_yield = raw_div * 100  # Dezimal → Prozent
+                else:
+                    div_yield = 0
+                
+                # Safety Cap
+                if div_yield > 20:
+                    div_yield = 0  # Offensichtlich falsch
                 
                 # Net carry = dividend yield - financing cost
                 net_carry = div_yield - (financing_cost * 100)
@@ -15137,6 +16097,30 @@ def carry_analysis():
                 financing_cost_amount = current_price * quantity * financing_cost
                 net_annual_income = annual_income - financing_cost_amount
                 
+                # ✅ Yield Diff (vs Benchmark - z.B. Swiss Gov Bond ~0.5%)
+                benchmark_yield = 0.5
+                yield_diff = div_yield - benchmark_yield
+                
+                # ✅ Risk Premium (einfache Schätzung)
+                hist = ticker.history(period='1y')
+                if not hist.empty and len(hist) > 20:
+                    returns = hist['Close'].pct_change().dropna()
+                    volatility = returns.std() * np.sqrt(252) * 100  # Annualized
+                    risk_premium = (div_yield / volatility) * 100 if volatility > 0 else 0
+                else:
+                    risk_premium = 0
+                
+                # ✅ Trend (Simple 50d MA vs 200d MA)
+                if len(hist) >= 200:
+                    ma_50 = hist['Close'].rolling(window=50).mean().iloc[-1]
+                    ma_200 = hist['Close'].rolling(window=200).mean().iloc[-1]
+                    if ma_50 > ma_200:
+                        trend = 'BULLISH'
+                    else:
+                        trend = 'BEARISH'
+                else:
+                    trend = 'NEUTRAL'
+                
                 asset_value = current_price * quantity
                 total_value += asset_value
                 total_carry += net_annual_income
@@ -15146,6 +16130,9 @@ def carry_analysis():
                     'quantity': quantity,
                     'currentPrice': current_price,
                     'divYield': div_yield,
+                    'yield_diff': yield_diff,
+                    'risk_premium': risk_premium,
+                    'trend': trend,
                     'netCarry': net_carry,
                     'annualIncome': annual_income,
                     'financingCost': financing_cost_amount,
