@@ -59,3 +59,7 @@ dev-reports/
 # Static generated files (optional)
 static/icon-*.png
 !static/profile.png
+
+# Large Video Files (>100MB - GitHub Limit)
+static/sapprovid.mov
+static/scene23.mp4

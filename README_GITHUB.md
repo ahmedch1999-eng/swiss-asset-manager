@@ -183,3 +183,4 @@ Diese Plattform ist **keine FINMA-lizenzierte Finanzdienstleistung**. Alle Analy
 
 **Viel Erfolg mit Swiss Asset Pro!** 🚀
 
+
