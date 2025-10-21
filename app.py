@@ -4557,15 +4557,20 @@ html, body {
     <!-- ======================================================================================== -->
 
     <!-- ======================================================================================== -->
-    <!-- 🔒 VIDEO INTRO SCREEN - 5 SEKUNDEN -->
+    <!-- 🔒 VIDEO INTRO SCREEN - OPTIONAL (nur wenn Video existiert) -->
     <!-- ======================================================================================== -->
-    <div class="video-intro-screen" id="videoIntroScreen">
+    <!-- Video temporär deaktiviert - zu groß für GitHub/Render (153MB > 100MB Limit) -->
+    <!-- Lokale Version: Video funktioniert mit /static/sapprovid.mov -->
+    <!-- Production: Geht direkt zu Login Screen -->
+    <!--
+    <div class="video-intro-screen" id="videoIntroScreen" style="display: none;">
         <video id="introVideo" autoplay muted playsinline preload="auto" style="width: 100vw; height: 100vh; object-fit: cover;">
             <source src="/static/sapprovid.mov" type="video/quicktime">
             <source src="/static/sapprovid.mov" type="video/mp4">
             Your browser does not support the video tag.
         </video>
     </div>
+    -->
 
     <!-- ======================================================================================== -->
     <!-- 🔒 PROTECTED - WELCOME SCREEN & ANIMATION - DO NOT MODIFY WITHOUT EXPLICIT PERMISSION -->
@@ -6201,53 +6206,72 @@ html, body {
             const introVideo = document.getElementById('introVideo');
             const loginScreen = document.getElementById('loginScreen');
 
+            // ROBUSTE FUNKTION: Skip zu Login (funktioniert IMMER)
+            function skipToLogin() {
+                console.log('⏭️ Skipping to login screen...');
+                if (videoIntroScreen) {
+                    videoIntroScreen.style.display = 'none';
+                }
+                if (loginScreen) {
+                    loginScreen.classList.add('active');
+                }
+            }
+
             // MOBILE: Überspringe Video komplett (zu groß, stockt)
             const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || window.innerWidth < 768;
             
             if (isMobile) {
                 console.log('📱 Mobile detected - skip video, go directly to login');
-                videoIntroScreen.style.display = 'none';
-                if (loginScreen) {
-                    loginScreen.classList.add('active');
-                }
+                skipToLogin();
                 return; // Stoppe hier für Mobile
             }
 
-            // DESKTOP: Video abspielen
-            console.log('🖥️ Desktop detected - play video intro');
-            introVideo.play().catch(e => {
-                console.log('Video autoplay blocked, retrying...', e);
-                setTimeout(() => introVideo.play(), 100);
+            // CHECK: Existiert das Video überhaupt?
+            if (!introVideo || !introVideo.canPlayType || !introVideo.canPlayType('video/quicktime')) {
+                console.log('⚠️ Video not available - skip to login');
+                skipToLogin();
+                return;
+            }
+
+            // DESKTOP: Video abspielen (mit Error Handling)
+            console.log('🖥️ Desktop detected - attempting to play video intro');
+            
+            // Error Handler: Falls Video nicht lädt → Skip zu Login
+            introVideo.addEventListener('error', function(e) {
+                console.log('❌ Video load error - skipping to login', e);
+                skipToLogin();
             });
+
+            // Versuche Video zu starten
+            const playPromise = introVideo.play();
+            
+            if (playPromise !== undefined) {
+                playPromise.catch(e => {
+                    console.log('⚠️ Video autoplay blocked or failed - skipping to login', e);
+                    skipToLogin();
+                });
+            }
             
             window.videoStartTime = Date.now();
 
-            // Stop video nach 3 Sekunden (bevor stockende Teile kommen)
+            // Stop video nach 2.5 Sekunden (noch kürzer, kein Stocken mehr!)
             introVideo.addEventListener('timeupdate', function() {
-                if (introVideo.currentTime >= 3) {
+                if (introVideo.currentTime >= 2.5) {
                     introVideo.pause();
                     videoIntroScreen.classList.add('fade-out');
                     setTimeout(() => {
-                        videoIntroScreen.style.display = 'none';
-                        if (loginScreen) {
-                            loginScreen.classList.add('active');
-                        }
+                        skipToLogin();
                     }, 500);
                 }
             });
 
-            // Fallback: Nach 3.5 Sekunden sicher zum Login wechseln
+            // Fallback: Nach 3 Sekunden SICHER zum Login wechseln
             setTimeout(() => {
-                if (videoIntroScreen.style.display !== 'none') {
-                    videoIntroScreen.classList.add('fade-out');
-                    setTimeout(() => {
-                        videoIntroScreen.style.display = 'none';
-                        if (loginScreen) {
-                            loginScreen.classList.add('active');
-                        }
-                    }, 500);
+                if (videoIntroScreen && videoIntroScreen.style.display !== 'none') {
+                    console.log('⏱️ Timeout reached - forcing skip to login');
+                    skipToLogin();
                 }
-            }, 3500); // 3.5 seconds safety fallback
+            }, 3000); // 3 seconds safety fallback (noch kürzer!)
         });
         
         // Erzwinge Breite für alle Seiten + Titel-Balken
